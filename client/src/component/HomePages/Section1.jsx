@@ -101,7 +101,7 @@ export default function EchoHome() {
                 className="relative w-full min-h-screen flex flex-col"
                 style={{
                     backgroundImage:
-                        "linear-gradient(180deg, rgba(10,15,10,0.55) 0%, rgba(10,15,10,0.25) 35%, rgba(10,15,10,0.55) 100%), url('/src/assets/heroImg.png')",
+                        "linear-gradient(180deg, rgba(10,15,10,0.55) 0%, rgba(10,15,10,0.25) 35%, rgba(10,15,10,0.55) 100%), url('https://cdn.sanity.io/images/4bjhs9ma/production/4c055a1575ac9c6e55856fdd4a0a807a7ce242bc-1774x887.png')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}
