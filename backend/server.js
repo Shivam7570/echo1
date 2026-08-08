@@ -20,13 +20,5 @@ process.on("unhandledRejection", (err) => {
   process.exit(1);
 });
 
-app.get("/", (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: "Echo The Jungle Backend is running successfully",
-  });
-});
-
-
 // shivamrajpootshivam0_db_user 
 // C3kGzo1Ql75GIqHQ

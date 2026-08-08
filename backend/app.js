@@ -44,6 +44,13 @@ app.get("/api/health", (req, res) => {
   res.json({ success: true, message: "Echo backend is running" });
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Echo The Jungle Backend is running successfully",
+  });
+});
+
 // ---- API routes ----
 app.use("/api/auth", authRoutes);
 app.use("/api/enquiries", enquiryRoutes);
