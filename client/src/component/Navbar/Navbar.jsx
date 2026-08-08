@@ -31,7 +31,7 @@ export default function Navbar() {
             <nav
                 className={`w-full transition-all duration-300 ${isScrolled
                     ? "bg-[#0A1A12]/95 backdrop-blur-md shadow-2xl py-1 border-b border-[#C6A15B]/20"
-                    : "bg-[#0A1A12] py- md:py- border-b border-white/10"
+                    : " "
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

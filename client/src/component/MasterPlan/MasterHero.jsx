@@ -25,27 +25,13 @@ export default function MasterHero() {
             <header className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6 max-w-7xl mx-auto w-full">
 
                 {/* Logo Section */}
-                <div className="flex items-center space-x-3">
-                    <div className="text-amber-400">
-                        <Leaf className="w-6 h-6 rotate-45" />
-                    </div>
-                    <div>
-                        <h1 className="font-serif text-2xl font-semibold tracking-widest leading-none text-stone-100">
-                            ECHO
-                        </h1>
-                        <p className="text-[8px] font-sans tracking-[0.25em] text-amber-200/80 uppercase mt-1">
-                            THE JUNGLE RESORT & VILLA
-                        </p>
-                    </div>
-                </div>
+                
 
                 {/* Desktop Nav Links */}
 
 
                 {/* CTA Button */}
-                <button className="bg-[#D4A359] hover:bg-[#c29249] text-stone-950 font-bold text-xs tracking-widest px-6 py-3 rounded-lg shadow-md transition-all uppercase">
-                    ENQUIRE NOW
-                </button>
+                 
             </header>
 
             {/* Hero Content Section */}

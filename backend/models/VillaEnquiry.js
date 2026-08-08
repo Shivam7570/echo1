@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const enquirySchema = new mongoose.Schema(
+const villaEnquirySchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -19,24 +19,7 @@ const enquirySchema = new mongoose.Schema(
       trim: true,
       maxlength: [20, "Phone number cannot exceed 20 characters"],
     },
-    message: {
-      type: String,
-      trim: true,
-      maxlength: [2000, "Message cannot exceed 2000 characters"],
-    },
     city: {
-      type: String,
-      trim: true,
-    },
-    visitDate: {
-      type: String,
-      trim: true,
-    },
-    visitTime: {
-      type: String,
-      trim: true,
-    },
-    resortName: {
       type: String,
       trim: true,
     },
@@ -52,20 +35,10 @@ const enquirySchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
-    source: {
-      // which part of the site the enquiry came from
+    message: {
       type: String,
-      enum: [
-        "contact-page",
-        "chat-widget",
-        "home",
-        "resort",
-        "villa",
-        "wedding",
-        "masterplan",
-        "other",
-      ],
-      default: "other",
+      trim: true,
+      maxlength: [2000, "Message cannot exceed 2000 characters"],
     },
     status: {
       type: String,
@@ -73,7 +46,7 @@ const enquirySchema = new mongoose.Schema(
       default: "new",
     },
   },
-  { timestamps: true }
+  { timestamps: true, collection: "villas" }
 );
 
-module.exports = mongoose.model("Enquiry", enquirySchema);
+module.exports = mongoose.model("VillaEnquiry", villaEnquirySchema);

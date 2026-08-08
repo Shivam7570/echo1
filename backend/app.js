@@ -9,6 +9,8 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const authRoutes = require("./routes/authRoutes");
 const enquiryRoutes = require("./routes/enquiryRoutes");
 const propertyRoutes = require("./routes/propertyRoutes");
+const resortEnquiryRoutes = require("./routes/resortEnquiryRoutes");
+const villaEnquiryRoutes = require("./routes/villaEnquiryRoutes");
 
 const app = express();
 
@@ -34,6 +36,8 @@ const enquiryLimiter = rateLimit({
   message: { success: false, message: "Too many requests, please try again later." },
 });
 app.use("/api/enquiries", enquiryLimiter);
+app.use("/api/resorts", enquiryLimiter);
+app.use("/api/villas", enquiryLimiter);
 
 // ---- Health check ----
 app.get("/api/health", (req, res) => {
@@ -44,6 +48,8 @@ app.get("/api/health", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/enquiries", enquiryRoutes);
 app.use("/api/properties", propertyRoutes);
+app.use("/api/resorts", resortEnquiryRoutes);
+app.use("/api/villas", villaEnquiryRoutes);
 
 // ---- Error handling ----
 app.use(notFound);

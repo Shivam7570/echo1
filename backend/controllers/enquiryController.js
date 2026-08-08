@@ -5,7 +5,7 @@ const Enquiry = require("../models/Enquiry");
 // @route   POST /api/enquiries
 // @access  Public
 const createEnquiry = asyncHandler(async (req, res) => {
-  const { name, email, phone, message, source } = req.body;
+  const { name, email, phone, message, source, city, visitDate, visitTime, resortName, villaName, budgetRange, purpose } = req.body;
 
   if (!name || (!email && !phone)) {
     res.status(400);
@@ -18,6 +18,13 @@ const createEnquiry = asyncHandler(async (req, res) => {
     phone,
     message,
     source,
+    city,
+    visitDate,
+    visitTime,
+    resortName,
+    villaName,
+    budgetRange,
+    purpose,
   });
 
   res.status(201).json({

@@ -6,21 +6,7 @@ export const HeroSection = () => {
             style={{ backgroundImage: "url('https://images.unsplash.com/photo-1688653802629-5360086bf632?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
         >
             {/* Navbar */}
-            <nav className="flex items-center justify-between px-10 py-6 max-w-7xl mx-auto">
-                <div className="text-2xl font-serif tracking-widest uppercase">ECHO</div>
-                <div className="hidden md:flex space-x-8 text-sm font-light">
-                    <a href="#home" className="hover:text-amber-400">Home</a>
-                    <a href="#about" className="hover:text-amber-400">About Us</a>
-                    <a href="#resort" className="hover:text-amber-400">Resort Collection</a>
-                    <a href="#villas" className="text-amber-400 underline underline-offset-4">Villa Collection</a>
-                    <a href="#amenities" className="hover:text-amber-400">Amenities</a>
-                    <a href="#investment" className="hover:text-amber-400">Investment</a>
-                    <a href="#contact" className="hover:text-amber-400">Contact</a>
-                </div>
-                <button className="bg-amber-600 hover:bg-amber-700 text-white px-5 py-2 rounded text-sm tracking-wide">
-                    Enquire Now
-                </button>
-            </nav>
+            
 
             {/* Optional dark overlay for readability */}
             <div className="absolute inset-0 bg-black/40 -z-10" />

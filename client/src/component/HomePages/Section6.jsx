@@ -46,7 +46,10 @@ export default function Section6() {
                 name: formData.fullName,
                 phone: formData.mobileNumber,
                 email: formData.emailAddress,
-                message: `City: ${formData.city}, Visit Date: ${formData.visitDate}, Visit Time: ${formData.visitTime}, Message: ${formData.message}`,
+                city: formData.city,
+                visitDate: formData.visitDate,
+                visitTime: formData.visitTime,
+                message: formData.message,
                 source: 'home'
             });
             setStatus({ loading: false, error: '' });
@@ -111,15 +114,15 @@ export default function Section6() {
 
             {/* Top Main Section with Background Image */}
             <div
-                className="relative flex-1 bg-cover bg-center py-12 px-6 lg:px-16"
+                className="relative flex-1 bg-cover bg-center py-10 px-6 lg:px-16"
                 style={{
                     backgroundImage: `linear-gradient(to right, rgba(7, 29, 18, 0.92) 0%, rgba(7, 29, 18, 0.75) 50%, rgba(7, 29, 18, 0.6) 100%), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=1920')`
                 }}
             >
-                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
 
                     {/* Left Column - Hero Content */}
-                    <div className="lg:col-span-6 space-y-8">
+                    <div className="lg:col-span-6 space-y-6">
                         <div>
                             <div className="flex items-center space-x-2 text-amber-400 text-xs tracking-[0.25em] font-semibold uppercase mb-2">
                                 <span className="h-[1px] w-6 bg-amber-400/60" />
@@ -129,23 +132,23 @@ export default function Section6() {
                             <h1 className="text-4xl md:text-5xl font-serif text-white tracking-wide leading-tight">
                                 Book A Site Visit
                             </h1>
-                            <p className="mt-4 text-slate-300 text-sm md:text-base leading-relaxed max-w-lg">
+                            <p className="mt-3 text-slate-300 text-sm md:text-base leading-relaxed max-w-lg">
                                 Experience the perfect blend of nature and luxury. Visit Echo – The Jungle Resort & Villa and explore your future investment.
                             </p>
                         </div>
 
                         {/* Feature Item List */}
-                        <div className="space-y-6 pt-2">
+                        <div className="space-y-4 pt-1">
                             {features.map((item, idx) => (
                                 <div key={idx} className="flex items-start space-x-4 group">
-                                    <div className="w-12 h-12 rounded-full bg-[#0E2C1E]/80 border border-amber-500/30 flex items-center justify-center flex-shrink-0 backdrop-blur-sm group-hover:border-amber-400 transition-colors">
+                                    <div className="w-10 h-10 rounded-full bg-[#0E2C1E]/80 border border-amber-500/30 flex items-center justify-center flex-shrink-0 backdrop-blur-sm group-hover:border-amber-400 transition-colors">
                                         {item.icon}
                                     </div>
                                     <div>
-                                        <h3 className="text-base font-semibold text-white tracking-wide">
+                                        <h3 className="text-sm font-semibold text-white tracking-wide">
                                             {item.title}
                                         </h3>
-                                        <p className="text-xs text-slate-300 mt-0.5">
+                                        <p className="text-xs text-slate-300">
                                             {item.desc}
                                         </p>
                                     </div>
@@ -154,26 +157,26 @@ export default function Section6() {
                         </div>
                     </div>
 
-                    {/* Right Column - Booking Form */}
+                    {/* Right Column - Compact Booking Form */}
                     <div className="lg:col-span-6">
-                        <div className="bg-[#FAF8F5] text-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl border border-stone-200">
+                        <div className="bg-[#FAF8F5] text-slate-800 rounded-2xl p-5 md:p-6 shadow-2xl border border-stone-200">
 
-                            <div className="text-center mb-6">
-                                <div className="text-amber-600 text-xs font-serif tracking-widest uppercase mb-1">
+                            <div className="text-center mb-4">
+                                <div className="text-amber-600 text-xs font-serif tracking-widest uppercase mb-0.5">
                                     ✦
                                 </div>
-                                <h2 className="text-xl md:text-2xl font-serif text-slate-900 tracking-wider">
+                                <h2 className="text-lg md:text-xl font-serif text-slate-900 tracking-wider">
                                     BOOK YOUR SITE VISIT
                                 </h2>
-                                <p className="text-xs text-slate-500 mt-1 max-w-xs mx-auto">
-                                    Fill in your details and our team will get in touch to schedule your visit.
+                                <p className="text-[11px] text-slate-500 mt-0.5 max-w-xs mx-auto">
+                                    Fill in your details and our team will get in touch.
                                 </p>
                             </div>
 
                             {/* Form */}
-                            <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+                            <form onSubmit={handleSubmit} className="space-y-3 text-xs">
                                 {/* Row 1: Name & Mobile */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <div>
                                         <label className="block text-slate-700 font-medium mb-1">
                                             Full Name <span className="text-rose-500">*</span>
@@ -185,10 +188,10 @@ export default function Section6() {
                                                 required
                                                 value={formData.fullName}
                                                 onChange={handleChange}
-                                                placeholder="Enter your full name"
-                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-lg py-2.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
+                                                placeholder="Enter full name"
+                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
                                             />
-                                            <User className="absolute right-3 top-3 text-slate-400 w-4 h-4" />
+                                            <User className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
                                         </div>
                                     </div>
 
@@ -203,16 +206,16 @@ export default function Section6() {
                                                 required
                                                 value={formData.mobileNumber}
                                                 onChange={handleChange}
-                                                placeholder="Enter your mobile number"
-                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-lg py-2.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
+                                                placeholder="Enter mobile number"
+                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
                                             />
-                                            <Phone className="absolute right-3 top-3 text-slate-400 w-4 h-4" />
+                                            <Phone className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Row 2: Email & City */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <div>
                                         <label className="block text-slate-700 font-medium mb-1">
                                             Email Address
@@ -223,10 +226,10 @@ export default function Section6() {
                                                 name="emailAddress"
                                                 value={formData.emailAddress}
                                                 onChange={handleChange}
-                                                placeholder="Enter your email address"
-                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-lg py-2.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
+                                                placeholder="Enter email address"
+                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
                                             />
-                                            <Mail className="absolute right-3 top-3 text-slate-400 w-4 h-4" />
+                                            <Mail className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
                                         </div>
                                     </div>
 
@@ -241,49 +244,50 @@ export default function Section6() {
                                                 required
                                                 value={formData.city}
                                                 onChange={handleChange}
-                                                placeholder="Enter your city"
-                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-lg py-2.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
+                                                placeholder="Enter city"
+                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
                                             />
-                                            <MapPin className="absolute right-3 top-3 text-slate-400 w-4 h-4" />
+                                            <MapPin className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
                                         </div>
                                     </div>
                                 </div>
 
-                                {/* Preferred Visit Date */}
-                                <div>
-                                    <label className="block text-slate-700 font-medium mb-1">
-                                        Preferred Visit Date
-                                    </label>
-                                    <div className="relative">
-                                        <input
-                                            type="date"
-                                            name="visitDate"
-                                            value={formData.visitDate}
-                                            onChange={handleChange}
-                                            className="w-full bg-[#F4F1EA] text-slate-800 rounded-lg py-2.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
-                                        />
-                                        <Calendar className="absolute right-3 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                                {/* Row 3: Preferred Visit Date & Time side by side */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div>
+                                        <label className="block text-slate-700 font-medium mb-1">
+                                            Preferred Date
+                                        </label>
+                                        <div className="relative">
+                                            <input
+                                                type="date"
+                                                name="visitDate"
+                                                value={formData.visitDate}
+                                                onChange={handleChange}
+                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
+                                            />
+                                            <Calendar className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5 pointer-events-none" />
+                                        </div>
                                     </div>
-                                </div>
 
-                                {/* Preferred Visit Time */}
-                                <div>
-                                    <label className="block text-slate-700 font-medium mb-1">
-                                        Preferred Visit Time
-                                    </label>
-                                    <div className="relative">
-                                        <select
-                                            name="visitTime"
-                                            value={formData.visitTime}
-                                            onChange={handleChange}
-                                            className="w-full bg-[#F4F1EA] text-slate-800 rounded-lg py-2.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all appearance-none text-slate-600"
-                                        >
-                                            <option value="">Select preferred time</option>
-                                            <option value="morning">Morning (09:00 AM - 12:00 PM)</option>
-                                            <option value="afternoon">Afternoon (12:00 PM - 03:00 PM)</option>
-                                            <option value="evening">Evening (03:00 PM - 06:00 PM)</option>
-                                        </select>
-                                        <ChevronDown className="absolute right-3 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                                    <div>
+                                        <label className="block text-slate-700 font-medium mb-1">
+                                            Preferred Time
+                                        </label>
+                                        <div className="relative">
+                                            <select
+                                                name="visitTime"
+                                                value={formData.visitTime}
+                                                onChange={handleChange}
+                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all appearance-none text-slate-600"
+                                            >
+                                                <option value="">Select time</option>
+                                                <option value="morning">Morning (09:00 AM - 12:00 PM)</option>
+                                                <option value="afternoon">Afternoon (12:00 PM - 03:00 PM)</option>
+                                                <option value="evening">Evening (03:00 PM - 06:00 PM)</option>
+                                            </select>
+                                            <ChevronDown className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5 pointer-events-none" />
+                                        </div>
                                     </div>
                                 </div>
 
@@ -295,27 +299,27 @@ export default function Section6() {
                                     <div className="relative">
                                         <textarea
                                             name="message"
-                                            rows={2}
+                                            rows={1}
                                             value={formData.message}
                                             onChange={handleChange}
-                                            placeholder="Any specific questions or requirements?"
-                                            className="w-full bg-[#F4F1EA] text-slate-800 rounded-lg py-2 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400 resize-none"
+                                            placeholder="Any questions or requirements?"
+                                            className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400 resize-none"
                                         />
-                                        <Pencil className="absolute right-3 top-3 text-slate-400 w-4 h-4" />
+                                        <Pencil className="absolute right-2.5 top-2 text-slate-400 w-3.5 h-3.5" />
                                     </div>
                                 </div>
 
                                 {/* Checkbox */}
-                                <div className="flex items-start space-x-2 pt-1">
+                                <div className="flex items-start space-x-2 pt-0.5">
                                     <input
                                         type="checkbox"
                                         id="agreed"
                                         name="agreed"
                                         checked={formData.agreed}
                                         onChange={handleChange}
-                                        className="mt-0.5 h-4 w-4 accent-amber-600 border-stone-300 rounded cursor-pointer"
+                                        className="mt-0.5 h-3.5 w-3.5 accent-amber-600 border-stone-300 rounded cursor-pointer"
                                     />
-                                    <label htmlFor="agreed" className="text-[11px] text-slate-600 leading-tight cursor-pointer">
+                                    <label htmlFor="agreed" className="text-[10px] text-slate-600 leading-tight cursor-pointer">
                                         I agree to be contacted by Echo – The Jungle Resort & Villa regarding my site visit.
                                     </label>
                                 </div>
@@ -323,9 +327,9 @@ export default function Section6() {
                                 {/* Submit Button */}
                                 <button
                                     type="submit"
-                                    className="w-full mt-2 bg-[#C69A43] hover:bg-[#B58B37] text-white font-medium py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all text-xs tracking-wider uppercase"
+                                    className="w-full mt-1 bg-[#C69A43] hover:bg-[#B58B37] text-white font-medium py-2.5 px-4 rounded-md flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all text-xs tracking-wider uppercase cursor-pointer"
                                 >
-                                    <Calendar className="w-4 h-4" />
+                                    <Calendar className="w-3.5 h-3.5" />
                                     <span>BOOK SITE VISIT</span>
                                 </button>
                             </form>
@@ -337,7 +341,7 @@ export default function Section6() {
             </div>
 
             {/* Bottom Highlight Bar */}
-            <div className="bg-[#05160E] border-t border-emerald-900/40 py-6 px-6 lg:px-16">
+            <div className="bg-[#05160E] border-t border-emerald-900/40 py-5 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-emerald-900/40">
                     {bottomBadges.map((badge, idx) => (
                         <div key={idx} className={`flex items-center space-x-4 ${idx !== 0 ? 'pt-4 sm:pt-0 sm:pl-6' : ''}`}>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { submitResortEnquiry } from '../../lib/api';
 import {
     Compass,
     Home,
@@ -31,6 +32,48 @@ import {
 export default function RSection3() {
     const handleResortListingsings = () => {
         navigate('/ResortListingsings'); // Replace '/wedding' with your target route path
+    };
+
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        phone: '',
+        city: '',
+        resortType: '',
+        budgetRange: '',
+        purpose: '',
+        message: ''
+    });
+
+    const [status, setStatus] = useState({ loading: false, error: '' });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus({ loading: true, error: '' });
+        try {
+            await submitResortEnquiry({
+                name: formData.fullName,
+                email: formData.email,
+                phone: formData.phone,
+                city: formData.city,
+                resortName: formData.resortType,
+                budgetRange: formData.budgetRange,
+                purpose: formData.purpose,
+                message: formData.message,
+            });
+            setStatus({ loading: false, error: '' });
+            alert('Resort Enquiry Submitted!');
+            setFormData({
+                fullName: '', email: '', phone: '', city: '', resortType: '', budgetRange: '', purpose: '', message: ''
+            });
+        } catch (err) {
+            setStatus({ loading: false, error: err.message || 'Failed to send request.' });
+            alert('Error: ' + (err.message || 'Failed to send.'));
+        }
     };
     const resortTypes = [
         {
@@ -249,7 +292,7 @@ export default function RSection3() {
                         <div className="lg:col-span-4 space-y-4 text-center">
                             <div>
                                 <h2 className="text-2xl font-serif text-[#1C3026] font-bold tracking-wider uppercase">
-                                    ENQUIRY FORM
+                                    RESORT ENQUIRY
                                 </h2>
                                 <p className="text-xs text-slate-600 font-medium mt-1">
                                     We'll Get In Touch With You
@@ -267,7 +310,7 @@ export default function RSection3() {
 
                         {/* Center Form */}
                         <div className="lg:col-span-5 space-y-3">
-                            <form onSubmit={(e) => e.preventDefault()} className="space-y-2.5">
+                            <form onSubmit={handleSubmit} className="space-y-2.5">
 
                                 {/* Inputs Grid */}
                                 <div className="grid grid-cols-1 gap-2.5">
@@ -276,6 +319,10 @@ export default function RSection3() {
                                         <input
                                             type="text"
                                             placeholder="Full Name"
+                                            name="fullName"
+                                            value={formData.fullName}
+                                            onChange={handleChange}
+                                            required
                                             className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-[#1C3026]"
                                         />
                                     </div>
@@ -285,6 +332,9 @@ export default function RSection3() {
                                         <input
                                             type="email"
                                             placeholder="Email Address"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
                                             className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-[#1C3026]"
                                         />
                                     </div>
@@ -294,6 +344,10 @@ export default function RSection3() {
                                         <input
                                             type="tel"
                                             placeholder="Phone Number"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            required
                                             className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-[#1C3026]"
                                         />
                                     </div>
@@ -303,13 +357,16 @@ export default function RSection3() {
                                         <input
                                             type="text"
                                             placeholder="City"
+                                            name="city"
+                                            value={formData.city}
+                                            onChange={handleChange}
                                             className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-[#1C3026]"
                                         />
                                     </div>
 
                                     <div className="relative">
                                         <Home className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <select className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
+                                        <select name="resortType" value={formData.resortType} onChange={handleChange} className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
                                             <option value="">Interested Resort Type</option>
                                             <option value="type1">Resort Type 1</option>
                                             <option value="type2">Resort Type 2</option>
@@ -322,7 +379,7 @@ export default function RSection3() {
 
                                     <div className="relative">
                                         <DollarSign className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <select className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
+                                        <select name="budgetRange" value={formData.budgetRange} onChange={handleChange} className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
                                             <option value="">Budget Range</option>
                                             <option value="low">₹50 Lacs - ₹1 Cr</option>
                                             <option value="med">₹1 Cr - ₹2.5 Cr</option>
@@ -333,7 +390,7 @@ export default function RSection3() {
 
                                     <div className="relative">
                                         <Building2 className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <select className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
+                                        <select name="purpose" value={formData.purpose} onChange={handleChange} className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
                                             <option value="">Purpose of Investment</option>
                                             <option value="rental">Rental Returns</option>
                                             <option value="personal">Personal Holiday Home</option>
@@ -346,6 +403,9 @@ export default function RSection3() {
                                         <textarea
                                             rows={2}
                                             placeholder="Your Message / Requirements"
+                                            name="message"
+                                            value={formData.message}
+                                            onChange={handleChange}
                                             className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg p-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#1C3026] resize-none"
                                         />
                                     </div>

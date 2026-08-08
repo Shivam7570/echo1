@@ -75,7 +75,7 @@ export default function Section3() {
 
     return (
         <section
-            className="relative py-24 overflow-hidden"
+            className="relative py-7 overflow-hidden"
             style={{ background: palette.ivory }}
         >
             <div className="max-w-7xl mx-auto px-6">

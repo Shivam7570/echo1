@@ -15,10 +15,23 @@ async function request(path, options = {}) {
   return data;
 }
 
-// Submit a contact/enquiry form. `source` identifies where on the site it came from.
-export function submitEnquiry({ name, email, phone, message, source = "other" }) {
+export function submitEnquiry(data) {
   return request("/enquiries", {
     method: "POST",
-    body: JSON.stringify({ name, email, phone, message, source }),
+    body: JSON.stringify(data),
+  });
+}
+
+export function submitResortEnquiry(data) {
+  return request("/resorts", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+}
+
+export function submitVillaEnquiry(data) {
+  return request("/villas", {
+    method: "POST",
+    body: JSON.stringify(data),
   });
 }

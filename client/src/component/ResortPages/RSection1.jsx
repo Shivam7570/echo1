@@ -1,120 +1,231 @@
-import React from 'react';
-import {
-    Building2,
-    TrendingUp,
-    Coins,
-    Users,
-    Palmtree
-} from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Utensils, Camera, Flower2, Home, X } from 'lucide-react';
 
-export default function RSection1() {
-    const cards = [
-        {
-            id: 1,
-            icon: <Building2 className="w-8 h-8 text-amber-400" />,
-            title: 'Why Resort\nOwnership',
-            description: 'Own a piece of paradise that combines personal enjoyment with long-term financial growth.',
-        },
-        {
-            id: 2,
-            icon: <TrendingUp className="w-8 h-8 text-amber-400" />,
-            title: 'Investment\nBenefits',
-            description: 'High potential appreciation, asset diversification, and strong returns in a growing market.',
-        },
-        {
-            id: 3,
-            icon: <Coins className="w-8 h-8 text-amber-400" />,
-            title: 'Rental\nPotential',
-            description: 'Generate passive income through short-term rentals and maximize your investment returns.',
-        },
-        {
-            id: 4,
-            icon: <Users className="w-8 h-8 text-amber-400" />,
-            title: 'Tourism\nDemand',
-            description: 'Rising tourism and increasing demand ensure consistent occupancy and high rental yields.',
-        },
-        {
-            id: 5,
-            icon: <Palmtree className="w-8 h-8 text-amber-400" />,
-            title: 'High-Growth\nDestinations',
-            description: 'Carefully selected locations with excellent connectivity, infrastructure, and future growth potential.',
-        },
-    ];
+export default function RSection() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        preferredDate: '',
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Add form submission logic here (e.g., API call)
+        console.log("Site visit booking submitted:", formData);
+        alert("Thank you! Your site visit request has been received.");
+        setIsModalOpen(false);
+        setFormData({ name: '', email: '', phone: '', preferredDate: '' });
+    };
 
     return (
-        <div className="min-h-screen bg-[#FAF7F2] text-slate-800 font-sans">
-            {/* Hero Header Banner */}
+        <section className="relative w-full min-h-screen bg-[#070b07] text-white font-serif overflow-hidden flex flex-col justify-between">
+
+            {/* Background Image with Dark Gradient Overlays */}
             <div
-                className="relative h-[420px] md:h-[480px] bg-cover bg-center flex flex-col justify-center px-8 md:px-16"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                    backgroundImage: `linear-gradient(to right, rgba(15, 23, 18, 0.75) 0%, rgba(15, 23, 18, 0.3) 50%, rgba(15, 23, 18, 0.1) 100%), url('/src/assets/resortHiro.jpg')`
+                    backgroundImage: `url('/src/assets/ResortHero.png')`
                 }}
             >
-                <div className="max-w-7xl mx-auto w-full space-y-3">
-                    {/* Tag / Badge */}
-
-
-                    {/* Title */}
-                    <h1 className="text-5xl md:text-7xl font-serif text-white tracking-tight leading-none">
-                        Resort <br />
-                        Collection
-                    </h1>
-
-                    {/* Subtitle */}
-                    <p className="text-amber-300 font-serif text-lg md:text-2xl tracking-wide pt-2">
-                        Luxury Resort Investment Opportunities
-                    </p>
-                </div>
+                {/* Dark Vignette Overlay for Readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#040804] via-[#040804]/80 via-40% to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#040804] via-transparent to-[#040804]/50" />
             </div>
 
-            {/* Main Content Section */}
-            <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16 space-y-12">
+            {/* Main Content Overlay */}
+            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-12 w-full flex-1 flex flex-col justify-between">
 
-                {/* Section Heading */}
-                <div className="text-center space-y-3">
-                    <h2 className="text-3xl md:text-4xl font-serif text-[#1C3026] tracking-tight">
-                        Overview
-                    </h2>
+                {/* Hero Body Content */}
+                <div className="max-w-xl py-12 space-y-6">
 
-                    {/* Decorative Divider */}
-                    <div className="flex items-center justify-center space-x-2 text-amber-600/70">
-                        <span className="h-[1px] w-12 bg-amber-600/30"></span>
-                        <span className="text-xs">✦</span>
-                        <span className="h-[1px] w-12 bg-amber-600/30"></span>
+                    {/* Main Title Heading */}
+                    <div className="space-y-1">
+                        <h1 className="text-5xl md:text-6xl font-light tracking-wide text-white">
+                            DISCOVER
+                        </h1>
+                        <h1 className="text-5xl md:text-6xl font-light tracking-wide text-[#c29b4b]">
+                            THE DESTINATION
+                        </h1>
                     </div>
 
-                    <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-                        Discover premium resort ownership opportunities in high-growth destinations. <br className="hidden sm:inline" />
-                        Enjoy luxury living while earning attractive returns on your investment.
-                    </p>
-                </div>
+                    {/* Decorative Gold Divider */}
+                    <div className="flex items-center gap-3 w-48 py-1">
+                        <div className="h-[1px] flex-1 bg-gradient-to-r from-[#c29b4b] to-transparent" />
+                        <span className="text-[#c29b4b] text-xs">❖</span>
+                        <div className="h-[1px] flex-1 bg-gradient-to-l from-[#c29b4b] to-transparent" />
+                    </div>
 
-                {/* 5 Cards Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
-                    {cards.map((card) => (
-                        <div
-                            key={card.id}
-                            className="bg-[#F4EFE6]/60 border border-stone-200/80 rounded-2xl p-6 text-center flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-shadow duration-300 min-h-[300px]"
+                    {/* Subtitle & Body Text */}
+                    <div className="space-y-3 font-sans">
+                        <h3 className="text-xl md:text-2xl font-serif text-amber-100/90 font-normal">
+                            Where Luxury Meets Nature
+                        </h3>
+                        {/* Paragraph updated with Times New Roman font */}
+                        <p
+                            className="text-xs md:text-sm text-stone-300 font-light leading-relaxed max-w-md"
+                            style={{ fontFamily: "'Times New Roman', Times, serif" }}
                         >
-                            {/* Circular Dark Icon Container */}
-                            <div className="w-16 h-16 rounded-full bg-[#1A3326] flex items-center justify-center shadow-md mb-4 border border-amber-500/20">
-                                {card.icon}
-                            </div>
+                            Immerse yourself in the lap of wilderness with world-class villas, curated experiences, and unforgettable moments.
+                        </p>
+                    </div>
 
-                            {/* Title */}
-                            <h3 className="font-serif text-[#1C3026] text-lg font-semibold whitespace-pre-line leading-snug mb-3">
-                                {card.title}
-                            </h3>
+                    {/* Icon Features Grid */}
+                    <div className="grid grid-cols-4 gap-4 pt-6 pb-2 border-t border-stone-800/80 font-sans">
 
-                            {/* Description */}
-                            <p className="text-xs text-slate-600 leading-relaxed mt-auto">
-                                {card.description}
-                            </p>
+                        {/* Feature 1 */}
+                        <div className="flex flex-col items-center text-center space-y-2 border-r border-stone-800/80 pr-2">
+                            <Home className="w-6 h-6 text-[#c29b4b] stroke-[1.25]" />
+                            <span className="text-[10px] tracking-wider text-amber-100 uppercase font-medium leading-tight">
+                                LUXURY<br />VILLAS
+                            </span>
                         </div>
-                    ))}
+
+                        {/* Feature 2 */}
+                        <div className="flex flex-col items-center text-center space-y-2 border-r border-stone-800/80 pr-2">
+                            <Utensils className="w-6 h-6 text-[#c29b4b] stroke-[1.25]" />
+                            <span className="text-[10px] tracking-wider text-amber-100 uppercase font-medium leading-tight">
+                                FINE<br />DINING
+                            </span>
+                        </div>
+
+                        {/* Feature 3 */}
+                        <div className="flex flex-col items-center text-center space-y-2 border-r border-stone-800/80 pr-2">
+                            <Flower2 className="w-6 h-6 text-[#c29b4b] stroke-[1.25]" />
+                            <span className="text-[10px] tracking-wider text-amber-100 uppercase font-medium leading-tight">
+                                WELLNESS &<br />REJUVENATION
+                            </span>
+                        </div>
+
+                        {/* Feature 4 */}
+                        <div className="flex flex-col items-center text-center space-y-2">
+                            <Camera className="w-6 h-6 text-[#c29b4b] stroke-[1.25]" />
+                            <span className="text-[10px] tracking-wider text-amber-100 uppercase font-medium leading-tight">
+                                EXPERIENCES<br />TO REMEMBER
+                            </span>
+                        </div>
+
+                    </div>
+
+                    {/* Call-to-Action Button */}
+                    <div className="pt-2">
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="inline-flex items-center gap-2 bg-[#c29b4b] hover:bg-[#a8833b] text-stone-950 font-sans font-semibold text-xs tracking-wider uppercase px-6 py-3.5 rounded-sm transition cursor-pointer shadow-lg"
+                        >
+                            <span>BOOK A SITE VISIT</span>
+                            <ArrowRight className="w-4 h-4" />
+                        </button>
+                    </div>
+
                 </div>
+
+                {/* Empty bottom spacer for balance */}
+                <div />
 
             </div>
-        </div>
+
+            {/* ================= BOOK A SITE VISIT POPUP MODAL ================= */}
+            {isModalOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
+                    <div className="relative w-full max-w-md bg-[#0d140e] border border-[#c29b4b]/40 rounded-lg p-6 md:p-8 shadow-2xl text-stone-200 font-sans">
+
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setIsModalOpen(false)}
+                            className="absolute top-4 right-4 text-stone-400 hover:text-white transition"
+                            aria-label="Close modal"
+                        >
+                            <X className="w-5 h-5" />
+                        </button>
+
+                        {/* Modal Header */}
+                        <div className="text-center mb-6 space-y-1">
+                            <h2 className="text-2xl font-serif text-[#c29b4b] font-normal tracking-wide">
+                                Book a Site Visit
+                            </h2>
+                            <p className="text-xs text-stone-400 font-light">
+                                Schedule your exclusive walkthrough experience with us.
+                            </p>
+                        </div>
+
+                        {/* Form */}
+                        <form onSubmit={handleSubmit} className="space-y-4">
+                            <div>
+                                <label className="block text-xs uppercase tracking-wider text-amber-100/80 mb-1">
+                                    Full Name
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    required
+                                    value={formData.name}
+                                    onChange={handleInputChange}
+                                    placeholder="Enter your full name"
+                                    className="w-full bg-[#040804] border border-stone-800 rounded px-3 py-2 text-sm text-stone-200 focus:outline-none focus:border-[#c29b4b] transition"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-xs uppercase tracking-wider text-amber-100/80 mb-1">
+                                    Email Address
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    required
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    placeholder="name@example.com"
+                                    className="w-full bg-[#040804] border border-stone-800 rounded px-3 py-2 text-sm text-stone-200 focus:outline-none focus:border-[#c29b4b] transition"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-xs uppercase tracking-wider text-amber-100/80 mb-1">
+                                    Phone Number
+                                </label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    required
+                                    value={formData.phone}
+                                    onChange={handleInputChange}
+                                    placeholder="+91 00000 00000"
+                                    className="w-full bg-[#040804] border border-stone-800 rounded px-3 py-2 text-sm text-stone-200 focus:outline-none focus:border-[#c29b4b] transition"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-xs uppercase tracking-wider text-amber-100/80 mb-1">
+                                    Preferred Visit Date
+                                </label>
+                                <input
+                                    type="date"
+                                    name="preferredDate"
+                                    required
+                                    value={formData.preferredDate}
+                                    onChange={handleInputChange}
+                                    className="w-full bg-[#040804] border border-stone-800 rounded px-3 py-2 text-sm text-stone-200 focus:outline-none focus:border-[#c29b4b] transition [color-scheme:dark]"
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="w-full mt-2 bg-[#c29b4b] hover:bg-[#a8833b] text-stone-950 font-semibold text-xs tracking-wider uppercase py-3 rounded transition cursor-pointer shadow-md"
+                            >
+                                Confirm Booking
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
+        </section>
     );
 }

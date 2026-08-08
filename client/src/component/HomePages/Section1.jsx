@@ -13,6 +13,8 @@ import {
     Phone,
 } from "lucide-react";
 
+// 1. Import your PDF file
+
 const palette = {
     forestDeep: "#16241C",
     gold: "#C6A15B",
@@ -105,53 +107,9 @@ export default function EchoHome() {
                 }}
             >
                 {/* NAV */}
-                <nav className="w-full flex items-center justify-between px-6 md:px-14 py-6">
-                    <div className="text-white leading-tight">
-                        <div
-                            className="flex items-center gap-1 text-2xl tracking-widest"
-                            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-                        >
-                            ECHO
-                        </div>
-                        <div className="text-[10px] tracking-[0.25em] uppercase opacity-90">
-                            The Jungle
-                        </div>
-                        <div className="text-[10px] tracking-[0.25em] uppercase opacity-90">
-                            Resort &amp; Villa
-                        </div>
-                    </div>
-
-                    <ul className="hidden lg:flex items-center gap-9 text-sm text-white/90">
-                        {navLinks.map((link, i) => (
-                            <li key={link} className="relative">
-                                <a
-                                    href={`#${link.toLowerCase().replace(/\s/g, "")}`}
-                                    className="hover:text-white transition-colors"
-                                >
-                                    {link}
-                                </a>
-                                {i === 0 && (
-                                    <span
-                                        className="absolute left-0 -bottom-2 w-full h-[2px]"
-                                        style={{ backgroundColor: palette.gold }}
-                                    />
-                                )}
-                            </li>
-                        ))}
-                    </ul>
-
-                    <a
-                        href="#enquire"
-                        className="hidden md:inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-sm"
-                        style={{ backgroundColor: palette.goldSoft, color: palette.charcoal }}
-                    >
-                        Enquire Now
-                        <Phone size={14} />
-                    </a>
-                </nav>
 
                 {/* HERO CONTENT */}
-                <div className="flex-1 flex flex-col justify-center px-6 md:px-14 pb-20 max-w-2xl">
+                <div className="flex-1 flex p-20 flex-col justify-center px-6 md:px-14 pb-20 max-w-2xl">
                     <p
                         className="uppercase tracking-[0.3em] text-xs mb-5"
                         style={{ color: palette.goldSoft }}
@@ -187,14 +145,8 @@ export default function EchoHome() {
                             <Rocket size={16} />
                             Explore Project
                         </a>
-                        <a
-                            href="#brochure"
-                            className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-sm border text-white"
-                            style={{ borderColor: "rgba(255,255,255,0.6)" }}
-                        >
-                            <Download size={16} />
-                            Download Brochure
-                        </a>
+
+
                     </div>
                 </div>
 
