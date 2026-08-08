@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 
 // Import your logos
@@ -38,24 +39,24 @@ export default function Navbar() {
                     <div className="flex items-center justify-between min-h-[70px] md:min-h-[85px]">
 
                         {/* Left Main Brand Logo */}
-                        <a href="/" className="flex items-center shrink-0 py-1">
+                        <Link to="/" className="flex items-center shrink-0 py-1">
                             <img
                                 src={leftLogo}
                                 alt="Echo Logo"
                                 className="h-16 md:h-20 w-auto object-contain transition-all duration-300 hover:scale-105"
                             />
-                        </a>
+                        </Link>
 
                         {/* Desktop Navigation Links */}
                         <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
                             {navLinks.map((item) => (
-                                <a
+                                <Link
                                     key={item.name}
-                                    href={item.href}
+                                    to={item.href}
                                     className="text-[#E8E6E3] hover:text-[#C6A15B] uppercase text-xs md:text-sm font-semibold tracking-widest transition-colors duration-200"
                                 >
                                     {item.name}
-                                </a>
+                                </Link>
                             ))}
                         </div>
 
@@ -104,14 +105,14 @@ export default function Navbar() {
                 {open && (
                     <div className="lg:hidden bg-[#0A1A12] border-t border-[#C6A15B]/30 px-6 py-6 space-y-4 shadow-2xl">
                         {navLinks.map((item) => (
-                            <a
+                            <Link
                                 key={item.name}
-                                href={item.href}
+                                to={item.href}
                                 onClick={() => setOpen(false)}
                                 className="block text-[#E8E6E3] hover:text-[#C6A15B] uppercase text-sm font-semibold tracking-wider transition-colors"
                             >
                                 {item.name}
-                            </a>
+                            </Link>
                         ))}
 
                         <div className="pt-4 border-t border-white/10 flex items-center justify-between">
