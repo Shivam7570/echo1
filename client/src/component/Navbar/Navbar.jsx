@@ -3,7 +3,7 @@ import { Menu, X, Phone, MessageCircle } from "lucide-react";
 
 // Import your logos
 import leftLogo from "../../assets/echologo1.png";
-import rightLogo from "../../assets/echologo2.png";
+import rightLogo from "../../assets/echologo2.webp";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
