@@ -26,10 +26,14 @@ import {
     ShieldAlert,
     ArrowRight,
     Leaf,
-    Trophy
+    Trophy,
+    X
 } from 'lucide-react';
 
 export default function RSection3() {
+    // State for image lightbox/modal
+    const [selectedImage, setSelectedImage] = useState(null);
+
     const handleResortListingsings = () => {
         navigate('/ResortListingsings'); // Replace '/wedding' with your target route path
     };
@@ -75,6 +79,7 @@ export default function RSection3() {
             alert('Error: ' + (err.message || 'Failed to send.'));
         }
     };
+
     const resortTypes = [
         {
             name: 'RESORT TYPE 1',
@@ -101,8 +106,8 @@ export default function RSection3() {
     const features = [
         {
             icon: <Compass className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Total Area',
-            values: ['10,000 sq. ft.', '15,000 sq. ft.', '20,000 sq. ft.', '25,000 sq. ft.', '30,000 sq. ft.'],
+            label: 'Resort Size Range',
+            values: ['266 sq. ft.', '15,000 sq. ft.', '20,000 sq. ft.', '25,000 sq. ft.', '30,000 sq. ft.'],
         },
         {
             icon: <Home className="w-4 h-4 text-[#1C3026]" />,
@@ -195,7 +200,7 @@ export default function RSection3() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#FAF7F2] text-slate-800 font-sans p-4 md:p-8 space-y-6">
+        <div className="min-h-screen bg-[#FAF7F2] text-slate-800 font-sans p-4 md:p-8 space-y-6 relative">
             <div className="max-w-7xl mx-auto space-y-6">
 
                 {/* Table Container */}
@@ -233,7 +238,11 @@ export default function RSection3() {
                                             <div className="text-[10px] text-amber-300 tracking-wider font-semibold uppercase mb-1.5">
                                                 {resort.name}
                                             </div>
-                                            <div className="h-16 w-full rounded overflow-hidden border border-amber-500/20">
+                                            <div 
+                                                className="h-16 w-full rounded overflow-hidden border border-amber-500/20 cursor-pointer hover:opacity-90 transition-opacity"
+                                                onClick={() => setSelectedImage(resort.image)}
+                                                title="Click to view full image"
+                                            >
                                                 <img
                                                     src={resort.image}
                                                     alt={resort.name}
@@ -299,7 +308,11 @@ export default function RSection3() {
                                 </p>
                             </div>
 
-                            <div className="h-100 rounded-xl overflow-hidden border border-stone-300 shadow-xs">
+                            <div 
+                                className="h-100 rounded-xl overflow-hidden border border-stone-300 shadow-xs cursor-pointer hover:opacity-95 transition-opacity"
+                                onClick={() => setSelectedImage("https://www.echothejungle.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-3-2026-11_42_04-PM.png")}
+                                title="Click to view full image"
+                            >
                                 <img
                                     src="https://www.echothejungle.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-3-2026-11_42_04-PM.png"
                                     alt="Resort Deck View"
@@ -443,13 +456,11 @@ export default function RSection3() {
                             ))}
                             <button
                                 onClick={handleResortListingsings}
-                                className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded text-sm flex items-center gap-2 cursor-pointer"
+                                className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded text-sm flex items-center gap-2 cursor-pointer w-full justify-center"
                             >
                                 Our Resorts <span>→</span>
                             </button>
-
                         </div>
-
 
                     </div>
                 </div>
@@ -473,6 +484,26 @@ export default function RSection3() {
                 </div>
 
             </div>
+
+            {/* Fullscreen Image Lightbox Modal */}
+            {selectedImage && (
+                <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+                    <div className="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
+                        <button
+                            onClick={() => setSelectedImage(null)}
+                            className="absolute -top-12 right-0 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors flex items-center justify-center cursor-pointer"
+                            title="Close preview"
+                        >
+                            <X className="w-6 h-6" />
+                        </button>
+                        <img
+                            src={selectedImage}
+                            alt="Fullscreen Preview"
+                            className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl border border-white/10"
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

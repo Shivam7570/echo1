@@ -23,12 +23,13 @@ const app = express();
 // CORE MIDDLEWARE
 // --------------------------------------------------
 
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL || "https://www.echothejungle.com/",
-    credentials: true,
-  })
-);
+
+
+// Enable CORS for all routes (or restrict it to your domain)
+app.use(cors({
+  origin: ['https://echothejungle.com', 'https://www.echothejungle.com'],
+  credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
