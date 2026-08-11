@@ -1,18 +1,26 @@
 import express from 'express';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'dist')));
+const distPath = path.join(__dirname, 'dist');
+
+app.use(express.static(distPath));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'), (err) => {
-        if (err) {
-            res.status(500).send("Error loading index.html: " + err.message);
-        }
-    });
+    const indexPath = path.join(distPath, 'index.html');
+    if (fs.existsSync(indexPath)) {
+        res.sendFile(indexPath, (err) => {
+            if (err && !res.headersSent) {
+                res.status(500).send("Error serving index.html: " + err.message);
+            }
+        });
+    } else {
+        res.status(500).send("Build folder ('dist') not found on server. Please run 'npm run build' or upload dist folder.");
+    }
 });
 
 const PORT = process.env.PORT || 3000;
