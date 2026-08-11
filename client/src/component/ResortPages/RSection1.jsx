@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Utensils, Camera, Flower2, Home, X } from 'lucide-react';
+import { submitResortEnquiry } from '../../lib/api';
 
 export default function RSection() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,13 +16,22 @@ export default function RSection() {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Add form submission logic here (e.g., API call)
-        console.log("Site visit booking submitted:", formData);
-        alert("Thank you! Your site visit request has been received.");
-        setIsModalOpen(false);
-        setFormData({ name: '', email: '', phone: '', preferredDate: '' });
+        try {
+            await submitResortEnquiry({
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                message: `Preferred Visit Date: ${formData.preferredDate}`,
+                source: 'resort-site-visit'
+            });
+            alert("Thank you! Your site visit request has been received.");
+            setIsModalOpen(false);
+            setFormData({ name: '', email: '', phone: '', preferredDate: '' });
+        } catch (err) {
+            alert('Error: ' + (err.message || 'Failed to submit booking.'));
+        }
     };
 
     return (

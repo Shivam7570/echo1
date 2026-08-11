@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { submitEnquiry } from '../../lib/api';
 
 export const ContactAndFooterSection = () => {
     const [form, setForm] = useState({
@@ -11,10 +12,27 @@ export const ContactAndFooterSection = () => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', form);
-        alert('Thanks! We will get back to you shortly.');
+        try {
+            await submitEnquiry({
+                name: `${form.brideName} & ${form.groomName}`.trim() || form.brideName || form.groomName,
+                email: form.email,
+                phone: form.phone,
+                visitDate: form.weddingDate,
+                budgetRange: form.budget,
+                message: `Guests: ${form.guests}, Package: ${form.package}, Requirements: ${form.requirements}, Message: ${form.message}`,
+                source: 'wedding-contact'
+            });
+            alert('Thanks! We will get back to you shortly.');
+            setForm({
+                brideName: '', groomName: '', phone: '', email: '',
+                weddingDate: '', guests: '', package: '', budget: '',
+                requirements: '', message: '',
+            });
+        } catch (err) {
+            alert('Error: ' + (err.message || 'Failed to submit request.'));
+        }
     };
 
     return (
