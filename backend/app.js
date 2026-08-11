@@ -3,7 +3,6 @@ const cors = require("cors");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const rateLimit = require("express-rate-limit");
-const path = require("path");
 
 const {
   notFound,
@@ -86,32 +85,17 @@ app.use("/api/villas", villaEnquiryRoutes);
 
 
 // --------------------------------------------------
-// SERVE REACT / VITE FRONTEND
+// API-ONLY 404 HANDLER
 // --------------------------------------------------
-
-const frontendPath = path.join(__dirname, "../client/dist");
-
-app.use(express.static(frontendPath));
-
-
-// --------------------------------------------------
-// REACT ROUTER FALLBACK
-// --------------------------------------------------
-
-// This is important for routes like:
-// /resort
-// /villa
-// /wedding
-// /masterplan
-// /contact
+// This server only serves /api/* routes.
+// Frontend (React/Vite) is deployed separately on echothejungle.com,
+// so there's no client/dist here to fall back to.
 
 app.use((req, res, next) => {
-  // Don't handle API routes here
-  if (req.path.startsWith("/api/")) {
-    return next();
-  }
-
-  res.sendFile(path.join(frontendPath, "index.html"));
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+  });
 });
 
 
