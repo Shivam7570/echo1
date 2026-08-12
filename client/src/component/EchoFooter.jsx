@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
     ChevronRight,
     Phone,
@@ -8,11 +9,36 @@ import {
     Download,
     ArrowUp
 } from 'lucide-react';
+import logo from "../assets/echologo1.png";
+
 
 export default function EchoFooter() {
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    const quickLinks = [
+        { name: 'Home', path: '/' },
+        { name: 'Resort Collection', path: '/resort' },
+        { name: 'Villa Collection', path: '/villa' },
+        { name: 'Plots & Master Plan', path: '/masterplan' },
+        { name: 'Destination Weddings', path: '/wedding' },
+        { name: 'Resort Listings', path: '/ResortListingsings' },
+        { name: 'Contact Us', path: '/contact' },
+    ];
+
+    const projectsList = [
+        { name: 'Deer Meadow Suites', path: '/resort' },
+        { name: 'Gazelle Retreat', path: '/resort' },
+        { name: 'Leopard Crest Suites', path: '/resort' },
+        { name: 'Tusker Havens', path: '/resort' },
+        { name: 'Tiger Apex Pavilions', path: '/resort' },
+        { name: 'Lily Haven Villas', path: '/villa' },
+        { name: 'Azalea Retreat Villas', path: '/villa' },
+        { name: 'Lotus Signature Villas', path: '/villa' },
+        { name: 'Orchid Grand Villas', path: '/villa' },
+        { name: 'Premium Plots', path: '/masterplan' },
+    ];
 
     return (
         <footer className="bg-[#051C12] text-stone-300 font-sans pt-12 pb-6 px-6 lg:px-16 border-t border-emerald-950">
@@ -32,7 +58,7 @@ export default function EchoFooter() {
                         {/* Logo */}
                         <div className="pt-2">
                             <div className="flex items-center space-x-2">
-                                <span className="text-[#C5A253] text-xl"><img className='h-22 w-38' src="/src/assets/echologo1.png" alt="" /></span>
+                                <span className="text-[#C5A253] text-xl"><img className='h-22 w-23' src={logo} alt="" /></span>
                             </div>
                             <p className="text-[9px] text-[#C5A253] tracking-widest uppercase mt-0.5">
                                 THE JUNGLE RESORT & VILLA
@@ -46,21 +72,16 @@ export default function EchoFooter() {
                             QUICK LINKS
                         </h3>
                         <ul className="space-y-2.5 text-xs">
-                            {[
-                                'Home',
-                                'About Us',
-                                'Resort Collection',
-                                'Villa Collection',
-                                'Plots & Master Plan',
-                                'Amenities',
-                                'Investment',
-                                'Contact Us'
-                            ].map((link, idx) => (
+                            {quickLinks.map((link, idx) => (
                                 <li key={idx}>
-                                    <a href={`#${link.toLowerCase().replace(/\s+/g, '-')}`} className="flex items-center justify-between text-stone-300 hover:text-[#C5A253] transition-colors pr-4">
-                                        <span>{link}</span>
+                                    <Link
+                                        to={link.path}
+                                        onClick={scrollToTop}
+                                        className="flex items-center justify-between text-stone-300 hover:text-[#C5A253] transition-colors pr-4"
+                                    >
+                                        <span>{link.name}</span>
                                         <ChevronRight className="w-3 h-3 text-stone-400" />
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -72,11 +93,16 @@ export default function EchoFooter() {
                             PROJECTS
                         </h3>
                         <ul className="space-y-2.5 text-xs text-stone-300">
-                            {['Resort Type 1', 'Resort Type 2', 'Resort Type 3', 'Villa Type 1', 'Villa Type 2', 'Villa Type 3', 'Premium Plots'].map((item, idx) => (
+                            {projectsList.map((item, idx) => (
                                 <li key={idx}>
-                                    <a href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-[#C5A253] transition-colors">
-                                        {item}
-                                    </a>
+                                    <Link
+                                        to={item.path}
+                                        onClick={scrollToTop}
+                                        className="flex items-center justify-between text-stone-300 hover:text-[#C5A253] transition-colors pr-4"
+                                    >
+                                        <span>{item.name}</span>
+                                        <ChevronRight className="w-3 h-3 text-stone-400" />
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -90,7 +116,7 @@ export default function EchoFooter() {
                         <div className="space-y-4 text-xs text-stone-300">
                             <div className="flex items-start space-x-3">
                                 <Phone className="w-4 h-4 text-[#C5A253] flex-shrink-0 mt-0.5" />
-                                <span>+91 98765 43210</span>
+                                <span>+91 9217579077</span>
                             </div>
                             <div className="flex items-start space-x-3">
                                 <Mail className="w-4 h-4 text-[#C5A253] flex-shrink-0 mt-0.5" />
@@ -99,14 +125,12 @@ export default function EchoFooter() {
                             <div className="flex items-start space-x-3">
                                 <MapPin className="w-4 h-4 text-[#C5A253] flex-shrink-0 mt-0.5" />
                                 <span className="leading-relaxed">
-                                    Village Dhela, Ramnagar,<br />
-                                    Nainital, Uttarakhand,<br />
-                                    India - 244715
+                                    Gurudwara Road, Village Narainwala, Dhampur District Bijnor, Uttar Pradesh, 246735.
                                 </span>
                             </div>
                             <div className="flex items-start space-x-3">
                                 <Clock className="w-4 h-4 text-[#C5A253] flex-shrink-0 mt-0.5" />
-                                <span>Mon - Sat (10:00 AM - 7:00 PM)</span>
+                                <span>24/7</span>
                             </div>
                         </div>
                     </div>
@@ -199,27 +223,14 @@ export default function EchoFooter() {
                 {/* Bottom Bar Section */}
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-[11px] text-stone-400">
 
-                    {/* RERA Info Left */}
-                    <div className="flex items-center space-x-3">
-                        <div className="w-9 h-9 rounded-full border border-[#C5A253] flex items-center justify-center text-[#C5A253] text-[9px] font-bold">
-                            RERA
-                        </div>
-                        <div>
-                            <p className="font-bold text-[#C5A253] text-[10px] uppercase tracking-wider">RERA REGISTERED</p>
-                            <p className="text-stone-300">RERA No.: UKREAO818000019</p>
-                            <a href="https://udrer.uk.gov.in" target="_blank" rel="noreferrer" className="underline hover:text-white">
-                                udrer.uk.gov.in
-                            </a>
-                        </div>
-                    </div>
+                    
 
                     {/* Legal Links Center */}
                     <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-stone-300">
                         <a href="#privacy" className="hover:text-[#C5A253] transition-colors">Privacy Policy</a>
                         <span className="text-emerald-800">|</span>
                         <a href="#terms" className="hover:text-[#C5A253] transition-colors">Terms & Conditions</a>
-                        <span className="text-emerald-800">|</span>
-                        <a href="#rera" className="hover:text-[#C5A253] transition-colors">RERA Information</a>
+                        
                         <span className="text-emerald-800">|</span>
                         <a href="#sitemap" className="hover:text-[#C5A253] transition-colors">Sitemap</a>
                     </div>

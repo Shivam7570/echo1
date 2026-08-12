@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { submitResortEnquiry } from '../../lib/api';
+import welcome from "../../assets/welcomeImg.png";
 import {
     Compass,
     Home,
@@ -31,11 +33,13 @@ import {
 } from 'lucide-react';
 
 export default function RSection3() {
+    const navigate = useNavigate();
     // State for image lightbox/modal
     const [selectedImage, setSelectedImage] = useState(null);
 
     const handleResortListingsings = () => {
-        navigate('/ResortListingsings'); // Replace '/wedding' with your target route path
+        navigate('/ResortListingsings');
+        window.scrollTo(0, 0);
     };
 
     const [formData, setFormData] = useState({
@@ -82,23 +86,23 @@ export default function RSection3() {
 
     const resortTypes = [
         {
-            name: 'RESORT TYPE 1',
+            name: 'Deer Meadow Suites',
             image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600',
         },
         {
-            name: 'RESORT TYPE 2',
+            name: 'Gazelle Retreat',
             image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=600',
         },
         {
-            name: 'RESORT TYPE 3',
+            name: 'Leopard Crest Suites',
             image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600',
         },
         {
-            name: 'RESORT TYPE 4',
-            image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600',
+            name: 'Tusker Havens',
+            image: 'https://plus.unsplash.com/premium_photo-1675745329634-8c187fa18c00?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3wyfHx8ZW58MHx8fHx8',
         },
         {
-            name: 'RESORT TYPE 5',
+            name: 'Tiger Apex Pavilions',
             image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=600',
         },
     ];
@@ -111,17 +115,13 @@ export default function RSection3() {
         },
         {
             icon: <Home className="w-4 h-4 text-[#1C3026]" />,
-            label: 'No. of Villas / Units',
+            label: 'No of Unit',
             values: ['3 Luxury Villas', '5 Luxury Cottages', '8 Luxury Villas', '10 Luxury Cabins', '12 Luxury Villas'],
         },
-        {
-            icon: <Maximize2 className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Villa Size Range',
-            values: ['1500 – 2000 sq. ft.', '1200 – 1800 sq. ft.', '1500 – 2500 sq. ft.', '1000 – 1800 sq. ft.', '2000 – 3500 sq. ft.'],
-        },
+        
         {
             icon: <Waves className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Private Pool',
+            label: 'Plunge Pool',
             values: ['check', 'check', 'check', 'check', 'check'],
         },
         {
@@ -137,17 +137,22 @@ export default function RSection3() {
         {
             icon: <UtensilsCrossed className="w-4 h-4 text-[#1C3026]" />,
             label: 'Restaurant',
-            values: ['-', 'check', 'check', 'check', 'check'],
+            values: ['check', 'check', 'check', 'check', 'check'],
         },
         {
             icon: <Sparkles className="w-4 h-4 text-[#1C3026]" />,
             label: 'Spa & Wellness',
-            values: ['-', '-', 'check', 'check', 'check'],
+            values: ['check', 'check', 'check', 'check', 'check'],
         },
         {
             icon: <Baby className="w-4 h-4 text-[#1C3026]" />,
             label: 'Kids Play Area',
-            values: ['-', 'check', 'check', 'check', 'check'],
+            values: ['check', 'check', 'check', 'check', 'check'],
+        },
+        {
+            icon: <Car className="w-4 h-4 text-[#1C3026]" />,
+            label: 'Parking',
+            values: ['check', 'check', 'check', 'check', 'check'],
         },
         {
             icon: <Users className="w-4 h-4 text-[#1C3026]" />,
@@ -164,15 +169,11 @@ export default function RSection3() {
             label: 'Security',
             values: ['24/7 Security', '24/7 Security', '24/7 Security', '24/7 Security', '24/7 Security'],
         },
-        {
-            icon: <Car className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Parking',
-            values: ['Ample Parking', 'Ample Parking', 'Ample Parking', 'Ample Parking', 'Ample Parking'],
-        },
+        
         {
             icon: <TrendingUp className="w-4 h-4 text-[#1C3026]" />,
             label: 'ROI Potential',
-            values: ['High', 'High', 'Very High', 'Very High', 'Excellent'],
+            values: ['Very High', 'Very High', 'Very High', 'Very High', 'Excellent'],
         },
     ];
 
@@ -238,7 +239,7 @@ export default function RSection3() {
                                             <div className="text-[10px] text-amber-300 tracking-wider font-semibold uppercase mb-1.5">
                                                 {resort.name}
                                             </div>
-                                            <div 
+                                            <div
                                                 className="h-16 w-full rounded overflow-hidden border border-amber-500/20 cursor-pointer hover:opacity-90 transition-opacity"
                                                 onClick={() => setSelectedImage(resort.image)}
                                                 title="Click to view full image"
@@ -308,13 +309,13 @@ export default function RSection3() {
                                 </p>
                             </div>
 
-                            <div 
+                            <div
                                 className="h-100 rounded-xl overflow-hidden border border-stone-300 shadow-xs cursor-pointer hover:opacity-95 transition-opacity"
                                 onClick={() => setSelectedImage("https://www.echothejungle.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-3-2026-11_42_04-PM.png")}
                                 title="Click to view full image"
                             >
                                 <img
-                                    src="https://www.echothejungle.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-3-2026-11_42_04-PM.png"
+                                    src={welcome}
                                     alt="Resort Deck View"
                                     className="w-full h-full object-cover"
                                 />
@@ -365,17 +366,7 @@ export default function RSection3() {
                                         />
                                     </div>
 
-                                    <div className="relative">
-                                        <MapPin className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <input
-                                            type="text"
-                                            placeholder="City"
-                                            name="city"
-                                            value={formData.city}
-                                            onChange={handleChange}
-                                            className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-[#1C3026]"
-                                        />
-                                    </div>
+                                   
 
                                     <div className="relative">
                                         <Home className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
@@ -390,16 +381,7 @@ export default function RSection3() {
                                         <ChevronDown className="w-4 h-4 absolute right-3 top-2.5 text-slate-500 pointer-events-none" />
                                     </div>
 
-                                    <div className="relative">
-                                        <DollarSign className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <select name="budgetRange" value={formData.budgetRange} onChange={handleChange} className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
-                                            <option value="">Budget Range</option>
-                                            <option value="low">₹50 Lacs - ₹1 Cr</option>
-                                            <option value="med">₹1 Cr - ₹2.5 Cr</option>
-                                            <option value="high">₹2.5 Cr+</option>
-                                        </select>
-                                        <ChevronDown className="w-4 h-4 absolute right-3 top-2.5 text-slate-500 pointer-events-none" />
-                                    </div>
+                                   
 
                                     <div className="relative">
                                         <Building2 className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />

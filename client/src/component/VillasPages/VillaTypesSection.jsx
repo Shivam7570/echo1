@@ -1,68 +1,44 @@
 import React from 'react';
 import { Square, CheckCircle2, Home, Sparkles } from 'lucide-react';
 
+import resort1Layout1 from "../../assets/resortLayout1.png";
+import resort1Layout2 from "../../assets/layout2.jpg";
+import resort1Layout5 from "../../assets/layout5.jpeg";
+import resort1Layout4 from "../../assets/layout4.jpg";
+import resort1Layout3 from "../../assets/layout3.jpg";
+
+
 export default function VillaTypesSection() {
     const villaTypes = [
         {
             id: 1,
-            badge: 'VILLA TYPE 1',
+            badge: 'Lily Haven Villas',
             heroImage: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=600',
-            layoutImage: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=600',
-            area: '3,500 sq. ft.',
-            specifications: '3 BHK | 3 Baths | Ground + 1 Floor',
-            features: [
-                'Private Swimming Pool',
-                'Landscaped Garden',
-                'Smart Home Automation',
-                'Covered Car Parking',
-                '24/7 Security Access',
-            ],
+            layoutImage: resort1Layout1,
+            area: '126 sq. yrd.',
+             
         },
         {
             id: 2,
-            badge: 'VILLA TYPE 2',
+            badge: 'Azalea Restreat Villas',
             heroImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600',
-            layoutImage: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=600',
-            area: '4,800 sq. ft.',
-            specifications: '4 BHK | 4 Baths | Ground + 2 Floors',
-            features: [
-                'Infinity Edge Pool',
-                'Rooftop Terrace Deck',
-                'Private Lawn & Patio',
-                'Double Height Living',
-                'EV Charging Station',
-            ],
-        },
+            layoutImage: resort1Layout2,
+            area: '145 sq. yrd.',
+         },
         {
             id: 3,
-            badge: 'VILLA TYPE 3',
+            badge: 'Lotus Signature Villas',
             heroImage: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=600',
-            layoutImage: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=600',
-            area: '6,200 sq. ft.',
-            specifications: '5 BHK | 6 Baths | Ground + 2 Floors',
-            features: [
-                'Heated Plunge Pool',
-                'Elevator Access',
-                'Outdoor BBQ Lounge',
-                'Servant Quarters',
-                'Panoramic Forest View',
-            ],
-        },
+            layoutImage: resort1Layout3,
+            area: '188 sq. yrd.',
+         },
         {
             id: 4,
-            badge: 'VILLA TYPE 4',
+            badge: 'Orchid Grand Villas',
             heroImage: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600',
-            layoutImage: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=600',
-            area: '8,000 sq. ft.',
-            specifications: '6 BHK | 7 Baths | Presidential Suite',
-            features: [
-                'Grand Private Pool',
-                'Private Spa & Sauna',
-                '3-Car Underground Garage',
-                'Home Theater Room',
-                'Dedicated Concierge',
-            ],
-        },
+            layoutImage: resort1Layout4,
+            area: '220 sq. yrd.',
+         },
     ];
 
     return (
@@ -124,10 +100,10 @@ export default function VillaTypesSection() {
                                 </div>
                             </div>
 
-                            {/* Specifications Section */}
+                            {/* Villa Size Range Section */}
                             <div className="space-y-1.5 pt-2 border-t border-amber-900/10">
                                 <h4 className="text-[10px] font-bold text-[#1C3026] tracking-wider uppercase">
-                                    SPECIFICATIONS
+                                    VILLA SIZE RANGE
                                 </h4>
                                 <div className="space-y-1 text-xs text-slate-800 font-medium">
                                     <div className="flex items-center space-x-1.5">
@@ -135,26 +111,12 @@ export default function VillaTypesSection() {
                                         <span>{item.area}</span>
                                     </div>
                                     <div className="flex items-center space-x-1.5 text-[11px] text-slate-700">
-                                        <Home className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" />
-                                        <span>{item.specifications}</span>
+                                        
+                                        <span>{item.villaSizeRange}</span>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Features Section */}
-                            <div className="space-y-1.5 pt-2 border-t border-amber-900/10 flex-1">
-                                <h4 className="text-[10px] font-bold text-[#1C3026] tracking-wider uppercase">
-                                    FEATURES
-                                </h4>
-                                <ul className="space-y-1">
-                                    {item.features.map((feature, fIdx) => (
-                                        <li key={fIdx} className="flex items-center space-x-1.5 text-[11px] text-slate-700 leading-tight">
-                                            <CheckCircle2 className="w-3 h-3 text-amber-700 flex-shrink-0" />
-                                            <span>{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
                         </div>
                     ))}
                 </div>
@@ -171,7 +133,7 @@ export default function VillaTypesSection() {
                     <div className="flex items-center space-x-3 text-amber-300/90 text-[11px] font-light">
                         <span>Freehold Ownership</span>
                         <span>•</span>
-                        <span>Private Pool Options</span>
+                        <span>Investment Opportunity</span>
                         <span>•</span>
                         <span>Rental Management</span>
                     </div>

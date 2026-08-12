@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { Square, Leaf, X } from 'lucide-react';
 import resort1Layout1 from "../../assets/resortLayout1.png";
-import resort1Layout2 from "../../assets/resortLayout2.png";
+import resort1Layout2 from "../../assets/layout2.jpg";
+import resort1Layout5 from "../../assets/layout5.jpeg";
+import resort1Layout4 from "../../assets/layout4.jpg";
+import resort1Layout3 from "../../assets/layout3.jpg";
+
+
+
+
 
 
 export default function RSection2() {
@@ -14,35 +21,35 @@ export default function RSection2() {
             badge: 'Deer Meadow Suites',
             heroImage: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600',
             layoutImage: resort1Layout1,
-            area: '10,000 sq. ft.',
+            area: '520 sq. ft.',
         },
         {
             id: 2,
-            badge: 'RESORT TYPE 2',
+            badge: 'Gazelle Retreat',
             heroImage: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=600',
             layoutImage: resort1Layout2,
-            area: '15,000 sq. ft.',
+            area: '610 sq. ft.',
         },
         {
             id: 3,
-            badge: 'RESORT TYPE 3',
+            badge: 'Leopard Crest Suites',
             heroImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600',
-            layoutImage: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=600',
-            area: '20,000 sq. ft.',
+            layoutImage: resort1Layout3,
+            area: '750 sq. ft.',
         },
         {
             id: 4,
-            badge: 'RESORT TYPE 4',
-            heroImage: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600',
-            layoutImage: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=600',
-            area: '25,000 sq. ft.',
+            badge: 'Tusker Havens',
+            heroImage: 'https://plus.unsplash.com/premium_photo-1675745329634-8c187fa18c00?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3wyfHx8ZW58MHx8fHx8',
+            layoutImage: resort1Layout4,
+            area: '950 sq. ft.',
         },
         {
             id: 5,
-            badge: 'RESORT TYPE 5',
+            badge: 'Tiger Apex Pavilions',
             heroImage: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=600',
-            layoutImage: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=600',
-            area: '30,000 sq. ft.',
+            layoutImage: resort1Layout5,
+            area: '1350 sq. ft.',
         },
     ];
 

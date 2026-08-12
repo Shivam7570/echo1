@@ -8,8 +8,6 @@ import {
     Trees,
     Building2,
     Sparkles,
-    Baby,
-    Users,
     ShieldCheck,
     Car,
     TrendingUp,
@@ -72,99 +70,75 @@ export default function VillaComparisonSection() {
             alert('Error: ' + (err.message || 'Failed to send.'));
         }
     };
+
     const villaTypes = [
         {
-            name: 'VILLA TYPE 1',
-            subtitle: 'Garden Villa',
+            name: 'Lily Haven Villas',
+            subtitle: '',
             image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=600',
         },
         {
-            name: 'VILLA TYPE 2',
-            subtitle: 'Duplex Villa',
+            name: 'Azalea Restreat Villas',
+            subtitle: '',
             image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=600',
         },
         {
-            name: 'VILLA TYPE 3',
-            subtitle: 'Pool Villa',
+            name: 'Lotus Signature Villas',
+            subtitle: '',
             image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600',
         },
         {
-            name: 'VILLA TYPE 4',
-            subtitle: 'Luxury Estate',
+            name: 'Orchid Grand Villas',
+            subtitle: '',
             image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600',
-        },
-        {
-            name: 'VILLA TYPE 5',
-            subtitle: 'Grand Signature Villa',
-            image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600',
         },
     ];
 
     const features = [
         {
             icon: <Compass className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Plot Area',
-            values: ['2,500 sq. ft.', '3,200 sq. ft.', '4,000 sq. ft.', '5,500 sq. ft.', '7,500 sq. ft.'],
+            label: 'Size Range',
+            values: ['2,500 sq. ft.', '3,200 sq. ft.', '4,000 sq. ft.', '5,500 sq. ft.'],
         },
         {
             icon: <Maximize2 className="w-4 h-4 text-[#1C3026]" />,
             label: 'Built-up Area',
-            values: ['1,800 sq. ft.', '2,400 sq. ft.', '3,100 sq. ft.', '4,200 sq. ft.', '5,800 sq. ft.'],
+            values: ['1,800 sq. ft.', '2,400 sq. ft.', '3,100 sq. ft.', '4,200 sq. ft.'],
         },
         {
             icon: <Bed className="w-4 h-4 text-[#1C3026]" />,
             label: 'Bedrooms (BHK)',
-            values: ['2 BHK', '3 BHK', '3 BHK + Study', '4 BHK + Maid', '5 BHK + Servant Qtr'],
+            values: ['2 BHK', '3 BHK', '3 BHK + Study', '4 BHK + Maid'],
         },
-        {
-            icon: <Bath className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Bathrooms',
-            values: ['2 Baths', '3 Baths', '4 Baths', '5 Baths', '6 Baths'],
-        },
+        
         {
             icon: <Layers className="w-4 h-4 text-[#1C3026]" />,
             label: 'Floors / Structure',
-            values: ['G + 1', 'G + 1', 'G + 2', 'G + 2', 'G + 2 + Terrace'],
+            values: ['G + 1', 'G + 1', 'G + 1', 'G + 1'],
         },
-        {
-            icon: <Waves className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Private Pool',
-            values: ['-', '-', 'check', 'check', 'check'],
-        },
-        {
-            icon: <Trees className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Private Lawn / Garden',
-            values: ['check', 'check', 'check', 'check', 'check'],
-        },
+        
+       
         {
             icon: <Sun className="w-4 h-4 text-[#1C3026]" />,
             label: 'Private Terrace / Deck',
-            values: ['-', 'check', 'check', 'check', 'check'],
+            values: ['-', 'check', 'check', 'check'],
         },
-        {
-            icon: <Car className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Parking Capacity',
-            values: ['1 Covered', '2 Covered', '2 Covered', '3 Covered', '4 Covered'],
-        },
+         
         {
             icon: <Building2 className="w-4 h-4 text-[#1C3026]" />,
             label: 'Clubhouse Access',
-            values: ['check', 'check', 'check', 'check', 'check'],
+            values: ['check', 'check', 'check', 'check'],
         },
-        {
-            icon: <Sparkles className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Smart Home Automation',
-            values: ['-', 'Basic', 'Full', 'Full', 'Advanced Custom'],
-        },
+         
         {
             icon: <ShieldCheck className="w-4 h-4 text-[#1C3026]" />,
             label: 'Gated Security',
-            values: ['24/7 Security', '24/7 Security', '24/7 Security', '24/7 Security', '24/7 Security'],
+            values: ['24/7 Security', '24/7 Security', '24/7 Security', '24/7 Security'],
         },
         {
             icon: <TrendingUp className="w-4 h-4 text-[#1C3026]" />,
             label: 'ROI & Appreciation',
-            values: ['High', 'High', 'Very High', 'Very High', 'Exceptional'],
+            values: ['Very High', 'Very High', 'Very High', 'Very High'],
         },
     ];
 
@@ -215,16 +189,16 @@ export default function VillaComparisonSection() {
 
                     {/* Comparison Table */}
                     <div className="overflow-x-auto">
-                        <table className="w-full border-collapse min-w-[800px] text-xs">
+                        <table className="w-full border-collapse min-w-[700px] text-xs">
                             <thead>
                                 <tr>
-                                    <th className="bg-[#1C3026] text-amber-200 font-serif p-3 w-1/6 text-center border-r border-stone-300 rounded-tl-xl uppercase text-[11px] tracking-wider leading-snug">
+                                    <th className="bg-[#1C3026] text-amber-200 font-serif p-3 w-1/5 text-center border-r border-stone-300 rounded-tl-xl uppercase text-[11px] tracking-wider leading-snug">
                                         Specifications /<br />Features
                                     </th>
                                     {villaTypes.map((villa, idx) => (
                                         <th
                                             key={idx}
-                                            className={`bg-[#1C3026] text-white p-2 text-center border-r border-stone-300 w-1/6 ${idx === villaTypes.length - 1 ? 'rounded-tr-xl border-r-0' : ''
+                                            className={`bg-[#1C3026] text-white p-2 text-center border-r border-stone-300 w-1/5 ${idx === villaTypes.length - 1 ? 'rounded-tr-xl border-r-0' : ''
                                                 }`}
                                         >
                                             <div className="text-[10px] text-amber-300 tracking-wider font-semibold uppercase">
@@ -252,7 +226,6 @@ export default function VillaComparisonSection() {
                                             key={rowIdx}
                                             className={isEven ? 'bg-[#F2ECE1]/60' : 'bg-[#FAF7F2]'}
                                         >
-                                            {/* Left Feature Name Header */}
                                             <td className="p-2.5 font-medium text-slate-800 border-b border-r border-stone-300">
                                                 <div className="flex items-center space-x-2">
                                                     {feature.icon}
@@ -260,7 +233,6 @@ export default function VillaComparisonSection() {
                                                 </div>
                                             </td>
 
-                                            {/* Feature Columns */}
                                             {feature.values.map((val, colIdx) => (
                                                 <td
                                                     key={colIdx}
@@ -288,7 +260,6 @@ export default function VillaComparisonSection() {
                 <div className="bg-[#FAF7F2] rounded-2xl border border-stone-300 p-4 md:p-6 shadow-sm">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
-                        {/* Left Header & Image Banner */}
                         <div className="lg:col-span-4 space-y-4 text-center">
                             <div>
                                 <h2 className="text-2xl font-serif text-[#1C3026] font-bold tracking-wider uppercase">
@@ -308,11 +279,8 @@ export default function VillaComparisonSection() {
                             </div>
                         </div>
 
-                        {/* Center Form */}
                         <div className="lg:col-span-5 space-y-3">
                             <form onSubmit={handleSubmit} className="space-y-2.5">
-
-                                {/* Inputs Grid */}
                                 <div className="grid grid-cols-1 gap-2.5">
                                     <div className="relative">
                                         <User className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
@@ -352,17 +320,7 @@ export default function VillaComparisonSection() {
                                         />
                                     </div>
 
-                                    <div className="relative">
-                                        <MapPin className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <input
-                                            type="text"
-                                            placeholder="City"
-                                            name="city"
-                                            value={formData.city}
-                                            onChange={handleChange}
-                                            className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-[#1C3026]"
-                                        />
-                                    </div>
+                               
 
                                     <div className="relative">
                                         <Home className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
@@ -372,21 +330,11 @@ export default function VillaComparisonSection() {
                                             <option value="type2">Villa Type 2 (Duplex Villa)</option>
                                             <option value="type3">Villa Type 3 (Pool Villa)</option>
                                             <option value="type4">Villa Type 4 (Luxury Estate)</option>
-                                            <option value="type5">Villa Type 5 (Grand Signature Villa)</option>
                                         </select>
                                         <ChevronDown className="w-4 h-4 absolute right-3 top-2.5 text-slate-500 pointer-events-none" />
                                     </div>
 
-                                    <div className="relative">
-                                        <DollarSign className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <select name="budgetRange" value={formData.budgetRange} onChange={handleChange} className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
-                                            <option value="">Budget Range</option>
-                                            <option value="low">₹1.5 Cr - ₹3 Cr</option>
-                                            <option value="med">₹3 Cr - ₹5 Cr</option>
-                                            <option value="high">₹5 Cr+</option>
-                                        </select>
-                                        <ChevronDown className="w-4 h-4 absolute right-3 top-2.5 text-slate-500 pointer-events-none" />
-                                    </div>
+                                 
 
                                     <div className="relative">
                                         <Building2 className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
@@ -411,7 +359,6 @@ export default function VillaComparisonSection() {
                                     </div>
                                 </div>
 
-                                {/* Submit Button */}
                                 <div className="pt-2 text-center">
                                     <button
                                         type="submit"
@@ -424,7 +371,6 @@ export default function VillaComparisonSection() {
                             </form>
                         </div>
 
-                        {/* Right Feature Cards */}
                         <div className="lg:col-span-3 bg-[#F3EEE5]/80 rounded-xl p-4 border border-stone-300/70 space-y-4">
                             {highlights.map((item, idx) => (
                                 <div key={idx} className="flex items-start space-x-3">
@@ -446,7 +392,6 @@ export default function VillaComparisonSection() {
                     </div>
                 </div>
 
-                {/* Footer Banner Bar */}
                 <div className="bg-[#1C3026] rounded-xl p-3 px-8 flex flex-col md:flex-row items-center justify-around text-white text-xs gap-3">
                     <div className="flex items-center space-x-2">
                         <Leaf className="w-4 h-4 text-amber-400" />
