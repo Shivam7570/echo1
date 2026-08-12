@@ -2,22 +2,49 @@ import React, { useState, useEffect, useMemo } from 'react';
 
 async function adminFetch(path, options = {}) {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  const candidates = [
-    `http://localhost:5000/api${cleanPath}`,
-    `/api${cleanPath}`,
-    `https://api.echothejungle.com/api${cleanPath}`,
-  ];
+  const isLocalhost =
+    typeof window !== 'undefined' &&
+    (window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1' ||
+      window.location.hostname.startsWith('192.168.'));
 
+  const candidates = isLocalhost
+    ? [
+        `http://localhost:5000/api${cleanPath}`,
+        `/api${cleanPath}`,
+        `https://api.echothejungle.com/api${cleanPath}`,
+      ]
+    : [
+        `/api${cleanPath}`,
+        `${cleanPath}`,
+        `https://api.echothejungle.com/api${cleanPath}`,
+        `http://localhost:5000/api${cleanPath}`,
+      ];
+
+  const uniqueCandidates = [...new Set(candidates)];
   let lastErr = null;
-  for (const url of candidates) {
+
+  for (let i = 0; i < uniqueCandidates.length; i++) {
+    const url = uniqueCandidates[i];
+    const isLast = i === uniqueCandidates.length - 1;
+
     try {
       const res = await fetch(url, options);
       const json = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(json.message || `Server returned ${res.status}`);
+      if (!res.ok) {
+        const errorMsg = json.message || `Server returned ${res.status}`;
+        const err = new Error(errorMsg);
+        err.status = res.status;
+        if ((res.status === 404 || res.status >= 500) && !isLast) {
+          lastErr = err;
+          continue;
+        }
+        throw err;
+      }
       return json;
     } catch (err) {
       lastErr = err;
-      if (err.name === 'TypeError' || err.message.includes('Failed to fetch')) {
+      if (err.name === 'TypeError' || err.message.includes('Failed to fetch') || ((err.status === 404 || err.status >= 500) && !isLast)) {
         continue;
       }
       throw err;

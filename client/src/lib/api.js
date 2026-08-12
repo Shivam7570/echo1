@@ -20,15 +20,27 @@ async function request(path, options = {}) {
     const cleanCustom = customBase.replace(/\/+$/, "");
     candidateUrls.push(`${cleanCustom}${cleanPath}`);
   }
+
   if (isLocalhost()) {
     candidateUrls.push(`${LOCAL_BACKEND}${cleanPath}`);
     candidateUrls.push(`/api${cleanPath}`);
+  } else {
+    // Relative paths are critical when backend & frontend are hosted on Hostinger under the same domain
+    candidateUrls.push(`/api${cleanPath}`);
+    candidateUrls.push(`${cleanPath}`);
+    candidateUrls.push(`${PROD_BACKEND}${cleanPath}`);
+    candidateUrls.push(`${LOCAL_BACKEND}${cleanPath}`);
   }
-  candidateUrls.push(`${PROD_BACKEND}${cleanPath}`);
+
+  // Remove duplicates while preserving order
+  const uniqueCandidateUrls = [...new Set(candidateUrls)];
 
   let lastError = null;
 
-  for (const url of candidateUrls) {
+  for (let i = 0; i < uniqueCandidateUrls.length; i++) {
+    const url = uniqueCandidateUrls[i];
+    const isLastCandidate = i === uniqueCandidateUrls.length - 1;
+
     try {
       const res = await fetch(url, {
         headers: { "Content-Type": "application/json" },
@@ -38,14 +50,23 @@ async function request(path, options = {}) {
       const data = await res.json().catch(() => ({}));
 
       if (!res.ok) {
-        throw new Error(data.message || `Server returned status ${res.status}`);
+        const errorMsg = data.message || `Server returned status ${res.status}`;
+        const err = new Error(errorMsg);
+        err.status = res.status;
+
+        // If 404 Not Found or Server Error (5xx) and we have more candidates, continue to next candidate
+        if ((res.status === 404 || res.status >= 500) && !isLastCandidate) {
+          lastError = err;
+          continue;
+        }
+
+        throw err;
       }
 
       return data;
     } catch (err) {
       lastError = err;
-      // If it's a network error (like Failed to fetch), try the next candidate URL
-      if (err.name === "TypeError" || err.message.includes("Failed to fetch")) {
+      if (err.name === "TypeError" || err.message.includes("Failed to fetch") || ((err.status === 404 || err.status >= 500) && !isLastCandidate)) {
         continue;
       }
       throw err;

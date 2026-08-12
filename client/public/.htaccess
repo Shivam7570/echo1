@@ -2,11 +2,15 @@
   RewriteEngine On
   RewriteBase /
 
+  # Do not rewrite /api requests (pass through to Node.js backend)
+  RewriteCond %{REQUEST_URI} ^/api [NC]
+  RewriteRule ^ - [L]
+
   # Do not rewrite existing files or directories
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Rewrite all other requests to index.html for React Router SPA
+  # Rewrite all other frontend page requests to index.html for React Router SPA
   RewriteRule ^ index.html [L]
 </IfModule>

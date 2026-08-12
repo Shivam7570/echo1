@@ -51,39 +51,54 @@ const enquiryLimiter = rateLimit({
   },
 });
 
+// Rate limiting on both /api and root paths
 app.use("/api/enquiries", enquiryLimiter);
+app.use("/enquiries", enquiryLimiter);
 app.use("/api/resorts", enquiryLimiter);
+app.use("/resorts", enquiryLimiter);
 app.use("/api/villas", enquiryLimiter);
+app.use("/villas", enquiryLimiter);
 app.use("/api/site-visits", enquiryLimiter);
+app.use("/site-visits", enquiryLimiter);
 
 
 // --------------------------------------------------
-// HEALTH CHECK
+// HEALTH CHECK & ROOT
 // --------------------------------------------------
 
-app.get("/api/health", (req, res) => {
+const healthCheck = (req, res) => {
   res.json({
     success: true,
     message: "Echo backend is running",
   });
-});
+};
+
+app.get("/api/health", healthCheck);
+app.get("/health", healthCheck);
+app.get("/", healthCheck);
 
 
 // --------------------------------------------------
-// API ROUTES
+// API ROUTES (Mounted on both /api and root paths)
 // --------------------------------------------------
 
 app.use("/api/auth", authRoutes);
+app.use("/auth", authRoutes);
 
 app.use("/api/enquiries", enquiryRoutes);
+app.use("/enquiries", enquiryRoutes);
 
 app.use("/api/properties", propertyRoutes);
+app.use("/properties", propertyRoutes);
 
 app.use("/api/resorts", resortEnquiryRoutes);
+app.use("/resorts", resortEnquiryRoutes);
 
 app.use("/api/villas", villaEnquiryRoutes);
+app.use("/villas", villaEnquiryRoutes);
 
 app.use("/api/site-visits", siteVisitRoutes);
+app.use("/site-visits", siteVisitRoutes);
 
 
 // --------------------------------------------------
