@@ -5,40 +5,31 @@ import {
     MapPin,
     TrendingUp,
     ShieldCheck,
-    Trees,
-    Leaf
+    Trees
 } from 'lucide-react';
+import masthero from "../../assets/PlotHeroImg.png";
 
 export default function MasterHero() {
     return (
-        <div className="relative min-h-screen w-full bg-stone-900 text-white font-sans overflow-hidden flex flex-col justify-between">
+        <div className="relative p-10 min-h-screen w-full bg-stone-900 text-white font-sans overflow-hidden flex flex-col justify-between">
 
             {/* Background Image with Dark Gradient Overlay */}
             <div
                 className="absolute inset-0 bg-cover bg-center z-0"
                 style={{
-                    backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.2) 100%), url('/src/assets/PlotHeroImg.png')`
+                    backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.2) 100%), url(${masthero})`
                 }}
             />
 
             {/* Top Navigation Bar */}
             <header className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6 max-w-7xl mx-auto w-full">
-
                 {/* Logo Section */}
-                
-
                 {/* Desktop Nav Links */}
-
-
                 {/* CTA Button */}
-                 
             </header>
 
             {/* Hero Content Section */}
             <main className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 py-8 flex-1 flex flex-col justify-center space-y-6">
-
-                {/* Page Badge */}
-
 
                 {/* Title Block */}
                 <div className="space-y-2 max-w-2xl">
@@ -57,12 +48,12 @@ export default function MasterHero() {
 
                 {/* Action Buttons */}
                 <div className="flex flex-wrap items-center gap-4 pt-2">
-                    <button className="bg-[#D4A359] hover:bg-[#c29249] text-stone-950 font-semibold text-sm px-6 py-3.5 rounded-xl shadow-lg flex items-center space-x-2 transition-all">
+                    <button className="bg-[#D4A359] hover:bg-[#c29249] text-stone-950 font-semibold text-sm px-6 py-3.5 rounded-xl shadow-lg flex items-center space-x-2 transition-all cursor-pointer">
                         <span>Explore Plots</span>
                         <ArrowRight className="w-4 h-4" />
                     </button>
 
-                    <button className="bg-stone-900/40 hover:bg-stone-900/70 border border-stone-500/50 backdrop-blur-md text-stone-200 font-medium text-sm px-6 py-3.5 rounded-xl flex items-center space-x-2 transition-all">
+                    <button className="bg-stone-900/40 hover:bg-stone-900/70 border border-stone-500/50 backdrop-blur-md text-stone-200 font-medium text-sm px-6 py-3.5 rounded-xl flex items-center space-x-2 transition-all cursor-pointer">
                         <span>Download Master Plan</span>
                         <Download className="w-4 h-4 text-stone-300" />
                     </button>
@@ -120,7 +111,6 @@ export default function MasterHero() {
                 </div>
 
             </main>
-
         </div>
     );
 }

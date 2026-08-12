@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Utensils, Camera, Flower2, Home, X } from 'lucide-react';
 import { submitResortEnquiry } from '../../lib/api';
+import resoprtHero from "../../assets/ResortHero.png";
 
 export default function RSection() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,7 +42,7 @@ export default function RSection() {
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                    backgroundImage: `url('/src/assets/ResortHero.png')`
+                    backgroundImage: `url(${resoprtHero})`
                 }}
             >
                 {/* Dark Vignette Overlay for Readability */}
@@ -77,7 +78,6 @@ export default function RSection() {
                         <h3 className="text-xl md:text-2xl font-serif text-amber-100/90 font-normal">
                             Where Luxury Meets Nature
                         </h3>
-                        {/* Paragraph updated with Times New Roman font */}
                         <p
                             className="text-xs md:text-sm text-stone-300 font-light leading-relaxed max-w-md"
                             style={{ fontFamily: "'Times New Roman', Times, serif" }}
@@ -136,9 +136,7 @@ export default function RSection() {
 
                 </div>
 
-                {/* Empty bottom spacer for balance */}
                 <div />
-
             </div>
 
             {/* ================= BOOK A SITE VISIT POPUP MODAL ================= */}

@@ -12,6 +12,8 @@ import {
     Building2,
     Send
 } from 'lucide-react';
+import contactHero from "../../assets/contactHero.jpg";
+
 
 export default function ContactHero() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -78,7 +80,7 @@ export default function ContactHero() {
             <div
                 className="absolute inset-0 bg-cover bg-center z-0"
                 style={{
-                    backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%), linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 40%), url('/src/assets/contactHero.jpg')`
+                    backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%), linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 40%), url(${contactHero})`
                 }}
             />
 

@@ -178,13 +178,16 @@ export default function SectionRoom() {
 
       {/* Floating Chat Widget */}
       <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
-        <div className="hidden sm:flex items-center gap-2 bg-white text-stone-900 text-xs font-medium px-4 py-2.5 rounded-lg shadow-xl border border-stone-200">
-          <span>👋 Welcome to Devaha Jungle Resort! How may we assist you today?</span>
-        </div>
         <div className="relative">
-          <button className="bg-amber-500 hover:bg-amber-600 text-stone-950 p-3.5 rounded-full shadow-2xl transition duration-300 flex items-center justify-center cursor-pointer">
+          <a
+            href="https://wa.me/919217579077"
+            target="_blank"
+            rel="noreferrer"
+            className="bg-amber-500 hover:bg-amber-600 text-stone-950 p-3.5 rounded-full shadow-2xl transition duration-300 flex items-center justify-center cursor-pointer"
+            title="Chat on WhatsApp"
+          >
             <MessageSquare className="w-5 h-5 fill-stone-950" />
-          </button>
+          </a>
           <span className="absolute -top-1 -right-1 bg-red-600 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
             1
           </span>
