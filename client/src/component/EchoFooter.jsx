@@ -9,7 +9,7 @@ import {
     Download,
     ArrowUp
 } from 'lucide-react';
-import logo from "../assets/echologo1.png";
+import logo from "../assets/infraLogo.jpeg";
 
 
 export default function EchoFooter() {
@@ -19,26 +19,15 @@ export default function EchoFooter() {
 
     const quickLinks = [
         { name: 'Home', path: '/' },
-        { name: 'Resort Collection', path: '/resort' },
-        { name: 'Villa Collection', path: '/villa' },
-        { name: 'Plots & Master Plan', path: '/masterplan' },
+        { name: 'Resort ', path: '/resort' },
+        { name: 'Villa ', path: '/villa' },
+        { name: 'Master Plan', path: '/masterplan' },
         { name: 'Destination Weddings', path: '/wedding' },
         { name: 'Resort Listings', path: '/ResortListingsings' },
         { name: 'Contact Us', path: '/contact' },
     ];
 
-    const projectsList = [
-        { name: 'Deer Meadow Suites', path: '/resort' },
-        { name: 'Gazelle Retreat', path: '/resort' },
-        { name: 'Leopard Crest Suites', path: '/resort' },
-        { name: 'Tusker Havens', path: '/resort' },
-        { name: 'Tiger Apex Pavilions', path: '/resort' },
-        { name: 'Lily Haven Villas', path: '/villa' },
-        { name: 'Azalea Retreat Villas', path: '/villa' },
-        { name: 'Lotus Signature Villas', path: '/villa' },
-        { name: 'Orchid Grand Villas', path: '/villa' },
-        { name: 'Premium Plots', path: '/masterplan' },
-    ];
+
 
     return (
         <footer className="bg-[#051C12] text-stone-300 font-sans pt-12 pb-6 px-6 lg:px-16 border-t border-emerald-950">
@@ -61,7 +50,7 @@ export default function EchoFooter() {
                                 <span className="text-[#C5A253] text-xl"><img className='h-22 w-23' src={logo} alt="" /></span>
                             </div>
                             <p className="text-[9px] text-[#C5A253] tracking-widest uppercase mt-0.5">
-                                THE JUNGLE RESORT & VILLA
+
                             </p>
                         </div>
                     </div>
@@ -87,26 +76,7 @@ export default function EchoFooter() {
                         </ul>
                     </div>
 
-                    {/* Column 3: Projects */}
-                    <div className="lg:col-span-2 space-y-4 lg:border-r border-emerald-900/40 lg:pr-4">
-                        <h3 className="text-[#C5A253] text-xs font-bold tracking-widest uppercase">
-                            PROJECTS
-                        </h3>
-                        <ul className="space-y-2.5 text-xs text-stone-300">
-                            {projectsList.map((item, idx) => (
-                                <li key={idx}>
-                                    <Link
-                                        to={item.path}
-                                        onClick={scrollToTop}
-                                        className="flex items-center justify-between text-stone-300 hover:text-[#C5A253] transition-colors pr-4"
-                                    >
-                                        <span>{item.name}</span>
-                                        <ChevronRight className="w-3 h-3 text-stone-400" />
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+
 
                     {/* Column 4: Contact Details */}
                     <div className="lg:col-span-3 space-y-4 lg:border-r border-emerald-900/40 lg:pr-4">
@@ -145,7 +115,7 @@ export default function EchoFooter() {
                             <div className="flex items-center space-x-2">
                                 {/* Instagram */}
                                 <a
-                                    href="#instagram"
+                                    href="https://www.instagram.com/echothejungleresort?igsh=MTk1azljMGppdXNzOA=="
                                     className="w-8 h-8 rounded-full border border-[#C5A253]/60 flex items-center justify-center text-[#C5A253] hover:bg-[#C5A253] hover:text-[#051C12] transition-colors"
                                 >
                                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -223,14 +193,14 @@ export default function EchoFooter() {
                 {/* Bottom Bar Section */}
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-[11px] text-stone-400">
 
-                    
+
 
                     {/* Legal Links Center */}
                     <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-stone-300">
                         <a href="#privacy" className="hover:text-[#C5A253] transition-colors">Privacy Policy</a>
                         <span className="text-emerald-800">|</span>
                         <a href="#terms" className="hover:text-[#C5A253] transition-colors">Terms & Conditions</a>
-                        
+
                         <span className="text-emerald-800">|</span>
                         <a href="#sitemap" className="hover:text-[#C5A253] transition-colors">Sitemap</a>
                     </div>

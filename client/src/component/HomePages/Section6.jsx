@@ -6,7 +6,6 @@ import {
     Mail,
     MapPin,
     Calendar,
-    ChevronDown,
     Pencil,
     ShieldCheck,
     Leaf,
@@ -27,6 +26,8 @@ export default function Section6() {
         message: '',
         agreed: false
     });
+
+    const [submitted, setSubmitted] = useState(false);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -53,7 +54,7 @@ export default function Section6() {
                 source: 'home'
             });
             setStatus({ loading: false, error: '' });
-            alert('Site Visit Booking Request Submitted!');
+            setSubmitted(true);
             setFormData({
                 fullName: '', mobileNumber: '', emailAddress: '', city: '', visitDate: '', visitTime: '', message: '', agreed: false
             });
@@ -166,173 +167,172 @@ export default function Section6() {
                                     ✦
                                 </div>
                                 <h2 className="text-lg md:text-xl font-serif text-slate-900 tracking-wider">
-                                    BOOK YOUR SITE VISIT
+                                    Book a Free Consultation
                                 </h2>
                                 <p className="text-[11px] text-slate-500 mt-0.5 max-w-xs mx-auto">
                                     Fill in your details and our team will get in touch.
                                 </p>
                             </div>
 
-                            {/* Form */}
-                            <form onSubmit={handleSubmit} className="space-y-3 text-xs">
-                                {/* Row 1: Name & Mobile */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <div>
-                                        <label className="block text-slate-700 font-medium mb-1">
-                                            Full Name <span className="text-rose-500">*</span>
-                                        </label>
-                                        <div className="relative">
-                                            <input
-                                                type="text"
-                                                name="fullName"
-                                                required
-                                                value={formData.fullName}
-                                                onChange={handleChange}
-                                                placeholder="Enter full name"
-                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
-                                            />
-                                            <User className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
-                                        </div>
+                            {submitted ? (
+                                <div className="py-10 text-center space-y-3">
+                                    <div className="w-12 h-12 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mx-auto text-lg font-bold">
+                                        ✓
                                     </div>
-
-                                    <div>
-                                        <label className="block text-slate-700 font-medium mb-1">
-                                            Mobile Number <span className="text-rose-500">*</span>
-                                        </label>
-                                        <div className="relative">
-                                            <input
-                                                type="tel"
-                                                name="mobileNumber"
-                                                required
-                                                value={formData.mobileNumber}
-                                                onChange={handleChange}
-                                                placeholder="Enter mobile number"
-                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
-                                            />
-                                            <Phone className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
-                                        </div>
-                                    </div>
+                                    <h3 className="text-sm font-semibold text-slate-900">Thank You!</h3>
+                                    <p className="text-xs text-slate-600 max-w-xs mx-auto">
+                                        Your site visit request has been received. Our team will contact you shortly.
+                                    </p>
+                                    <button
+                                        type="button"
+                                        onClick={() => setSubmitted(false)}
+                                        className="mt-2 text-xs text-amber-700 underline font-medium cursor-pointer"
+                                    >
+                                        Book another visit
+                                    </button>
                                 </div>
+                            ) : (
+                                <form onSubmit={handleSubmit} className="space-y-3 text-xs">
+                                    {status.error && (
+                                        <div className="bg-rose-50 border border-rose-200 text-rose-600 px-3 py-2 rounded-md text-xs">
+                                            {status.error}
+                                        </div>
+                                    )}
 
-                                {/* Row 2: Email & City */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        <div>
+                                            <label className="block text-slate-700 font-medium mb-1">
+                                                Full Name <span className="text-rose-500">*</span>
+                                            </label>
+                                            <div className="relative">
+                                                <input
+                                                    type="text"
+                                                    name="fullName"
+                                                    required
+                                                    value={formData.fullName}
+                                                    onChange={handleChange}
+                                                    placeholder="Enter full name"
+                                                    className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-2 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
+                                                />
+                                                <User className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label className="block text-slate-700 font-medium mb-1">
+                                                Mobile Number <span className="text-rose-500">*</span>
+                                            </label>
+                                            <div className="relative">
+                                                <input
+                                                    type="tel"
+                                                    name="mobileNumber"
+                                                    required
+                                                    value={formData.mobileNumber}
+                                                    onChange={handleChange}
+                                                    placeholder="Enter mobile number"
+                                                    className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-2 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
+                                                />
+                                                <Phone className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        <div>
+                                            <label className="block text-slate-700 font-medium mb-1">
+                                                Email Address <span className="text-rose-500">*</span>
+                                            </label>
+                                            <div className="relative">
+                                                <input
+                                                    type="email"
+                                                    name="emailAddress"
+                                                    required
+                                                    value={formData.emailAddress}
+                                                    onChange={handleChange}
+                                                    placeholder="Enter email address"
+                                                    className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-2 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
+                                                />
+                                                <Mail className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label className="block text-slate-700 font-medium mb-1">
+                                                City
+                                            </label>
+                                            <div className="relative">
+                                                <input
+                                                    type="text"
+                                                    name="city"
+                                                    value={formData.city}
+                                                    onChange={handleChange}
+                                                    placeholder="Enter city"
+                                                    className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-2 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
+                                                />
+                                                <MapPin className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        <div>
+                                            <label className="block text-slate-700 font-medium mb-1">
+                                                Preferred Date
+                                            </label>
+                                            <div className="relative">
+                                                <input
+                                                    type="date"
+                                                    name="visitDate"
+                                                    value={formData.visitDate}
+                                                    onChange={handleChange}
+                                                    className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-2 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
+                                                />
+                                                <Calendar className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5 pointer-events-none" />
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div>
                                         <label className="block text-slate-700 font-medium mb-1">
-                                            Email Address
+                                            Message (Optional)
                                         </label>
                                         <div className="relative">
-                                            <input
-                                                type="email"
-                                                name="emailAddress"
-                                                value={formData.emailAddress}
+                                            <textarea
+                                                name="message"
+                                                rows={2}
+                                                value={formData.message}
                                                 onChange={handleChange}
-                                                placeholder="Enter email address"
-                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
+                                                placeholder="Any questions or requirements?"
+                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-2 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400 resize-none"
                                             />
-                                            <Mail className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
+                                            <Pencil className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
                                         </div>
                                     </div>
 
-                                    <div>
-                                        <label className="block text-slate-700 font-medium mb-1">
-                                            City <span className="text-rose-500">*</span>
-                                        </label>
-                                        <div className="relative">
-                                            <input
-                                                type="text"
-                                                name="city"
-                                                required
-                                                value={formData.city}
-                                                onChange={handleChange}
-                                                placeholder="Enter city"
-                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
-                                            />
-                                            <MapPin className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Row 3: Preferred Visit Date & Time side by side */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <div>
-                                        <label className="block text-slate-700 font-medium mb-1">
-                                            Preferred Date
-                                        </label>
-                                        <div className="relative">
-                                            <input
-                                                type="date"
-                                                name="visitDate"
-                                                value={formData.visitDate}
-                                                onChange={handleChange}
-                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
-                                            />
-                                            <Calendar className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5 pointer-events-none" />
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <label className="block text-slate-700 font-medium mb-1">
-                                            Preferred Time
-                                        </label>
-                                        <div className="relative">
-                                            <select
-                                                name="visitTime"
-                                                value={formData.visitTime}
-                                                onChange={handleChange}
-                                                className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all appearance-none text-slate-600"
-                                            >
-                                                <option value="">Select time</option>
-                                                <option value="morning">Morning (09:00 AM - 12:00 PM)</option>
-                                                <option value="afternoon">Afternoon (12:00 PM - 03:00 PM)</option>
-                                                <option value="evening">Evening (03:00 PM - 06:00 PM)</option>
-                                            </select>
-                                            <ChevronDown className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5 pointer-events-none" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Message */}
-                                <div>
-                                    <label className="block text-slate-700 font-medium mb-1">
-                                        Message (Optional)
-                                    </label>
-                                    <div className="relative">
-                                        <textarea
-                                            name="message"
-                                            rows={1}
-                                            value={formData.message}
+                                    <div className="flex items-start space-x-2 pt-0.5">
+                                        <input
+                                            type="checkbox"
+                                            id="agreed"
+                                            name="agreed"
+                                            checked={formData.agreed}
                                             onChange={handleChange}
-                                            placeholder="Any questions or requirements?"
-                                            className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-1.5 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400 resize-none"
+                                            className="mt-0.5 h-3.5 w-3.5 accent-amber-600 border-stone-300 rounded cursor-pointer"
                                         />
-                                        <Pencil className="absolute right-2.5 top-2 text-slate-400 w-3.5 h-3.5" />
+                                        <label htmlFor="agreed" className="text-[10px] text-slate-600 leading-tight cursor-pointer">
+                                            I agree to be contacted by Echo – The Jungle Resort & Villa regarding my site visit.
+                                        </label>
                                     </div>
-                                </div>
 
-                                {/* Checkbox */}
-                                <div className="flex items-start space-x-2 pt-0.5">
-                                    <input
-                                        type="checkbox"
-                                        id="agreed"
-                                        name="agreed"
-                                        checked={formData.agreed}
-                                        onChange={handleChange}
-                                        className="mt-0.5 h-3.5 w-3.5 accent-amber-600 border-stone-300 rounded cursor-pointer"
-                                    />
-                                    <label htmlFor="agreed" className="text-[10px] text-slate-600 leading-tight cursor-pointer">
-                                        I agree to be contacted by Echo – The Jungle Resort & Villa regarding my site visit.
-                                    </label>
-                                </div>
-
-                                {/* Submit Button */}
-                                <button
-                                    type="submit"
-                                    className="w-full mt-1 bg-[#C69A43] hover:bg-[#B58B37] text-white font-medium py-2.5 px-4 rounded-md flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all text-xs tracking-wider uppercase cursor-pointer"
-                                >
-                                    <Calendar className="w-3.5 h-3.5" />
-                                    <span>BOOK SITE VISIT</span>
-                                </button>
-                            </form>
+                                    <button
+                                        type="submit"
+                                        disabled={status.loading}
+                                        className="w-full mt-1 bg-[#C69A43] hover:bg-[#B58B37] text-white font-medium py-2.5 px-4 rounded-md flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all text-xs tracking-wider uppercase cursor-pointer disabled:opacity-50"
+                                    >
+                                        <Calendar className="w-3.5 h-3.5" />
+                                        <span>{status.loading ? 'Submitting...' : 'Book a Free Consultation'}</span>
+                                    </button>
+                                </form>
+                            )}
 
                         </div>
                     </div>

@@ -108,6 +108,11 @@ export default function Section5() {
                         Strategically located near Jim Corbett National Park with excellent connectivity
                         and surrounded by renowned tourist destinations.
                     </p>
+                    {/* Added Address Subtext */}
+                    <div className="flex items-center justify-center space-x-1.5 text-xs text-amber-800 pt-2 font-medium">
+                        <FaMapMarkerAlt className="w-3.5 h-3.5 flex-shrink-0 text-amber-700" />
+                        <span>Gurudwara Road, Village Narainwala, Dhampur District Bijnor, Uttar Pradesh, 246735.</span>
+                    </div>
                 </div>
 
                 {/* Top Split: Map + Advantage Items */}
@@ -124,13 +129,13 @@ export default function Section5() {
                             referrerPolicy="no-referrer-when-downgrade"
                         />
                         {/* Custom Property Overlay Badge */}
-                        <div className="absolute top-4 left-4 bg-[#0F261C]/90 text-white backdrop-blur-md p-3 rounded-xl border border-amber-500/30 flex items-center space-x-3 shadow-lg">
-                            <div className="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center border border-amber-400/40">
+                        <div className="absolute top-4 left-4 bg-[#0F261C]/90 text-white backdrop-blur-md p-3 rounded-xl border border-amber-500/30 flex items-center space-x-3 shadow-lg max-w-[280px]">
+                            <div className="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center border border-amber-400/40 flex-shrink-0">
                                 <FaMapMarkerAlt className="w-4 h-4 text-amber-400" />
                             </div>
                             <div>
                                 <h4 className="text-xs tracking-wider uppercase font-semibold text-amber-400">ECHO</h4>
-                                <p className="text-[10px] text-slate-300">The Jungle Resort & Villa</p>
+                                <p className="text-[10px] text-slate-300 leading-tight">Gurudwara Road, Narainwala, Dhampur, Bijnor, UP - 246735</p>
                             </div>
                         </div>
                     </div>
@@ -208,7 +213,7 @@ export default function Section5() {
                     <div className="flex items-center justify-center space-x-3 pt-2 md:pt-0">
                         <FaCar className="w-6 h-6 text-amber-400" />
                         <div className="text-left">
-                            <p className="font-semibold text-sm">5 Hours</p>
+                            <p className="font-semibold text-sm">3 Hours</p>
                             <p className="text-xs text-emerald-200/70">From Delhi NCR</p>
                         </div>
                     </div>
@@ -216,7 +221,7 @@ export default function Section5() {
                     <div className="flex items-center justify-center space-x-3 pt-4 md:pt-0">
                         <FaRoad className="w-6 h-6 text-amber-400" />
                         <div className="text-left">
-                            <p className="font-semibold text-sm">NH-309</p>
+                            <p className="font-semibold text-sm">NH-24</p>
                             <p className="text-xs text-emerald-200/70">Excellent Connectivity</p>
                         </div>
                     </div>

@@ -29,8 +29,10 @@ import {
     ArrowRight,
     Leaf,
     Trophy,
+
     X
 } from 'lucide-react';
+
 
 export default function RSection3() {
     const navigate = useNavigate();
@@ -118,7 +120,7 @@ export default function RSection3() {
             label: 'No of Unit',
             values: ['3 Luxury Villas', '5 Luxury Cottages', '8 Luxury Villas', '10 Luxury Cabins', '12 Luxury Villas'],
         },
-        
+
         {
             icon: <Waves className="w-4 h-4 text-[#1C3026]" />,
             label: 'Plunge Pool',
@@ -169,7 +171,7 @@ export default function RSection3() {
             label: 'Security',
             values: ['24/7 Security', '24/7 Security', '24/7 Security', '24/7 Security', '24/7 Security'],
         },
-        
+
         {
             icon: <TrendingUp className="w-4 h-4 text-[#1C3026]" />,
             label: 'ROI Potential',
@@ -366,7 +368,7 @@ export default function RSection3() {
                                         />
                                     </div>
 
-                                   
+
 
                                     <div className="relative">
                                         <Home className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
@@ -381,7 +383,7 @@ export default function RSection3() {
                                         <ChevronDown className="w-4 h-4 absolute right-3 top-2.5 text-slate-500 pointer-events-none" />
                                     </div>
 
-                                   
+
 
                                     <div className="relative">
                                         <Building2 className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />

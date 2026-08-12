@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
     TreePine,
     Home,
@@ -82,14 +83,14 @@ const highlights = [
         title: "Scenic Location",
         desc: "Close to Nature, Close to Peace",
         image:
-            "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=800&auto=format&fit=crop",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1IWjSMNvWu6XWz4yHv0zIAt35AqkgjNDrgnO_7CI9pA&s=10",
     },
     {
         icon: Milestone,
         title: "Villa Plots",
         desc: "Build Your Dream Villa",
         image:
-            "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=800&auto=format&fit=crop",
+            "https://www.groavy.com/static/media/Feb27.57f5d30f912f9de93e11.webp",
     },
 ];
 
@@ -131,22 +132,26 @@ export default function EchoHome() {
                         <span className="w-10 h-px" style={{ backgroundColor: palette.gold }} />
                     </div>
 
-                    <p className="text-white/90 text-lg mb-9 leading-relaxed">
-                        A Premium Resort, Villa &amp; Plot Destination Near{" "}
-                        <span style={{ color: palette.goldSoft }}>Jim Corbett</span>
+                    <p className="text-white text-lg mb-9 leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                        A Premium Resort, Findimming &amp; Destination Near{" "}
+                        <span
+                            style={{
+                                color: palette.goldSoft,
+                                textShadow: "0 2px 6px rgba(0,0,0,0.8)",
+                            }}
+                        >
+                            Jim Corbett
+                        </span>
                     </p>
-
                     <div className="flex flex-wrap gap-4">
-                        <a
-                            href="#explore"
+                        <Link
+                            to="/resort"
                             className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-sm"
                             style={{ backgroundColor: palette.goldSoft, color: palette.charcoal }}
                         >
                             <Rocket size={16} />
                             Explore Project
-                        </a>
-
-
+                        </Link>
                     </div>
                 </div>
 

@@ -41,8 +41,8 @@ const reasons = [
     },
     {
         icon: Hourglass,
-        title: "Limited",
-        titleLine2: "Inventory",
+        title: "Prime ",
+        titleLine2: "Opportunities",
         desc: "Premium villas and plots with limited availability for long-term value.",
         video: "https://www.pexels.com/download/video/37957950/", // aerial view of coastal luxury villas
     },

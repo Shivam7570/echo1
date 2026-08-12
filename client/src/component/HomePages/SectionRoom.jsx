@@ -16,24 +16,24 @@ const roomsData = [
   {
     id: 1,
     title: 'Deluxe',
-    type: 'Luxury Room',
+    type: 'With Jacuzzi',
     price: '7,000',
     image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=800',
     specs: [
       { icon: <Maximize2 className="w-3.5 h-3.5" />, text: '600 sq. ft.' },
-      { icon: <Bed className="w-3.5 h-3.5" />, text: '1 King Bed' },
+      
       { icon: <Mountain className="w-3.5 h-3.5" />, text: 'Mountain view' }
     ]
   },
   {
     id: 2,
     title: 'Premium',
-    type: 'Luxury Room',
+    type: 'With Jacuzzi',
     price: '7,500',
     image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800',
     specs: [
       { icon: <Maximize2 className="w-3.5 h-3.5" />, text: '750 sq. ft.' },
-      { icon: <Bed className="w-3.5 h-3.5" />, text: '1 King Bed' },
+     
       { icon: <Trees className="w-3.5 h-3.5" />, text: 'Mountain & Jim Corbett Forest View' }
     ]
   },
@@ -45,8 +45,7 @@ const roomsData = [
     image: 'https://plus.unsplash.com/premium_photo-1661923086373-73176f7c004a?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     specs: [
       { icon: <Trees className="w-3.5 h-3.5" />, text: 'Garden & Mountain View' },
-      { icon: <Bed className="w-3.5 h-3.5" />, text: '1 King Size Bed & 1 Single Bed' },
-      { icon: <Sparkles className="w-3.5 h-3.5" />, text: 'Jacuzzi' }
+       { icon: <Sparkles className="w-3.5 h-3.5" />, text: 'Jacuzzi' }
     ]
   },
   {
@@ -127,7 +126,7 @@ export default function SectionRoom() {
         {visibleRooms.map((room, index) => (
           <div
             key={`${room.id}-${index}`}
-            onClick={() => navigate('/resort-listings')}
+            onClick={() => navigate('/ResortListingsings')}
             className="relative rounded-xl overflow-hidden h-[350px] group border border-stone-800/80 hover:border-[#C5A059]/50 transition duration-500 shadow-2xl flex flex-col justify-end cursor-pointer"
           >
             {/* Background Image */}

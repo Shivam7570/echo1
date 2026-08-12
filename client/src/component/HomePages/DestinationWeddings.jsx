@@ -16,7 +16,8 @@ import {
     Heart,
     GlassWater,
     Cake,
-    CircleDot
+    CircleDot,
+    Mail
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -213,18 +214,27 @@ export default function DestinationWeddings() {
                         <h4 className="text-[10px] tracking-widest text-amber-400 uppercase font-semibold mb-3">
                             PLAN YOUR DREAM WEDDING
                         </h4>
+                        <button
+                            onClick={handlePlanWedding}
+                            className="bg-amber-600 hover:bg-amber-700 text-white px-11 py-2 rounded text-sm flex items-center gap-2 cursor-pointer mb-3"
+                        >
+                            Plan Your Wedding <span>→</span>
+                        </button>
+
                         <div className="space-y-2 text-xs text-slate-300">
                             <div className="flex items-center space-x-2">
                                 <Phone className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
-                                <span className="text-[11px]">+91 12345 67890</span>
+                                <span className="text-[11px]">+91 9217579077</span>
                             </div>
+
                             <div className="flex items-center space-x-2">
-                                <Globe className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
-                                <span className="text-[11px]">www.echothejungle.com</span>
+                                <Mail className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+                                <span className="text-[11px]">your-email@gmail.com</span>
                             </div>
+
                             <div className="flex items-center space-x-2">
                                 <MapPin className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
-                                <span className="text-[11px]">Near Jim Corbett National Park, Uttarakhand</span>
+                                <span className="text-[11px]">Gurudwara Road, Village Narainwala, Dhampur District Bijnor, Uttar Pradesh, 246735.</span>
                             </div>
                         </div>
                     </div>
