@@ -7,15 +7,8 @@ const {
   updateEnquiry,
   deleteEnquiry,
 } = require("../controllers/enquiryController");
-const { protect, authorize } = require("../middleware/authMiddleware");
 
-// Public - anyone submitting the contact/enquiry form or chat widget
-router.post("/", createEnquiry);
-
-// Admin only
-router.get("/", protect, authorize("admin", "editor"), getEnquiries);
-router.get("/:id", protect, authorize("admin", "editor"), getEnquiryById);
-router.put("/:id", protect, authorize("admin", "editor"), updateEnquiry);
-router.delete("/:id", protect, authorize("admin"), deleteEnquiry);
+router.route("/").post(createEnquiry).get(getEnquiries);
+router.route("/:id").get(getEnquiryById).put(updateEnquiry).delete(deleteEnquiry);
 
 module.exports = router;

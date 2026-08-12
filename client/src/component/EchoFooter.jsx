@@ -47,7 +47,7 @@ export default function EchoFooter() {
                         {/* Logo */}
                         <div className="pt-2">
                             <div className="flex items-center space-x-2">
-                                <span className="text-[#C5A253] text-xl"><img className='h-22 w-23' src={logo} alt="" /></span>
+                                <span className="text-[#C5A253] text-xl"><img className='h-38 w-51' src={logo} alt="" /></span>
                             </div>
                             <p className="text-[9px] text-[#C5A253] tracking-widest uppercase mt-0.5">
 

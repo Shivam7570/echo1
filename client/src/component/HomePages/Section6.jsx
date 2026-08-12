@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { submitEnquiry } from '../../lib/api';
+import { submitSiteVisit } from '../../lib/api';
 import {
     User,
     Phone,
@@ -43,15 +43,13 @@ export default function Section6() {
         e.preventDefault();
         setStatus({ loading: true, error: '' });
         try {
-            await submitEnquiry({
+            await submitSiteVisit({
                 name: formData.fullName,
                 phone: formData.mobileNumber,
                 email: formData.emailAddress,
                 city: formData.city,
-                visitDate: formData.visitDate,
-                visitTime: formData.visitTime,
                 message: formData.message,
-                source: 'home'
+                source: 'home-site-visit'
             });
             setStatus({ loading: false, error: '' });
             setSubmitted(true);
@@ -274,23 +272,7 @@ export default function Section6() {
                                         </div>
                                     </div>
 
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                        <div>
-                                            <label className="block text-slate-700 font-medium mb-1">
-                                                Preferred Date
-                                            </label>
-                                            <div className="relative">
-                                                <input
-                                                    type="date"
-                                                    name="visitDate"
-                                                    value={formData.visitDate}
-                                                    onChange={handleChange}
-                                                    className="w-full bg-[#F4F1EA] text-slate-800 rounded-md py-2 pr-8 pl-3 border border-stone-200 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-slate-400"
-                                                />
-                                                <Calendar className="absolute right-2.5 top-2.5 text-slate-400 w-3.5 h-3.5 pointer-events-none" />
-                                            </div>
-                                        </div>
-                                    </div>
+
 
                                     <div>
                                         <label className="block text-slate-700 font-medium mb-1">

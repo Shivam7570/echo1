@@ -25,7 +25,7 @@ export const FeaturesAndInvestment = () => {
                             </div>
                         </div>
                         <img
-                            src="https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop"
+                            src="https://images.pexels.com/photos/2476632/pexels-photo-2476632.jpeg"
                             alt="Sanctuary"
                             className="rounded-lg h-48 w-full object-cover"
                         />

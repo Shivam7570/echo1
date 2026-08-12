@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import { X, User, Mail, Phone, MapPin, Calendar, Clock, Building2, Send, Sparkles } from 'lucide-react';
-import { submitEnquiry } from '../../lib/api';
+import { X, User, Mail, Phone, MapPin, Building2, Send, Sparkles } from 'lucide-react';
+import { submitSiteVisit } from '../../lib/api';
 
-export default function ScheduleVisitModal({ isOpen, onClose, defaultProperty = 'Villas' }) {
+export default function ScheduleVisitModal({ isOpen, onClose, defaultProperty = 'Lily Haven Villas' }) {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
         city: '',
-        visitDate: '',
-        visitTime: 'Morning (10 AM - 1 PM)',
         propertyType: defaultProperty,
         message: ''
     });
@@ -28,14 +26,12 @@ export default function ScheduleVisitModal({ isOpen, onClose, defaultProperty = 
         e.preventDefault();
         setIsSubmitting(true);
         try {
-            await submitEnquiry({
+            await submitSiteVisit({
                 name: formData.name,
                 email: formData.email,
                 phone: formData.phone,
                 city: formData.city,
-                visitDate: formData.visitDate,
-                visitTime: formData.visitTime,
-                villaName: formData.propertyType,
+                propertyType: formData.propertyType,
                 message: formData.message || `Site visit requested for ${formData.propertyType}`,
                 source: 'site-visit-modal'
             });
@@ -48,8 +44,6 @@ export default function ScheduleVisitModal({ isOpen, onClose, defaultProperty = 
                     email: '',
                     phone: '',
                     city: '',
-                    visitDate: '',
-                    visitTime: 'Morning (10 AM - 1 PM)',
                     propertyType: defaultProperty,
                     message: ''
                 });
@@ -68,7 +62,7 @@ export default function ScheduleVisitModal({ isOpen, onClose, defaultProperty = 
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 text-stone-400 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors"
+                    className="absolute top-4 right-4 text-stone-400 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors cursor-pointer"
                     aria-label="Close"
                 >
                     <X className="w-5 h-5" />
@@ -140,7 +134,7 @@ export default function ScheduleVisitModal({ isOpen, onClose, defaultProperty = 
                             </div>
                             <div>
                                 <label className="block text-[11px] uppercase tracking-wider text-[#C6A15B] mb-1 font-semibold">
-                                    Email Address
+                                    Email Address *
                                 </label>
                                 <div className="relative">
                                     <Mail className="w-4 h-4 absolute left-3 top-3 text-stone-400" />
@@ -149,6 +143,7 @@ export default function ScheduleVisitModal({ isOpen, onClose, defaultProperty = 
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
+                                        required
                                         placeholder="name@example.com"
                                         className="w-full bg-[#05110B] border border-stone-800 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-200 focus:outline-none focus:border-[#C6A15B] transition"
                                     />
@@ -176,7 +171,7 @@ export default function ScheduleVisitModal({ isOpen, onClose, defaultProperty = 
                             </div>
                             <div>
                                 <label className="block text-[11px] uppercase tracking-wider text-[#C6A15B] mb-1 font-semibold">
-                                    Interest / Project
+                                    Interested Villa / Resort
                                 </label>
                                 <div className="relative">
                                     <Building2 className="w-4 h-4 absolute left-3 top-3 text-stone-400" />
@@ -186,48 +181,19 @@ export default function ScheduleVisitModal({ isOpen, onClose, defaultProperty = 
                                         onChange={handleChange}
                                         className="w-full bg-[#05110B] border border-stone-800 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-200 focus:outline-none focus:border-[#C6A15B] transition appearance-none"
                                     >
-                                        <option value="Luxury Villas">Luxury Villas</option>
-                                        <option value="Jungle Resort">Jungle Resort</option>
-                                        <option value="Master Plan Plot">Master Plan Plot</option>
-                                        <option value="Destination Wedding">Destination Wedding</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Visit Date & Preferred Time */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div>
-                                <label className="block text-[11px] uppercase tracking-wider text-[#C6A15B] mb-1 font-semibold">
-                                    Preferred Date *
-                                </label>
-                                <div className="relative">
-                                    <Calendar className="w-4 h-4 absolute left-3 top-3 text-stone-400" />
-                                    <input
-                                        type="date"
-                                        name="visitDate"
-                                        required
-                                        value={formData.visitDate}
-                                        onChange={handleChange}
-                                        className="w-full bg-[#05110B] border border-stone-800 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-200 focus:outline-none focus:border-[#C6A15B] transition [color-scheme:dark]"
-                                    />
-                                </div>
-                            </div>
-                            <div>
-                                <label className="block text-[11px] uppercase tracking-wider text-[#C6A15B] mb-1 font-semibold">
-                                    Preferred Slot
-                                </label>
-                                <div className="relative">
-                                    <Clock className="w-4 h-4 absolute left-3 top-3 text-stone-400" />
-                                    <select
-                                        name="visitTime"
-                                        value={formData.visitTime}
-                                        onChange={handleChange}
-                                        className="w-full bg-[#05110B] border border-stone-800 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-200 focus:outline-none focus:border-[#C6A15B] transition appearance-none"
-                                    >
-                                        <option value="Morning (10 AM - 1 PM)">Morning (10 AM - 1 PM)</option>
-                                        <option value="Afternoon (1 PM - 4 PM)">Afternoon (1 PM - 4 PM)</option>
-                                        <option value="Evening (4 PM - 7 PM)">Evening (4 PM - 7 PM)</option>
+                                        <optgroup label="Luxury Villas">
+                                            <option value="Lily Haven Villas">Lily Haven Villas</option>
+                                            <option value="Azalea Retreat Villas">Azalea Retreat Villas</option>
+                                            <option value="Lotus Signature Villas">Lotus Signature Villas</option>
+                                            <option value="Orchid Grand Villas">Orchid Grand Villas</option>
+                                        </optgroup>
+                                        <optgroup label="Resort Types">
+                                            <option value="Deer Meadow Suites">Deer Meadow Suites</option>
+                                            <option value="Gazelle Retreat">Gazelle Retreat</option>
+                                            <option value="Leopard Crest Suites">Leopard Crest Suites</option>
+                                            <option value="Tusker Havens">Tusker Havens</option>
+                                            <option value="Tiger Apex Pavilions">Tiger Apex Pavilions</option>
+                                        </optgroup>
                                     </select>
                                 </div>
                             </div>

@@ -196,7 +196,6 @@ export default function ContactHero() {
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <div className="relative">
                                         <Building2 className="w-4 h-4 absolute left-3 top-3 text-[#D4A359]" />
                                         <select
@@ -206,23 +205,13 @@ export default function ContactHero() {
                                             className="w-full bg-stone-900/80 border border-stone-700/80 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-300 focus:outline-none focus:border-[#D4A359] appearance-none"
                                         >
                                             <option value="">Resort Type</option>
-                                            <option value="Type 1">Resort Type 1</option>
-                                            <option value="Type 2">Resort Type 2</option>
-                                            <option value="Type 3">Resort Type 3</option>
+                                            <option value="Deer Meadow Suites">Deer Meadow Suites</option>
+                                            <option value="Gazelle Retreat">Gazelle Retreat</option>
+                                            <option value="Leopard Crest Suites">Leopard Crest Suites</option>
+                                            <option value="Tusker Havens">Tusker Havens</option>
+                                            <option value="Tiger Apex Pavilions">Tiger Apex Pavilions</option>
                                         </select>
                                     </div>
-
-                                    <div className="relative">
-                                        <Calendar className="w-4 h-4 absolute left-3 top-3 text-[#D4A359]" />
-                                        <input
-                                            type="date"
-                                            name="preferredDate"
-                                            value={formData.preferredDate}
-                                            onChange={handleInputChange}
-                                            className="w-full bg-stone-900/80 border border-stone-700/80 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-300 focus:outline-none focus:border-[#D4A359]"
-                                        />
-                                    </div>
-                                </div>
 
                                 <button
                                     type="submit"
@@ -328,32 +317,21 @@ export default function ContactHero() {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <div className="relative">
-                                    <Building2 className="w-4 h-4 absolute left-3 top-3 text-[#D4A359]" />
-                                    <select
-                                        name="resortType"
-                                        value={formData.resortType}
-                                        onChange={handleInputChange}
-                                        className="w-full bg-stone-900/80 border border-stone-700/80 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-300 focus:outline-none focus:border-[#D4A359] appearance-none"
-                                    >
-                                        <option value="">Select Resort Type</option>
-                                        <option value="Type 1">Resort Type 1</option>
-                                        <option value="Type 2">Resort Type 2</option>
-                                        <option value="Type 3">Resort Type 3</option>
-                                    </select>
-                                </div>
-
-                                <div className="relative">
-                                    <Calendar className="w-4 h-4 absolute left-3 top-3 text-[#D4A359]" />
-                                    <input
-                                        type="date"
-                                        name="preferredDate"
-                                        value={formData.preferredDate}
-                                        onChange={handleInputChange}
-                                        className="w-full bg-stone-900/80 border border-stone-700/80 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-300 focus:outline-none focus:border-[#D4A359]"
-                                    />
-                                </div>
+                            <div className="relative">
+                                <Building2 className="w-4 h-4 absolute left-3 top-3 text-[#D4A359]" />
+                                <select
+                                    name="resortType"
+                                    value={formData.resortType}
+                                    onChange={handleInputChange}
+                                    className="w-full bg-stone-900/80 border border-stone-700/80 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-300 focus:outline-none focus:border-[#D4A359] appearance-none"
+                                >
+                                    <option value="">Select Resort Type</option>
+                                    <option value="Deer Meadow Suites">Deer Meadow Suites</option>
+                                    <option value="Gazelle Retreat">Gazelle Retreat</option>
+                                    <option value="Leopard Crest Suites">Leopard Crest Suites</option>
+                                    <option value="Tusker Havens">Tusker Havens</option>
+                                    <option value="Tiger Apex Pavilions">Tiger Apex Pavilions</option>
+                                </select>
                             </div>
 
                             <button

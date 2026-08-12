@@ -75,17 +75,17 @@ export default function VillaComparisonSection() {
         {
             name: 'Lily Haven Villas',
             subtitle: '',
-            image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=600',
+            image: 'https://images.pexels.com/photos/14658637/pexels-photo-14658637.jpeg',
         },
         {
             name: 'Azalea Restreat Villas',
             subtitle: '',
-            image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=600',
+            image: 'https://images.pexels.com/photos/24807128/pexels-photo-24807128.jpeg',
         },
         {
             name: 'Lotus Signature Villas',
             subtitle: '',
-            image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600',
+            image: 'https://images.pexels.com/photos/15531226/pexels-photo-15531226.jpeg',
         },
         {
             name: 'Orchid Grand Villas',
@@ -111,8 +111,9 @@ export default function VillaComparisonSection() {
         {
             icon: <Sun className="w-4 h-4 text-[#1C3026]" />,
             label: 'Private Terrace / Deck',
-            values: ['✕', 'check', 'check', 'check'],
+            values: ['check', 'check', 'check', 'check'],
         },
+
 
         {
             icon: <Building2 className="w-4 h-4 text-[#1C3026]" />,
@@ -316,10 +317,10 @@ export default function VillaComparisonSection() {
                                         <Home className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
                                         <select name="villaType" value={formData.villaType} onChange={handleChange} className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
                                             <option value="">Interested Villa Type</option>
-                                            <option value="type1">Villa Type 1 (Garden Villa)</option>
-                                            <option value="type2">Villa Type 2 (Duplex Villa)</option>
-                                            <option value="type3">Villa Type 3 (Pool Villa)</option>
-                                            <option value="type4">Villa Type 4 (Luxury Estate)</option>
+                                            <option value="Lily Haven Villas">Lily Haven Villas (126 sq. yrd.)</option>
+                                            <option value="Azalea Retreat Villas">Azalea Retreat Villas (145 sq. yrd.)</option>
+                                            <option value="Lotus Signature Villas">Lotus Signature Villas (188 sq. yrd.)</option>
+                                            <option value="Orchid Grand Villas">Orchid Grand Villas (240 sq. yrd.)</option>
                                         </select>
                                         <ChevronDown className="w-4 h-4 absolute right-3 top-2.5 text-slate-500 pointer-events-none" />
                                     </div>

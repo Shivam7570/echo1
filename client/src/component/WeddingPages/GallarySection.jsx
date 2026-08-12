@@ -194,17 +194,7 @@ export const GalleryAndPackagesSection = () => {
                                     className="w-full px-3 py-2 rounded bg-[#06150E] border border-amber-500/30 text-white text-xs focus:outline-none focus:border-amber-400"
                                 />
                             </div>
-                            <div>
-                                <label className="block text-xs text-amber-300/90 mb-1">Tentative Date</label>
-                                <input
-                                    type="date"
-                                    name="date"
-                                    value={formData.date}
-                                    onChange={handleFormChange}
-                                    required
-                                    className="w-full px-3 py-2 rounded bg-[#06150E] border border-amber-500/30 text-slate-200 text-xs focus:outline-none focus:border-amber-400"
-                                />
-                            </div>
+
                             <div>
                                 <label className="block text-xs text-amber-300/90 mb-1">Message / Requirements</label>
                                 <textarea

@@ -14,6 +14,7 @@ const enquiryRoutes = require("./routes/enquiryRoutes");
 const propertyRoutes = require("./routes/propertyRoutes");
 const resortEnquiryRoutes = require("./routes/resortEnquiryRoutes");
 const villaEnquiryRoutes = require("./routes/villaEnquiryRoutes");
+const siteVisitRoutes = require("./routes/siteVisitRoutes");
 
 const app = express();
 
@@ -22,11 +23,9 @@ const app = express();
 // CORE MIDDLEWARE
 // --------------------------------------------------
 
-
-
-// Enable CORS for all routes (or restrict it to your domain)
+// Enable CORS for frontend and admin panel
 app.use(cors({
-  origin: ['https://echothejungle.com', 'https://www.echothejungle.com'],
+  origin: true,
   credentials: true
 }));
 
@@ -45,7 +44,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const enquiryLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 20,
+  max: 100,
   message: {
     success: false,
     message: "Too many requests, please try again later.",
@@ -55,6 +54,7 @@ const enquiryLimiter = rateLimit({
 app.use("/api/enquiries", enquiryLimiter);
 app.use("/api/resorts", enquiryLimiter);
 app.use("/api/villas", enquiryLimiter);
+app.use("/api/site-visits", enquiryLimiter);
 
 
 // --------------------------------------------------
@@ -83,13 +83,12 @@ app.use("/api/resorts", resortEnquiryRoutes);
 
 app.use("/api/villas", villaEnquiryRoutes);
 
+app.use("/api/site-visits", siteVisitRoutes);
+
 
 // --------------------------------------------------
 // API-ONLY 404 HANDLER
 // --------------------------------------------------
-// This server only serves /api/* routes.
-// Frontend (React/Vite) is deployed separately on echothejungle.com,
-// so there's no client/dist here to fall back to.
 
 app.use((req, res, next) => {
   res.status(404).json({

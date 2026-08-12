@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Utensils, Camera, Flower2, Home, X } from 'lucide-react';
-import { submitResortEnquiry } from '../../lib/api';
+import { submitSiteVisit } from '../../lib/api';
 import resoprtHero from "../../assets/ResortHero.png";
 
 export default function RSection() {
@@ -9,7 +9,6 @@ export default function RSection() {
         name: '',
         email: '',
         phone: '',
-        preferredDate: '',
     });
 
     const handleInputChange = (e) => {
@@ -20,16 +19,16 @@ export default function RSection() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await submitResortEnquiry({
+            await submitSiteVisit({
                 name: formData.name,
                 email: formData.email,
                 phone: formData.phone,
-                message: `Preferred Visit Date: ${formData.preferredDate}`,
+                propertyType: 'Resort Site Visit',
                 source: 'resort-site-visit'
             });
             alert("Thank you! Your site visit request has been received.");
             setIsModalOpen(false);
-            setFormData({ name: '', email: '', phone: '', preferredDate: '' });
+            setFormData({ name: '', email: '', phone: '' });
         } catch (err) {
             alert('Error: ' + (err.message || 'Failed to submit booking.'));
         }
@@ -147,7 +146,7 @@ export default function RSection() {
                         {/* Close Button */}
                         <button
                             onClick={() => setIsModalOpen(false)}
-                            className="absolute top-4 right-4 text-stone-400 hover:text-white transition"
+                            className="absolute top-4 right-4 text-stone-400 hover:text-white transition cursor-pointer"
                             aria-label="Close modal"
                         >
                             <X className="w-5 h-5" />
@@ -167,7 +166,7 @@ export default function RSection() {
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
                                 <label className="block text-xs uppercase tracking-wider text-amber-100/80 mb-1">
-                                    Full Name
+                                    Full Name *
                                 </label>
                                 <input
                                     type="text"
@@ -182,7 +181,7 @@ export default function RSection() {
 
                             <div>
                                 <label className="block text-xs uppercase tracking-wider text-amber-100/80 mb-1">
-                                    Email Address
+                                    Email Address *
                                 </label>
                                 <input
                                     type="email"
@@ -197,7 +196,7 @@ export default function RSection() {
 
                             <div>
                                 <label className="block text-xs uppercase tracking-wider text-amber-100/80 mb-1">
-                                    Phone Number
+                                    Phone Number *
                                 </label>
                                 <input
                                     type="tel"
@@ -207,20 +206,6 @@ export default function RSection() {
                                     onChange={handleInputChange}
                                     placeholder="+91 00000 00000"
                                     className="w-full bg-[#040804] border border-stone-800 rounded px-3 py-2 text-sm text-stone-200 focus:outline-none focus:border-[#c29b4b] transition"
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-xs uppercase tracking-wider text-amber-100/80 mb-1">
-                                    Preferred Visit Date
-                                </label>
-                                <input
-                                    type="date"
-                                    name="preferredDate"
-                                    required
-                                    value={formData.preferredDate}
-                                    onChange={handleInputChange}
-                                    className="w-full bg-[#040804] border border-stone-800 rounded px-3 py-2 text-sm text-stone-200 focus:outline-none focus:border-[#c29b4b] transition [color-scheme:dark]"
                                 />
                             </div>
 

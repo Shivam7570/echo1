@@ -21,7 +21,6 @@ const roomsData = [
     image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=800',
     specs: [
       { icon: <Maximize2 className="w-3.5 h-3.5" />, text: '600 sq. ft.' },
-      
       { icon: <Mountain className="w-3.5 h-3.5" />, text: 'Mountain view' }
     ]
   },
@@ -33,19 +32,18 @@ const roomsData = [
     image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800',
     specs: [
       { icon: <Maximize2 className="w-3.5 h-3.5" />, text: '750 sq. ft.' },
-     
       { icon: <Trees className="w-3.5 h-3.5" />, text: 'Mountain & Jim Corbett Forest View' }
     ]
   },
   {
     id: 3,
-    title: 'Premium Luxury Room',
+    title: 'Ultra Premium Luxury Room',
     type: 'With Jacuzzi',
     price: '8,000',
     image: 'https://plus.unsplash.com/premium_photo-1661923086373-73176f7c004a?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     specs: [
       { icon: <Trees className="w-3.5 h-3.5" />, text: 'Garden & Mountain View' },
-       { icon: <Sparkles className="w-3.5 h-3.5" />, text: 'Jacuzzi' }
+      { icon: <Sparkles className="w-3.5 h-3.5" />, text: 'Jacuzzi' }
     ]
   },
   {
@@ -54,7 +52,7 @@ const roomsData = [
     type: 'With Private Pool',
     price: '12,000',
     badge: 'MOST LOVED',
-    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=800',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4HXDVEnr_2GT8VmG1l4h8gegOATnRUId-zwxm_K6Bxg&s=10',
     specs: [
       { icon: <Maximize2 className="w-3.5 h-3.5" />, text: '850 sq. ft.' },
       { icon: <Mountain className="w-3.5 h-3.5" />, text: 'Mountain/Hill View' }
@@ -161,16 +159,6 @@ export default function SectionRoom() {
                 <span className="text-xl font-bold text-[#D4A359]">₹{room.price}</span>
                 <span className="text-xs font-sans text-stone-400"> / Night</span>
               </div>
-
-              {/* Specifications */}
-              <div className="border-t border-stone-700/50 pt-3 space-y-2">
-                {room.specs.map((spec, specIdx) => (
-                  <div key={specIdx} className="flex items-center gap-2 text-xs text-stone-300">
-                    <span className="text-[#C5A059]">{spec.icon}</span>
-                    <span className="truncate">{spec.text}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         ))}
@@ -192,6 +180,22 @@ export default function SectionRoom() {
             1
           </span>
         </div>
+      </div>
+
+      {/* Responsive Resort & Villa Buttons Bar */}
+      <div className="max-w-5xl mx-auto mt-0 flex flex-col sm:flex-row justify-around items-center w-full gap-4 bg-[#12201C] p-4 rounded-xl border border-stone-800">
+        <button
+          onClick={() => navigate('/resort')}
+          className="w-full sm:w-auto px-8 py-3 text-xs font-semibold tracking-widest uppercase rounded-lg border border-[#C5A059]/60 text-[#C5A059] hover:bg-[#C5A059] hover:text-[#0B1512] transition duration-300 text-center cursor-pointer shadow-md"
+        >
+          Resort
+        </button>
+        <button
+          onClick={() => navigate('/villa')}
+          className="w-full sm:w-auto px-8 py-3 text-xs font-semibold tracking-widest uppercase rounded-lg border border-[#C5A059]/60 text-[#C5A059] hover:bg-[#C5A059] hover:text-[#0B1512] transition duration-300 text-center cursor-pointer shadow-md"
+        >
+          Villa
+        </button>
       </div>
 
     </div>

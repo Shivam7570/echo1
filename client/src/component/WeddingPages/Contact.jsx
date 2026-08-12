@@ -49,7 +49,7 @@ export const ContactAndFooterSection = () => {
                             <input name="groomName" value={form.groomName} onChange={handleChange} placeholder="Groom Name" className="border rounded px-4 py-2 text-sm col-span-1" />
                             <input name="phone" value={form.phone} onChange={handleChange} placeholder="Phone Number" className="border rounded px-4 py-2 text-sm col-span-1" />
                             <input name="email" value={form.email} onChange={handleChange} placeholder="Email Address" className="border rounded px-4 py-2 text-sm col-span-1" />
-                            <input type="date" name="weddingDate" value={form.weddingDate} onChange={handleChange} className="border rounded px-4 py-2 text-sm col-span-1" />
+
                             <input name="guests" value={form.guests} onChange={handleChange} placeholder="Number of Guests" className="border rounded px-4 py-2 text-sm col-span-1" />
                             <select name="package" value={form.package} onChange={handleChange} className="border rounded px-4 py-2 text-sm col-span-1">
                                 <option value="">Select Package</option>

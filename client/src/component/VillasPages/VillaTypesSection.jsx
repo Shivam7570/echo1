@@ -14,7 +14,7 @@ export default function VillaTypesSection() {
         {
             id: 1,
             badge: 'Lily Haven Villas',
-            heroImage: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=600',
+            heroImage: 'https://images.pexels.com/photos/14658637/pexels-photo-14658637.jpeg',
             layoutImage: resort1Layout1,
             area: '126 sq. yrd.',
             villaSizeRange: 'Customizable build options'
@@ -22,7 +22,7 @@ export default function VillaTypesSection() {
         {
             id: 2,
             badge: 'Azalea Retreat Villas',
-            heroImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600',
+            heroImage: 'https://images.pexels.com/photos/24807128/pexels-photo-24807128.jpeg',
             layoutImage: resort1Layout2,
             area: '145 sq. yrd.',
             villaSizeRange: 'Customizable build options'
@@ -30,7 +30,7 @@ export default function VillaTypesSection() {
         {
             id: 3,
             badge: 'Lotus Signature Villas',
-            heroImage: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=600',
+            heroImage: 'https://images.pexels.com/photos/15531226/pexels-photo-15531226.jpeg',
             layoutImage: resort1Layout3,
             area: '188 sq. yrd.',
             villaSizeRange: 'Customizable build options'

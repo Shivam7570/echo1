@@ -93,19 +93,19 @@ export default function RSection3() {
         },
         {
             name: 'Gazelle Retreat',
-            image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=600',
+            image: 'https://images.pexels.com/photos/28586227/pexels-photo-28586227.jpeg',
         },
         {
             name: 'Leopard Crest Suites',
-            image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600',
+            image: 'https://images.pexels.com/photos/35069534/pexels-photo-35069534.jpeg',
         },
         {
             name: 'Tusker Havens',
-            image: 'https://plus.unsplash.com/premium_photo-1675745329634-8c187fa18c00?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3wyfHx8ZW58MHx8fHx8',
+            image: 'https://images.pexels.com/photos/34277699/pexels-photo-34277699.jpeg',
         },
         {
             name: 'Tiger Apex Pavilions',
-            image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=600',
+            image: 'https://images.pexels.com/photos/8082328/pexels-photo-8082328.jpeg',
         },
     ];
 
@@ -154,15 +154,11 @@ export default function RSection3() {
         },
         {
             icon: <Waves className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Plunge Pool',
-            values: ['✕', '✕', 'pool', 'jacuzzi', 'pool'],
+            label: 'Plunge Pool/ Pool',
+            values: ['❌', '❌', 'Pool', 'Jacuzzi', 'Pool'],
         },
 
-        {
-            icon: <Dumbbell className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Sports / Recreation',
-            values: ['✕', '✕', 'check', 'Jogging Track', 'Multi-Sports Area'],
-        },
+       
         {
             icon: <ShieldCheck className="w-4 h-4 text-[#1C3026]" />,
             label: 'Security',
@@ -294,157 +290,153 @@ export default function RSection3() {
                 </div>
 
                 {/* Enquiry Section Box */}
-                <div className="bg-[#FAF7F2] rounded-2xl border border-stone-300 p-4 md:p-6 shadow-sm">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            <div className="bg-[#FAF7F2] rounded-2xl border border-stone-300 p-4 md:p-6 shadow-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
 
-                        {/* Left Header & Image Banner */}
-                        <div className="lg:col-span-4 space-y-4 text-center">
-                            <div>
-                                <h2 className="text-2xl font-serif text-[#1C3026] font-bold tracking-wider uppercase">
-                                    RESORT ENQUIRY
-                                </h2>
-                                <p className="text-xs text-slate-600 font-medium mt-1">
-                                    We'll Get In Touch With You
-                                </p>
-                            </div>
-
-                            <div
-                                className="h-100 rounded-xl overflow-hidden border border-stone-300 shadow-xs cursor-pointer hover:opacity-95 transition-opacity"
-                                onClick={() => setSelectedImage("https://www.echothejungle.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-3-2026-11_42_04-PM.png")}
-                                title="Click to view full image"
-                            >
-                                <img
-                                    src={welcome}
-                                    alt="Resort Deck View"
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Center Form */}
-                        <div className="lg:col-span-5 space-y-3">
-                            <form onSubmit={handleSubmit} className="space-y-2.5">
-
-                                {/* Inputs Grid */}
-                                <div className="grid grid-cols-1 gap-2.5">
-                                    <div className="relative">
-                                        <User className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <input
-                                            type="text"
-                                            placeholder="Full Name"
-                                            name="fullName"
-                                            value={formData.fullName}
-                                            onChange={handleChange}
-                                            required
-                                            className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-[#1C3026]"
-                                        />
-                                    </div>
-
-                                    <div className="relative">
-                                        <Mail className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <input
-                                            type="email"
-                                            placeholder="Email Address"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-[#1C3026]"
-                                        />
-                                    </div>
-
-                                    <div className="relative">
-                                        <Phone className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <input
-                                            type="tel"
-                                            placeholder="Phone Number"
-                                            name="phone"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            required
-                                            className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-[#1C3026]"
-                                        />
-                                    </div>
-
-
-
-                                    <div className="relative">
-                                        <Home className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <select name="resortType" value={formData.resortType} onChange={handleChange} className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
-                                            <option value="">Interested Resort Type</option>
-                                            <option value="type1">Resort Type 1</option>
-                                            <option value="type2">Resort Type 2</option>
-                                            <option value="type3">Resort Type 3</option>
-                                            <option value="type4">Resort Type 4</option>
-                                            <option value="type5">Resort Type 5</option>
-                                        </select>
-                                        <ChevronDown className="w-4 h-4 absolute right-3 top-2.5 text-slate-500 pointer-events-none" />
-                                    </div>
-
-
-
-                                    <div className="relative">
-                                        <Building2 className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <select name="purpose" value={formData.purpose} onChange={handleChange} className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
-                                            <option value="">Purpose of Investment</option>
-                                            <option value="rental">Rental Returns</option>
-                                            <option value="personal">Personal Holiday Home</option>
-                                            <option value="both">Both</option>
-                                        </select>
-                                        <ChevronDown className="w-4 h-4 absolute right-3 top-2.5 text-slate-500 pointer-events-none" />
-                                    </div>
-
-                                    <div>
-                                        <textarea
-                                            rows={2}
-                                            placeholder="Your Message / Requirements"
-                                            name="message"
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg p-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#1C3026] resize-none"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Submit Button */}
-                                <div className="pt-2 text-center">
-                                    <button
-                                        type="submit"
-                                        className="bg-[#1C3026] hover:bg-[#14231b] text-white font-medium text-xs py-2.5 px-8 rounded-full inline-flex items-center space-x-2 transition-colors shadow-sm"
-                                    >
-                                        <span>SUBMIT ENQUIRY</span>
-                                        <ArrowRight className="w-3.5 h-3.5 text-amber-400" />
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-
-                        {/* Right Feature Cards */}
-                        <div className="lg:col-span-3 bg-[#F3EEE5]/80 rounded-xl p-4 border border-stone-300/70 space-y-4">
-                            {highlights.map((item, idx) => (
-                                <div key={idx} className="flex items-start space-x-3">
-                                    <div className="p-2 bg-[#FAF7F2] rounded-lg border border-stone-300/80 shadow-2xs flex-shrink-0">
-                                        {item.icon}
-                                    </div>
-                                    <div>
-                                        <h4 className="text-xs font-bold text-[#1C3026] leading-snug">
-                                            {item.title}
-                                        </h4>
-                                        <p className="text-[10px] text-slate-600 leading-tight">
-                                            {item.desc}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
-                            <button
-                                onClick={handleResortListingsings}
-                                className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded text-sm flex items-center gap-2 cursor-pointer w-full justify-center"
-                            >
-                                Our Resorts <span>→</span>
-                            </button>
-                        </div>
-
-                    </div>
+            {/* Left Header & Image Banner */}
+            <div className="lg:col-span-4 space-y-4 flex flex-col items-center text-center">
+                <div>
+                    <h2 className="text-2xl font-serif text-[#1C3026] font-bold tracking-wider uppercase">
+                        RESORT ENQUIRY
+                    </h2>
+                    <p className="text-xs text-slate-600 font-medium mt-1">
+                        We'll Get In Touch With You
+                    </p>
                 </div>
+
+                <div
+                    className="w-full max-w-sm h-100 rounded-xl overflow-hidden border border-stone-300 shadow-xs cursor-pointer hover:opacity-95 transition-opacity"
+                    onClick={() => setSelectedImage("https://www.echothejungle.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-3-2026-11_42_04-PM.png")}
+                    title="Click to view full image"
+                >
+                    <img
+                        src={welcome}
+                        alt="Resort Deck View"
+                        className="w-full h-full object-cover"
+                    />
+                </div>
+            </div>
+
+            {/* Center Form */}
+            <div className="lg:col-span-5 space-y-3 flex flex-col items-center">
+                <form onSubmit={handleSubmit} className="space-y-2.5 w-full max-w-md mx-auto">
+
+                    {/* Inputs Grid */}
+                    <div className="grid grid-cols-1 gap-2.5 text-center">
+                        <div className="relative">
+                            <User className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
+                            <input
+                                type="text"
+                                placeholder="Full Name"
+                                name="fullName"
+                                value={formData.fullName}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-800 text-center placeholder:text-center focus:outline-none focus:border-[#1C3026]"
+                            />
+                        </div>
+
+                        <div className="relative">
+                            <Mail className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
+                            <input
+                                type="email"
+                                placeholder="Email Address"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-800 text-center placeholder:text-center focus:outline-none focus:border-[#1C3026]"
+                            />
+                        </div>
+
+                        <div className="relative">
+                            <Phone className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
+                            <input
+                                type="tel"
+                                placeholder="Phone Number"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-800 text-center placeholder:text-center focus:outline-none focus:border-[#1C3026]"
+                            />
+                        </div>
+
+                        <div className="relative">
+                            <Home className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
+                            <select name="resortType" value={formData.resortType} onChange={handleChange} className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 text-center appearance-none focus:outline-none focus:border-[#1C3026]">
+                                <option value="">Interested Resort Type</option>
+                                <option value="Deer Meadow Suites">Deer Meadow Suites</option>
+                                <option value="Gazelle Retreat">Gazelle Retreat</option>
+                                <option value="Leopard Crest Suites">Leopard Crest Suites</option>
+                                <option value="Tusker Havens">Tusker Havens</option>
+                                <option value="Tiger Apex Pavilions">Tiger Apex Pavilions</option>
+                            </select>
+                            <ChevronDown className="w-4 h-4 absolute right-3 top-2.5 text-slate-500 pointer-events-none" />
+                        </div>
+
+                        <div className="relative">
+                            <Building2 className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
+                            <select name="purpose" value={formData.purpose} onChange={handleChange} className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 text-center appearance-none focus:outline-none focus:border-[#1C3026]">
+                                <option value="">Purpose of Investment</option>
+                                <option value="rental">Rental Returns</option>
+                                <option value="personal">Personal Holiday Home</option>
+                                <option value="both">Both</option>
+                            </select>
+                            <ChevronDown className="w-4 h-4 absolute right-3 top-2.5 text-slate-500 pointer-events-none" />
+                        </div>
+
+                        <div>
+                            <textarea
+                                rows={2}
+                                placeholder="Your Message / Requirements"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg p-2.5 text-xs text-slate-800 text-center placeholder:text-center focus:outline-none focus:border-[#1C3026] resize-none"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Submit Button */}
+                    <div className="pt-2 text-center">
+                        <button
+                            type="submit"
+                            className="bg-[#1C3026] hover:bg-[#14231b] text-white font-medium text-xs py-2.5 px-8 rounded-full inline-flex items-center space-x-2 transition-colors shadow-sm cursor-pointer"
+                        >
+                            <span>SUBMIT ENQUIRY</span>
+                            <ArrowRight className="w-3.5 h-3.5 text-amber-400" />
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            {/* Right Feature Cards */}
+            <div className="lg:col-span-3 bg-[#F3EEE5]/80 rounded-xl p-4 border border-stone-300/70 space-y-4 flex flex-col items-center text-center">
+                {highlights.map((item, idx) => (
+                    <div key={idx} className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-3 text-center sm:text-left">
+                        <div className="p-2 bg-[#FAF7F2] rounded-lg border border-stone-300/80 shadow-2xs flex-shrink-0">
+                            {item.icon}
+                        </div>
+                        <div>
+                            <h4 className="text-xs font-bold text-[#1C3026] leading-snug">
+                                {item.title}
+                            </h4>
+                            <p className="text-[10px] text-slate-600 leading-tight">
+                                {item.desc}
+                            </p>
+                        </div>
+                    </div>
+                ))}
+                <button
+                    onClick={handleResortListingsings}
+                    className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded text-sm flex items-center justify-center gap-2 cursor-pointer w-full"
+                >
+                    Our Resorts <span>→</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
 
                 {/* Footer Banner Bar */}
                 <div className="bg-[#1C3026] rounded-xl p-3 px-8 flex flex-col md:flex-row items-center justify-around text-white text-xs gap-3">

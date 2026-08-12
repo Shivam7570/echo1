@@ -3,13 +3,11 @@ const router = express.Router();
 const {
   createVillaEnquiry,
   getVillaEnquiries,
+  updateVillaEnquiry,
+  deleteVillaEnquiry,
 } = require("../controllers/villaEnquiryController");
-const { protect, authorize } = require("../middleware/authMiddleware");
 
-// Public route to submit villa enquiry
-router.post("/", createVillaEnquiry);
-
-// Admin route to get all villa enquiries
-router.get("/", protect, authorize("admin", "editor"), getVillaEnquiries);
+router.route("/").post(createVillaEnquiry).get(getVillaEnquiries);
+router.route("/:id").put(updateVillaEnquiry).delete(deleteVillaEnquiry);
 
 module.exports = router;
