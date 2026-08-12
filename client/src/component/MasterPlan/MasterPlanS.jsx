@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Compass, ZoomIn } from 'lucide-react';
+import imageSrc from "../../assets/Master Layout-02.png";
 
 export default function MasterPlanS() {
     const [selectedHotspot, setSelectedHotspot] = useState(null);
@@ -11,7 +12,8 @@ export default function MasterPlanS() {
     // Touch gesture tracking state
     const touchDistanceRef = useRef(null);
 
-    const imageSrc = "https://www.echothejungle.com/wp-content/uploads/2020/02/ECCHO-scaled.png";
+
+
 
     const zones = [
         { id: 'resort', name: 'Resort Zone', color: 'bg-blue-600' },
