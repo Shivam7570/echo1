@@ -172,7 +172,7 @@ export default function RSection3() {
         {
             icon: <TrendingUp className="w-4 h-4 text-[#1C3026]" />,
             label: 'ROI Potential',
-            values: ['Very High', 'Very High', 'Very High', 'Very High', 'Excellent'],
+            values: ['Very High', 'Very High', 'Very High', 'Very High', 'Very High'],
         },
     ];
 
