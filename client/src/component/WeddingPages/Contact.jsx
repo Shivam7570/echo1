@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { submitEnquiry } from '../../lib/api';
+import ScheduleVisitModal from '../Common/ScheduleVisitModal';
 
 export const ContactAndFooterSection = () => {
+    const [isVisitModalOpen, setIsVisitModalOpen] = useState(false);
     const [form, setForm] = useState({
         brideName: '', groomName: '', phone: '', email: '',
         weddingDate: '', guests: '', package: '', budget: '',
@@ -63,7 +65,7 @@ export const ContactAndFooterSection = () => {
                             </select>
                             <textarea name="requirements" value={form.requirements} onChange={handleChange} placeholder="Tell us about your requirements" className="border rounded px-4 py-2 text-sm col-span-2" rows={2} />
                             <textarea name="message" value={form.message} onChange={handleChange} placeholder="Your Message" className="border rounded px-4 py-2 text-sm col-span-2" rows={2} />
-                            <button type="submit" className="col-span-2 bg-[#0F1E19] hover:bg-[#152922] text-white py-3 rounded text-sm flex items-center justify-center gap-2">
+                            <button type="submit" className="col-span-2 bg-[#0F1E19] hover:bg-[#152922] text-white py-3 rounded text-sm flex items-center justify-center gap-2 cursor-pointer">
                                 Plan My Wedding ♥
                             </button>
                         </form>
@@ -73,11 +75,14 @@ export const ContactAndFooterSection = () => {
                     <div>
                         <span className="text-amber-700 text-xs tracking-widest uppercase">Get In Touch</span>
                         <div className="space-y-4 mt-6 text-sm text-gray-700">
-                            <p>📍 <strong>Resort Address</strong><br />Echo – The Jungle Resort &amp; Villa, Village Dhole, Ramnagar, Nainital, Uttarakhand, India – 244715</p>
-                            <p>📞 <strong>Call Us</strong><br />+91 98765 43210</p>
-                            <p>✉️ <strong>Email Us</strong><br />weddings@echoresort.com</p>
-                            <p>💬 <strong>Chat on WhatsApp</strong><br />+91 98765 43210</p>
-                            <button className="bg-amber-600 hover:bg-amber-700 text-white px-5 py-2 rounded text-xs">
+                            <p>📍 <strong>Resort Address</strong><br />Echo – The Jungle Resort &amp; Villa, Gurudwara Road, Village Narainwala, Dhampur District Bijnor.</p>
+                            <p>📞 <strong>Call Us</strong><br /><a href="tel:+919217579077" className="hover:text-amber-700">+91 9217579077</a></p>
+                            <p>✉️ <strong>Email Us</strong><br /><a href="mailto:info@echothejungle.com" className="hover:text-amber-700">info@echothejungle.com</a></p>
+                            <p>💬 <strong>Chat on WhatsApp</strong><br /><a href="https://wa.me/919217579077" target="_blank" rel="noreferrer" className="text-emerald-700 font-semibold hover:underline">+91 9217579077</a></p>
+                            <button
+                                onClick={() => setIsVisitModalOpen(true)}
+                                className="bg-amber-600 hover:bg-amber-700 text-white px-5 py-2 rounded text-xs transition cursor-pointer flex items-center gap-1.5"
+                            >
                                 Schedule a Site Visit 📅
                             </button>
                         </div>
@@ -85,13 +90,19 @@ export const ContactAndFooterSection = () => {
                         <div className="mt-6 rounded-lg overflow-hidden border">
                             <iframe
                                 title="Resort Location"
-                                src="https://www.google.com/maps?q=Ramnagar,Nainital,Uttarakhand&output=embed"
+                                src="https://www.google.com/maps?q=Dhampur,Bijnor&output=embed"
                                 className="w-full h-64 border-0"
                                 loading="lazy"
                             />
                         </div>
                     </div>
                 </div>
+
+                <ScheduleVisitModal
+                    isOpen={isVisitModalOpen}
+                    onClose={() => setIsVisitModalOpen(false)}
+                    defaultProperty="Destination Wedding"
+                />
             </section>
 
             {/* Footer */}

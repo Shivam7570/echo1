@@ -98,38 +98,28 @@ export default function VillaComparisonSection() {
         {
             icon: <Compass className="w-4 h-4 text-[#1C3026]" />,
             label: 'Size Range',
-            values: ['2,500 sq. ft.', '3,200 sq. ft.', '4,000 sq. ft.', '5,500 sq. ft.'],
+            values: ['126 sq. yrd.', '145 sq. yrd.', '188 sq. yrd.', '220 sq. yrd'],
         },
-        {
-            icon: <Maximize2 className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Built-up Area',
-            values: ['1,800 sq. ft.', '2,400 sq. ft.', '3,100 sq. ft.', '4,200 sq. ft.'],
-        },
-        {
-            icon: <Bed className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Bedrooms (BHK)',
-            values: ['2 BHK', '3 BHK', '3 BHK + Study', '4 BHK + Maid'],
-        },
-        
+
         {
             icon: <Layers className="w-4 h-4 text-[#1C3026]" />,
             label: 'Floors / Structure',
             values: ['G + 1', 'G + 1', 'G + 1', 'G + 1'],
         },
-        
-       
+
+
         {
             icon: <Sun className="w-4 h-4 text-[#1C3026]" />,
             label: 'Private Terrace / Deck',
-            values: ['-', 'check', 'check', 'check'],
+            values: ['✕', 'check', 'check', 'check'],
         },
-         
+
         {
             icon: <Building2 className="w-4 h-4 text-[#1C3026]" />,
             label: 'Clubhouse Access',
             values: ['check', 'check', 'check', 'check'],
         },
-         
+
         {
             icon: <ShieldCheck className="w-4 h-4 text-[#1C3026]" />,
             label: 'Gated Security',
@@ -320,7 +310,7 @@ export default function VillaComparisonSection() {
                                         />
                                     </div>
 
-                               
+
 
                                     <div className="relative">
                                         <Home className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
@@ -334,7 +324,7 @@ export default function VillaComparisonSection() {
                                         <ChevronDown className="w-4 h-4 absolute right-3 top-2.5 text-slate-500 pointer-events-none" />
                                     </div>
 
-                                 
+
 
                                     <div className="relative">
                                         <Building2 className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />

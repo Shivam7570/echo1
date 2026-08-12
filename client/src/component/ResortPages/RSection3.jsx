@@ -113,7 +113,7 @@ export default function RSection3() {
         {
             icon: <Compass className="w-4 h-4 text-[#1C3026]" />,
             label: 'Resort Size Range',
-            values: ['266 sq. ft.', '15,000 sq. ft.', '20,000 sq. ft.', '25,000 sq. ft.', '30,000 sq. ft.'],
+            values: ['520 sq. ft.', '610 sq. ft.', '750 sq. ft.', '950 sq. ft.', '1350 sq. ft.'],
         },
         {
             icon: <Home className="w-4 h-4 text-[#1C3026]" />,
@@ -121,11 +121,7 @@ export default function RSection3() {
             values: ['3 Luxury Villas', '5 Luxury Cottages', '8 Luxury Villas', '10 Luxury Cabins', '12 Luxury Villas'],
         },
 
-        {
-            icon: <Waves className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Plunge Pool',
-            values: ['check', 'check', 'check', 'check', 'check'],
-        },
+
         {
             icon: <Trees className="w-4 h-4 text-[#1C3026]" />,
             label: 'Garden / Green Area',
@@ -157,14 +153,15 @@ export default function RSection3() {
             values: ['check', 'check', 'check', 'check', 'check'],
         },
         {
-            icon: <Users className="w-4 h-4 text-[#1C3026]" />,
-            label: 'Banquet / Event Space',
-            values: ['-', '-', 'check', 'check', 'check'],
+            icon: <Waves className="w-4 h-4 text-[#1C3026]" />,
+            label: 'Plunge Pool',
+            values: ['✕', '✕', 'pool', 'jacuzzi', 'pool'],
         },
+
         {
             icon: <Dumbbell className="w-4 h-4 text-[#1C3026]" />,
             label: 'Sports / Recreation',
-            values: ['-', '-', 'check', 'Jogging Track', 'Multi-Sports Area'],
+            values: ['✕', '✕', 'check', 'Jogging Track', 'Multi-Sports Area'],
         },
         {
             icon: <ShieldCheck className="w-4 h-4 text-[#1C3026]" />,

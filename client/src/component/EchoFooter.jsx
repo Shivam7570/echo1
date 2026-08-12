@@ -9,7 +9,7 @@ import {
     Download,
     ArrowUp
 } from 'lucide-react';
-import logo from "../assets/infraLogo.jpeg";
+import logo from "../assets/infraLogo.png";
 
 
 export default function EchoFooter() {
@@ -95,12 +95,12 @@ export default function EchoFooter() {
                             <div className="flex items-start space-x-3">
                                 <MapPin className="w-4 h-4 text-[#C5A253] flex-shrink-0 mt-0.5" />
                                 <span className="leading-relaxed">
-                                    Gurudwara Road, Village Narainwala, Dhampur District Bijnor, Uttar Pradesh, 246735.
+                                    Gurudwara Road, Village Narainwala, Dhampur District Bijnor.
                                 </span>
                             </div>
                             <div className="flex items-start space-x-3">
                                 <Clock className="w-4 h-4 text-[#C5A253] flex-shrink-0 mt-0.5" />
-                                <span>24/7</span>
+                                <span>24/7 Availability on land</span>
                             </div>
                         </div>
                     </div>
@@ -208,7 +208,7 @@ export default function EchoFooter() {
                     {/* Copyright & Scroll Top Right */}
                     <div className="flex items-center space-x-4">
                         <div className="text-right text-[10px] text-stone-400">
-                            <p>© 2024 Echo – The Jungle Resort & Villa.</p>
+                            <p>© 2026 Echo – The Jungle Resort & Villa.</p>
                             <p>All Rights Reserved.</p>
                         </div>
                         <button

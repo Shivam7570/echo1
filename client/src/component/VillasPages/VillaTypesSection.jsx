@@ -1,14 +1,15 @@
-import React from 'react';
-import { Square, CheckCircle2, Home, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { Square, Sparkles, X } from 'lucide-react';
 
-import resort1Layout1 from "../../assets/resortLayout1.png";
-import resort1Layout2 from "../../assets/layout2.jpg";
-import resort1Layout5 from "../../assets/layout5.jpeg";
-import resort1Layout4 from "../../assets/layout4.jpg";
-import resort1Layout3 from "../../assets/layout3.jpg";
-
+import resort1Layout1 from "../../assets/villalayout1.jpg";
+import resort1Layout2 from "../../assets/villalayout2.jpg";
+import resort1Layout3 from "../../assets/villalayout3.jpg";
+import resort1Layout4 from "../../assets/villalayout4.jpg";
 
 export default function VillaTypesSection() {
+    // State to handle full-screen image modal preview
+    const [selectedImage, setSelectedImage] = useState(null);
+
     const villaTypes = [
         {
             id: 1,
@@ -16,33 +17,36 @@ export default function VillaTypesSection() {
             heroImage: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=600',
             layoutImage: resort1Layout1,
             area: '126 sq. yrd.',
-             
+            villaSizeRange: 'Customizable build options'
         },
         {
             id: 2,
-            badge: 'Azalea Restreat Villas',
+            badge: 'Azalea Retreat Villas',
             heroImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600',
             layoutImage: resort1Layout2,
             area: '145 sq. yrd.',
-         },
+            villaSizeRange: 'Customizable build options'
+        },
         {
             id: 3,
             badge: 'Lotus Signature Villas',
             heroImage: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=600',
             layoutImage: resort1Layout3,
             area: '188 sq. yrd.',
-         },
+            villaSizeRange: 'Customizable build options'
+        },
         {
             id: 4,
             badge: 'Orchid Grand Villas',
             heroImage: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600',
             layoutImage: resort1Layout4,
             area: '220 sq. yrd.',
-         },
+            villaSizeRange: 'Customizable build options'
+        },
     ];
 
     return (
-        <div className="min-h-screen bg-[#FAF7F2] text-slate-800 font-sans p-4 md:p-8 flex flex-col justify-between">
+        <div id="villa-types" className="min-h-screen bg-[#FAF7F2] text-slate-800 font-sans p-4 md:p-8 flex flex-col justify-between scroll-mt-20">
             <div className="max-w-7xl mx-auto w-full space-y-6">
 
                 {/* Header Section */}
@@ -77,26 +81,38 @@ export default function VillaTypesSection() {
                                 </span>
                             </div>
 
-                            {/* Main Exterior Image */}
-                            <div className="h-36 rounded-lg overflow-hidden border border-stone-300">
+                            {/* Main Exterior Image (Clickable) */}
+                            <div
+                                className="h-36 rounded-lg overflow-hidden border border-stone-300 cursor-pointer relative group"
+                                onClick={() => setSelectedImage({ url: item.heroImage, title: `${item.badge} - Exterior` })}
+                            >
                                 <img
                                     src={item.heroImage}
                                     alt={item.badge}
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
+                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-medium">
+                                    Click to view
+                                </div>
                             </div>
 
-                            {/* Layout Plan Section */}
+                            {/* Layout Plan Section (Clickable) */}
                             <div className="space-y-1">
                                 <h4 className="text-[10px] font-bold text-[#1C3026] tracking-wider uppercase">
                                     LAYOUT PLAN
                                 </h4>
-                                <div className="h-28 rounded-lg overflow-hidden border border-stone-300 bg-emerald-900/10 p-1">
+                                <div
+                                    className="h-28 rounded-lg overflow-hidden border border-stone-300 bg-emerald-900/10 p-1 cursor-pointer relative group"
+                                    onClick={() => setSelectedImage({ url: item.layoutImage, title: `${item.badge} - Layout Plan` })}
+                                >
                                     <img
                                         src={item.layoutImage}
                                         alt={`${item.badge} Layout`}
-                                        className="w-full h-full object-cover rounded"
+                                        className="w-full h-full object-cover rounded group-hover:scale-105 transition-transform duration-300"
                                     />
+                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-medium rounded">
+                                        Click to view
+                                    </div>
                                 </div>
                             </div>
 
@@ -111,7 +127,6 @@ export default function VillaTypesSection() {
                                         <span>{item.area}</span>
                                     </div>
                                     <div className="flex items-center space-x-1.5 text-[11px] text-slate-700">
-                                        
                                         <span>{item.villaSizeRange}</span>
                                     </div>
                                 </div>
@@ -140,6 +155,38 @@ export default function VillaTypesSection() {
                 </div>
 
             </div>
+
+            {/* Full-Screen Image Lightbox Modal with high contrast styling */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <div
+                        className="relative max-w-5xl w-full bg-[#14221b] rounded-2xl p-5 overflow-hidden shadow-2xl border border-amber-500/40"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="flex items-center justify-between mb-4 pb-2 border-b border-amber-500/20 text-white">
+                            <h3 className="text-base md:text-lg font-serif tracking-wider text-amber-300">
+                                {selectedImage.title}
+                            </h3>
+                            <button
+                                onClick={() => setSelectedImage(null)}
+                                className="p-2 rounded-full bg-white/10 hover:bg-amber-600 text-white transition-colors cursor-pointer"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+                        </div>
+                        <div className="max-h-[80vh] overflow-auto rounded-xl bg-stone-950/70 p-2 flex items-center justify-center border border-white/10">
+                            <img
+                                src={selectedImage.url}
+                                alt="Full Size Preview"
+                                className="max-h-[75vh] w-auto object-contain rounded-lg shadow-lg"
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

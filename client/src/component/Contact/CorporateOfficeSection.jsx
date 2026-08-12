@@ -32,8 +32,8 @@ export default function CorporateOfficeSection() {
                             </div>
                             <div className="space-y-0.5 pt-0.5">
                                 <p className="text-xs font-semibold text-stone-300">Phone</p>
-                                <p className="text-sm font-bold text-white tracking-wide">+91 98765 43210</p>
-                                <p className="text-xs text-stone-400">Mon - Sat (10:00 AM - 7:00 PM)</p>
+                                <p className="text-sm font-bold text-white tracking-wide">+91 9217579077</p>
+                                <p className="text-xs text-stone-400">Mon - Sun (24/7) (</p>
                             </div>
                         </div>
 
@@ -60,8 +60,7 @@ export default function CorporateOfficeSection() {
                                     Echo – The Jungle Resort & Villa
                                 </p>
                                 <p className="text-xs text-stone-400 leading-relaxed">
-                                    Village Dhela, Ramnagar, Nainital,<br />
-                                    Uttarakhand, India – 244715
+                                    Gurudwara Road, Village Narainwala, Dhampur District Bijnor.
                                 </p>
                             </div>
                         </div>
@@ -74,13 +73,7 @@ export default function CorporateOfficeSection() {
                             Experience Nature. Experience Echo.
                         </p>
                         {/* Stylized Leaf Graphic */}
-                        <div className="text-amber-400/80 pr-2">
-                            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                                <path d="M12 21a9 9 0 009-9c0-4.97-4.03-9-9-9a9 9 0 00-9 9c0 4.97 4.03 9 9 9z" strokeDasharray="2 2" />
-                                <path d="M6 12c4-8 12-6 12-6s2 8-6 12-6-6-6-6z" fill="currentColor" fillOpacity="0.2" />
-                                <path d="M12 18V6" />
-                            </svg>
-                        </div>
+
                     </div>
 
                 </div>
