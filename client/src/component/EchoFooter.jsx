@@ -149,7 +149,9 @@ export default function EchoFooter() {
                                 </div>
 
                                 <a
-                                    href="#download"
+                                    href="https://drive.google.com/uc?export=download&id=1_KTN2gb4tdGVJmWOiidoQd4F01Tp5jud"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="mt-3 bg-[#C5A253] hover:bg-[#b38f42] text-[#051C12] font-bold text-[10px] uppercase tracking-wider py-1.5 px-3 rounded flex items-center justify-between transition-colors"
                                 >
                                     <span>DOWNLOAD NOW</span>

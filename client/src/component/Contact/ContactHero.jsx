@@ -64,13 +64,8 @@ export default function ContactHero() {
 
     // Download Brochure Handler
     const handleDownloadBrochure = () => {
-        const pdfUrl = '/brochure.pdf';
-        const link = document.createElement('a');
-        link.href = pdfUrl;
-        link.download = 'Resort_Brochure.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        const pdfUrl = 'https://drive.google.com/uc?export=download&id=1_KTN2gb4tdGVJmWOiidoQd4F01Tp5jud';
+        window.open(pdfUrl, '_blank');
     };
 
     return (

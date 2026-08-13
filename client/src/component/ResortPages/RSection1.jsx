@@ -58,10 +58,11 @@ export default function RSection() {
                     {/* Main Title Heading */}
                     <div className="space-y-1">
                         <h1 className="text-5xl md:text-6xl font-light tracking-wide text-white">
-                            DISCOVER
+                            YOUR DESTINATION
+
                         </h1>
                         <h1 className="text-5xl md:text-6xl font-light tracking-wide text-[#c29b4b]">
-                            THE DESTINATION
+                            YOUR RESORT
                         </h1>
                     </div>
 

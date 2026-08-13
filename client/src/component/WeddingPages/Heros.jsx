@@ -21,9 +21,14 @@ export const HeroWedding = () => {
                 </p>
                 <div className="flex flex-wrap gap-4">
 
-                    <button className="border border-white/60 hover:border-white text-white px-6 py-3 rounded text-sm flex items-center gap-2">
+                    <a
+                        href="https://drive.google.com/uc?export=download&id=1_KTN2gb4tdGVJmWOiidoQd4F01Tp5jud"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border border-white/60 hover:border-white text-white px-6 py-3 rounded text-sm flex items-center gap-2 cursor-pointer transition-colors"
+                    >
                         Download Wedding Brochure <span>⬇</span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

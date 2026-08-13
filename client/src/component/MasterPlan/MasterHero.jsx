@@ -53,10 +53,15 @@ export default function MasterHero() {
                         <ArrowRight className="w-4 h-4" />
                     </button>
 
-                    <button className="bg-stone-900/40 hover:bg-stone-900/70 border border-stone-500/50 backdrop-blur-md text-stone-200 font-medium text-sm px-6 py-3.5 rounded-xl flex items-center space-x-2 transition-all cursor-pointer">
+                    <a
+                        href="https://drive.google.com/uc?export=download&id=1_KTN2gb4tdGVJmWOiidoQd4F01Tp5jud"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-stone-900/40 hover:bg-stone-900/70 border border-stone-500/50 backdrop-blur-md text-stone-200 font-medium text-sm px-6 py-3.5 rounded-xl flex items-center space-x-2 transition-all cursor-pointer"
+                    >
                         <span>Download Master Plan</span>
                         <Download className="w-4 h-4 text-stone-300" />
-                    </button>
+                    </a>
                 </div>
 
                 {/* Bottom Feature Badges Container */}
