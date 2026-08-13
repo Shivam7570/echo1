@@ -34,7 +34,7 @@ export default function MasterHero() {
                 {/* Title Block */}
                 <div className="space-y-2 max-w-2xl">
                     <h2 className="text-5xl md:text-6xl font-serif text-stone-100 tracking-wide font-normal">
-                        Premium Plots
+                        Premium Master Plan
                     </h2>
                     <p className="font-serif italic text-3xl md:text-4xl text-amber-300 font-light">
                         Where Nature Meets Opportunity

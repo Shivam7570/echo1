@@ -17,7 +17,7 @@ const roomsData = [
     id: 1,
     title: 'Deluxe',
     type: 'With Jacuzzi',
-    price: '7,000',
+    price: '7,500',
     image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=800',
     specs: [
       { icon: <Maximize2 className="w-3.5 h-3.5" />, text: '600 sq. ft.' },
@@ -26,9 +26,9 @@ const roomsData = [
   },
   {
     id: 2,
-    title: 'Premium',
+    title: 'Royal Forest Pool Villa',
     type: 'With Jacuzzi',
-    price: '7,500',
+    price: '8,500',
     image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800',
     specs: [
       { icon: <Maximize2 className="w-3.5 h-3.5" />, text: '750 sq. ft.' },
@@ -39,7 +39,7 @@ const roomsData = [
     id: 3,
     title: 'Ultra Premium Luxury Room',
     type: 'With Jacuzzi',
-    price: '8,000',
+    price: '10,000',
     image: 'https://plus.unsplash.com/premium_photo-1661923086373-73176f7c004a?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     specs: [
       { icon: <Trees className="w-3.5 h-3.5" />, text: 'Garden & Mountain View' },
@@ -48,9 +48,21 @@ const roomsData = [
   },
   {
     id: 4,
-    title: '2 Bedroom Villa',
+    title: 'The Serenity Retreat',
+    type: 'With Jacuzzi',
+    price: '15,000',
+    badge: 'MOST LOVED',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4HXDVEnr_2GT8VmG1l4h8gegOATnRUId-zwxm_K6Bxg&s=10',
+    specs: [
+      { icon: <Maximize2 className="w-3.5 h-3.5" />, text: '850 sq. ft.' },
+      { icon: <Mountain className="w-3.5 h-3.5" />, text: 'Mountain/Hill View' }
+    ]
+  },
+  {
+    id: 5,
+    title: 'The Forest Vista Suite',
     type: 'With Private Pool',
-    price: '12,000',
+    price: '20,000',
     badge: 'MOST LOVED',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4HXDVEnr_2GT8VmG1l4h8gegOATnRUId-zwxm_K6Bxg&s=10',
     specs: [

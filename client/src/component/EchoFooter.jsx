@@ -42,7 +42,7 @@ export default function EchoFooter() {
                             ABOUT VELZANO
                         </h3>
                         <p className="text-stone-300 text-xs leading-relaxed">
-                            Echo - The Jungle Resort & Villa is a luxury destination where nature meets elegance. Discover premium resorts, villas, and investment opportunities surrounded by lush greenery.
+                            VELZANO INFRA PRIVATE LIMITED is a forward-thinking real estate developer creating premium residential, commercial, and hospitality spaces. With a focus on quality, innovation, sustainability, and transparency, Velzano delivers future-ready environments built for lasting value and elevated living.
                         </p>
                         {/* Logo */}
                         <div className="pt-2">
@@ -174,11 +174,9 @@ export default function EchoFooter() {
                     {/* Legal Links Center */}
                     <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-stone-300">
                         <a href="#privacy" className="hover:text-[#C5A253] transition-colors">Privacy Policy</a>
-                        <span className="text-emerald-800">|</span>
-                        <a href="#terms" className="hover:text-[#C5A253] transition-colors">Terms & Conditions</a>
 
                         <span className="text-emerald-800">|</span>
-                        <a href="#sitemap" className="hover:text-[#C5A253] transition-colors">Sitemap</a>
+
                     </div>
 
                     {/* Copyright & Scroll Top Right */}

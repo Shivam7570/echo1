@@ -9,16 +9,14 @@ import {
     Mail,
     Phone,
     MapPin,
-    Building2,
-    Send
+    Building2
 } from 'lucide-react';
 import contactHero from "../../assets/contactHero.jpg";
-
 
 export default function ContactHero() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // Form state used for both inline and modal forms
+    // Form state used for the modal form
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -88,8 +86,8 @@ export default function ContactHero() {
                 {/* Center Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto">
 
-                    {/* Left Text Block */}
-                    <div className="lg:col-span-7 space-y-6">
+                    {/* Left Text Block (Expanded to span more width now that the right form is gone) */}
+                    <div className="lg:col-span-9 space-y-6">
 
                         <p className="font-serif italic text-2xl md:text-3xl text-[#D4A359] font-light">
                             Get In Touch
@@ -127,96 +125,6 @@ export default function ContactHero() {
                             </button>
                         </div>
 
-                    </div>
-
-                    {/* Right Side - Embedded Contact Form */}
-                    <div className="lg:col-span-5">
-                        <div className="bg-[#181816]/90 border border-[#D4A359]/30 rounded-2xl p-6 md:p-8 backdrop-blur-md shadow-2xl text-stone-100">
-                            <div className="text-center mb-6 space-y-1">
-                                <p className="font-serif italic text-[#D4A359] text-sm">Send Us A Message</p>
-                                <h3 className="text-2xl font-serif text-stone-100 uppercase tracking-wider">Book An Enquiry</h3>
-                            </div>
-
-                            <form onSubmit={handleFormSubmit} className="space-y-3.5">
-                                <div className="relative">
-                                    <User className="w-4 h-4 absolute left-3 top-3 text-[#D4A359]" />
-                                    <input
-                                        type="text"
-                                        name="fullName"
-                                        required
-                                        placeholder="Full Name"
-                                        value={formData.fullName}
-                                        onChange={handleInputChange}
-                                        className="w-full bg-stone-900/80 border border-stone-700/80 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-200 focus:outline-none focus:border-[#D4A359]"
-                                    />
-                                </div>
-
-                                <div className="relative">
-                                    <Mail className="w-4 h-4 absolute left-3 top-3 text-[#D4A359]" />
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        required
-                                        placeholder="Email Address"
-                                        value={formData.email}
-                                        onChange={handleInputChange}
-                                        className="w-full bg-stone-900/80 border border-stone-700/80 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-200 focus:outline-none focus:border-[#D4A359]"
-                                    />
-                                </div>
-
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <div className="relative">
-                                        <Phone className="w-4 h-4 absolute left-3 top-3 text-[#D4A359]" />
-                                        <input
-                                            type="tel"
-                                            name="phone"
-                                            required
-                                            placeholder="Phone Number"
-                                            value={formData.phone}
-                                            onChange={handleInputChange}
-                                            className="w-full bg-stone-900/80 border border-stone-700/80 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-200 focus:outline-none focus:border-[#D4A359]"
-                                        />
-                                    </div>
-
-                                    <div className="relative">
-                                        <MapPin className="w-4 h-4 absolute left-3 top-3 text-[#D4A359]" />
-                                        <input
-                                            type="text"
-                                            name="city"
-                                            placeholder="Your City"
-                                            value={formData.city}
-                                            onChange={handleInputChange}
-                                            className="w-full bg-stone-900/80 border border-stone-700/80 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-200 focus:outline-none focus:border-[#D4A359]"
-                                        />
-                                    </div>
-                                </div>
-
-                                    <div className="relative">
-                                        <Building2 className="w-4 h-4 absolute left-3 top-3 text-[#D4A359]" />
-                                        <select
-                                            name="resortType"
-                                            value={formData.resortType}
-                                            onChange={handleInputChange}
-                                            className="w-full bg-stone-900/80 border border-stone-700/80 rounded-lg pl-9 pr-3 py-2.5 text-xs text-stone-300 focus:outline-none focus:border-[#D4A359] appearance-none"
-                                        >
-                                            <option value="">Resort Type</option>
-                                            <option value="Deer Meadow Suites">Deer Meadow Suites</option>
-                                            <option value="Gazelle Retreat">Gazelle Retreat</option>
-                                            <option value="Leopard Crest Suites">Leopard Crest Suites</option>
-                                            <option value="Tusker Havens">Tusker Havens</option>
-                                            <option value="Tiger Apex Pavilions">Tiger Apex Pavilions</option>
-                                        </select>
-                                    </div>
-
-                                <button
-                                    type="submit"
-                                    className="w-full mt-2 bg-[#D4A359] hover:bg-[#c29249] text-stone-950 font-bold text-xs tracking-widest py-3 rounded-lg transition-all uppercase flex items-center justify-center space-x-2 cursor-pointer"
-                                >
-                                    <span>SUBMIT ENQUIRY</span>
-                                    <Send className="w-4 h-4" />
-                                </button>
-                            </form>
-                        </div>
                     </div>
 
                 </div>

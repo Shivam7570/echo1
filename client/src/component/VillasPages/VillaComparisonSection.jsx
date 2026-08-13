@@ -100,27 +100,21 @@ export default function VillaComparisonSection() {
             label: 'Size Range',
             values: ['126 sq. yrd.', '145 sq. yrd.', '188 sq. yrd.', '220 sq. yrd'],
         },
-
         {
             icon: <Layers className="w-4 h-4 text-[#1C3026]" />,
             label: 'Floors / Structure',
             values: ['G + 1', 'G + 1', 'G + 1', 'G + 1'],
         },
-
-
         {
             icon: <Sun className="w-4 h-4 text-[#1C3026]" />,
             label: 'Private Terrace / Deck',
             values: ['check', 'check', 'check', 'check'],
         },
-
-
         {
             icon: <Building2 className="w-4 h-4 text-[#1C3026]" />,
             label: 'Clubhouse Access',
             values: ['check', 'check', 'check', 'check'],
         },
-
         {
             icon: <ShieldCheck className="w-4 h-4 text-[#1C3026]" />,
             label: 'Gated Security',
@@ -157,8 +151,8 @@ export default function VillaComparisonSection() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#FAF7F2] text-slate-800 font-sans p-4 md:p-8 space-y-6">
-            <div className="max-w-7xl mx-auto space-y-6">
+        <div className="min-h-screen bg-[#FAF7F2] text-slate-800 font-sans flex flex-col items-center justify-center p-4 md:p-8">
+            <div className="max-w-7xl w-full mx-auto space-y-6">
 
                 {/* Table Container */}
                 <div className="bg-[#FAF7F2] rounded-2xl border border-stone-300 p-3 md:p-4 shadow-sm overflow-hidden">
@@ -261,7 +255,7 @@ export default function VillaComparisonSection() {
                                 </p>
                             </div>
 
-                            <div className="h-100 rounded-xl overflow-hidden border border-stone-300 shadow-xs">
+                            <div className="h-64 rounded-xl overflow-hidden border border-stone-300 shadow-xs">
                                 <img
                                     src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=600"
                                     alt="Luxury Villa Exterior"
@@ -311,11 +305,14 @@ export default function VillaComparisonSection() {
                                         />
                                     </div>
 
-
-
                                     <div className="relative">
                                         <Home className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <select name="villaType" value={formData.villaType} onChange={handleChange} className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
+                                        <select
+                                            name="villaType"
+                                            value={formData.villaType}
+                                            onChange={handleChange}
+                                            className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]"
+                                        >
                                             <option value="">Interested Villa Type</option>
                                             <option value="Lily Haven Villas">Lily Haven Villas (126 sq. yrd.)</option>
                                             <option value="Azalea Retreat Villas">Azalea Retreat Villas (145 sq. yrd.)</option>
@@ -325,11 +322,14 @@ export default function VillaComparisonSection() {
                                         <ChevronDown className="w-4 h-4 absolute right-3 top-2.5 text-slate-500 pointer-events-none" />
                                     </div>
 
-
-
                                     <div className="relative">
                                         <Building2 className="w-4 h-4 absolute left-3 top-2.5 text-slate-500" />
-                                        <select name="purpose" value={formData.purpose} onChange={handleChange} className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]">
+                                        <select
+                                            name="purpose"
+                                            value={formData.purpose}
+                                            onChange={handleChange}
+                                            className="w-full bg-[#F3EEE5] border border-stone-300 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-600 appearance-none focus:outline-none focus:border-[#1C3026]"
+                                        >
                                             <option value="">Purpose of Purchase</option>
                                             <option value="personal">Primary Residence</option>
                                             <option value="vacation">Vacation / Holiday Home</option>

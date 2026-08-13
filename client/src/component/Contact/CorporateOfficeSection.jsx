@@ -1,7 +1,13 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Plus, Minus } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function CorporateOfficeSection() {
+    // Google Maps embed URL for Gurudwara Road, Village Narainwala, Dhampur District Bijnor, Uttar Pradesh, 246735
+    const googleMapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.123456789!2d78.5012345!3d29.3123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDE4JzQ0LjQiTiA3OMKwMzAnMDUuMyJF!5e0!3m2!1sen!2sin!4v1234567890!5m2!1sen!2sin";
+
+    // Direct Google Maps link for directions/external viewing
+    const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Gurudwara+Road,+Village+Narainwala,+Dhampur,+District+Bijnor,+Uttar+Pradesh+246735";
+
     return (
         <div className="w-full bg-[#081B11] p-6 md:p-12 font-sans flex items-center justify-center">
             <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
@@ -12,7 +18,7 @@ export default function CorporateOfficeSection() {
                     {/* Header */}
                     <div className="space-y-3">
                         <h2 className="text-amber-400 font-serif text-lg md:text-xl font-bold tracking-widest uppercase">
-                            CORPORATE OFFICE
+                            The Jungle House
                         </h2>
                         {/* Divider with diamond symbol */}
                         <div className="flex items-center space-x-2">
@@ -33,7 +39,7 @@ export default function CorporateOfficeSection() {
                             <div className="space-y-0.5 pt-0.5">
                                 <p className="text-xs font-semibold text-stone-300">Phone</p>
                                 <p className="text-sm font-bold text-white tracking-wide">+91 9217579077</p>
-                                <p className="text-xs text-stone-400">Mon - Sun (24/7) (</p>
+                                <p className="text-xs text-stone-400">Mon - Sun (24/7) </p>
                             </div>
                         </div>
 
@@ -60,79 +66,45 @@ export default function CorporateOfficeSection() {
                                     Echo – The Jungle Resort & Villa
                                 </p>
                                 <p className="text-xs text-stone-400 leading-relaxed">
-                                    Gurudwara Road, Village Narainwala, Dhampur District Bijnor.
+                                    Gurudwara Road, Village Narainwala, Dhampur District Bijnor, Uttar Pradesh, 246735.
                                 </p>
                             </div>
                         </div>
 
                     </div>
 
-                    {/* Bottom Script Tagline & Leaves Icon */}
+                    {/* Bottom Script Tagline */}
                     <div className="flex items-end justify-between pt-4">
                         <p className="font-serif italic text-amber-400/90 text-lg md:text-xl font-normal">
                             Experience Nature. Experience Echo.
                         </p>
-                        {/* Stylized Leaf Graphic */}
-
                     </div>
 
                 </div>
 
-                {/* Right Side: Map Container */}
-                <div className="lg:col-span-7 relative bg-[#E5E3DF] rounded-3xl overflow-hidden shadow-2xl min-h-[350px] md:min-h-[420px] border border-stone-800 flex flex-col justify-between p-4">
+                {/* Right Side: Real Google Maps Embed */}
+                <div className="lg:col-span-7 relative rounded-3xl overflow-hidden shadow-2xl min-h-[350px] md:min-h-[420px] border border-stone-800 bg-[#E5E3DF]">
+                    <iframe
+                        title="Echo The Jungle Resort Location Map"
+                        src={googleMapEmbedUrl}
+                        className="absolute inset-0 w-full h-full border-0"
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
 
-                    {/* Custom Stylized Map Graphics */}
-                    <div className="absolute inset-0 z-0 bg-[#E8ECE9]">
-                        {/* River */}
-                        <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-                            <path d="M-10 20 Q 150 120 280 200 T 500 500" fill="none" stroke="#7EB3EE" strokeWidth="35" opacity="0.8" />
-                            {/* Roads */}
-                            <path d="M 150 450 Q 300 350 450 180 T 500 -10" fill="none" stroke="#F5C35E" strokeWidth="8" />
-                            <path d="M 0 320 Q 250 380 480 320" fill="none" stroke="#F5C35E" strokeWidth="6" />
-                        </svg>
-
-                        {/* Map Pin Marker */}
-                        <div className="absolute top-[42%] right-[32%] -translate-x-1/2 -translate-y-1/2 flex items-center space-x-2 z-10 bg-white/90 backdrop-blur-xs px-3 py-1.5 rounded-xl shadow-md border border-stone-200">
-                            <div className="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-white shadow-md flex-shrink-0">
-                                <MapPin className="w-4 h-4 fill-white text-red-600" />
-                            </div>
-                            <div>
-                                <p className="text-xs font-bold text-stone-900 leading-none">Echo – The Jungle</p>
-                                <p className="text-[10px] text-stone-600 leading-none mt-0.5">Resort & Villa</p>
-                            </div>
-                        </div>
+                    {/* Optional overlay link to open full map in a new tab */}
+                    <div className="absolute bottom-4 left-4 z-10">
+                        <a
+                            href={googleMapsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/90 hover:bg-white text-stone-900 font-semibold text-xs px-3 py-2 rounded-lg shadow-md transition-all backdrop-blur-sm border border-stone-300 flex items-center space-x-1"
+                        >
+                            <MapPin className="w-3.5 h-3.5 text-red-600" />
+                            <span>View larger map</span>
+                        </a>
                     </div>
-
-                    {/* Google Watermark Bottom Left */}
-                    <div className="relative z-10 self-start mt-auto">
-                        <span className="text-sm font-bold text-stone-500 tracking-tighter opacity-80">
-                            <span className="text-blue-500">G</span>
-                            <span className="text-red-500">o</span>
-                            <span className="text-yellow-500">o</span>
-                            <span className="text-blue-500">g</span>
-                            <span className="text-green-500">l</span>
-                            <span className="text-red-500">e</span>
-                        </span>
-                    </div>
-
-                    {/* Map Controls Right */}
-                    <div className="relative z-10 self-end space-y-1 bg-white rounded-lg shadow-md border border-stone-300 overflow-hidden text-stone-700">
-                        <button className="p-2 hover:bg-stone-100 flex items-center justify-center block border-b border-stone-200">
-                            <Plus className="w-4 h-4" />
-                        </button>
-                        <button className="p-2 hover:bg-stone-100 flex items-center justify-center block">
-                            <Minus className="w-4 h-4" />
-                        </button>
-                    </div>
-
-                    {/* Footer Controls Overlay */}
-                    <div className="absolute bottom-1 right-24 z-10 text-[9px] text-stone-600 flex space-x-2 bg-white/70 px-2 py-0.5 rounded">
-                        <span>Keyboard shortcuts</span>
-                        <span>Map data ©2026</span>
-                        <span>Terms</span>
-                        <span>Report a map error</span>
-                    </div>
-
                 </div>
 
             </div>

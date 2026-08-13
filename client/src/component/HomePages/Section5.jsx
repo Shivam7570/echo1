@@ -8,7 +8,8 @@ import {
     FaPlane,
     FaTrain,
     FaLandmark,
-    FaCamera
+    FaCamera,
+    FaWater
 } from 'react-icons/fa';
 import { GiTigerHead } from 'react-icons/gi';
 
@@ -32,7 +33,7 @@ export default function Section5() {
             id: 3,
             icon: <FaRoad className="w-6 h-6 text-amber-500" />,
             title: 'Excellent Road Connectivity',
-            subtitle: 'NH-309',
+            subtitle: 'NH-24',
             description: 'Seamless connectivity to major cities and tourist destinations.',
         },
         {
@@ -61,10 +62,10 @@ export default function Section5() {
         },
         {
             id: 3,
-            name: 'Corbett Museum',
+            name: 'Kainchi Dham ',
             duration: '20 Minutes',
             icon: <FaLandmark className="w-4 h-4 text-amber-500" />,
-            image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=600',
+            image: 'https://static1.squarespace.com/static/5e46d3773bf1ec51a04b43f8/5e4ac92571f6217a28b98aa4/5e4ac92571f6217a28b98aa5/1607096660126/kainchi-dham-e1458255355599.jpg?format=1500w',
         },
         {
             id: 4,
@@ -82,10 +83,10 @@ export default function Section5() {
         },
         {
             id: 6,
-            name: 'Pantnagar Airport',
+            name: 'Pili Dam',
             duration: '2 Hours',
-            icon: <FaPlane className="w-4 h-4 text-amber-500" />,
-            image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=600',
+            icon: <FaWater className="w-4 h-4 text-amber-500" />,
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IMXqCNP26EoptJgP7oWSZQdRBWtz6KIjSqZb3sjDYQ&s=10',
         },
     ];
 
@@ -108,10 +109,17 @@ export default function Section5() {
                         Strategically located near Jim Corbett National Park with excellent connectivity
                         and surrounded by renowned tourist destinations.
                     </p>
-                    {/* Added Address Subtext */}
-                    <div className="flex items-center justify-center space-x-1.5 text-xs text-amber-800 pt-2 font-medium">
-                        <FaMapMarkerAlt className="w-3.5 h-3.5 flex-shrink-0 text-amber-700" />
-                        <span>Gurudwara Road, Village Narainwala, Dhampur District Bijnor, Uttar Pradesh, 246735.</span>
+                    {/* Added Address Subtext with Clickable Link */}
+                    <div className="pt-2">
+                        <a
+                            href="https://earth.google.com/web/search/Gurudwara+Road,+Village+Narainwala,+Dhampur+District+Bijnor,+Uttar+Pradesh,+246735%2e/@29.85639196,76.32715326,991.31779548a,2567289.73631233d,35y,-0h,0t,0r/data=CsMBGpQBEo0BCiUweDM5MGEzM2NhMDZjZTVkM2I6MHg2NGYwMmI2MmNiNjkwZWViGU1dnnNcfD1AIYOBjCVRqlNAKlJHdXJ1ZHdhcmEgUm9hZCwgVmlsbGFnZSBOYXJhaW53YWxhLCBEaGFtcHVyIERpc3RyaWN0IEJpam5vciwgVXR0YXIgUHJhZGVzaCwgMjQ2NzM1GAIgASImCiQJt0WexdCZMUARtEWexdCZMcAZoRKBozQkSEAhyZJ5tsGGSMBCAggBOgMKATBCAggASg0I____________ARAA"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center space-x-1.5 text-xs text-amber-800 font-medium hover:text-amber-950 hover:underline transition-colors"
+                        >
+                            <FaMapMarkerAlt className="w-3.5 h-3.5 flex-shrink-0 text-amber-700" />
+                            <span>Gurudwara Road, Village Narainwala, Dhampur District Bijnor.</span>
+                        </a>
                     </div>
                 </div>
 
@@ -128,16 +136,21 @@ export default function Section5() {
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                         />
-                        {/* Custom Property Overlay Badge */}
-                        <div className="absolute top-4 left-4 bg-[#0F261C]/90 text-white backdrop-blur-md p-3 rounded-xl border border-amber-500/30 flex items-center space-x-3 shadow-lg max-w-[280px]">
+                        {/* Custom Property Overlay Badge (Clickable) */}
+                        <a
+                            href="https://earth.google.com/web/search/Gurudwara+Road,+Village+Narainwala,+Dhampur+District+Bijnor,+Uttar+Pradesh,+246735%2e/@29.85639196,76.32715326,991.31779548a,2567289.73631233d,35y,-0h,0t,0r/data=CsMBGpQBEo0BCiUweDM5MGEzM2NhMDZjZTVkM2I6MHg2NGYwMmI2MmNiNjkwZWViGU1dnnNcfD1AIYOBjCVRqlNAKlJHdXJ1ZHdhcmEgUm9hZCwgVmlsbGFnZSBOYXJhaW53YWxhLCBEaGFtcHVyIERpc3RyaWN0IEJpam5vciwgVXR0YXIgUHJhZGVzaCwgMjQ2NzM1GAIgASImCiQJt0WexdCZMUARtEWexdCZMcAZoRKBozQkSEAhyZJ5tsGGSMBCAggBOgMKATBCAggASg0I____________ARAA"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="absolute top-4 left-4 bg-[#0F261C]/90 text-white backdrop-blur-md p-3 rounded-xl border border-amber-500/30 flex items-center space-x-3 shadow-lg max-w-[280px] hover:bg-[#0F261C] transition-colors group cursor-pointer"
+                        >
                             <div className="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center border border-amber-400/40 flex-shrink-0">
                                 <FaMapMarkerAlt className="w-4 h-4 text-amber-400" />
                             </div>
                             <div>
-                                <h4 className="text-xs tracking-wider uppercase font-semibold text-amber-400">ECHO</h4>
+                                <h4 className="text-xs tracking-wider uppercase font-semibold text-amber-400 group-hover:underline">ECHO</h4>
                                 <p className="text-[10px] text-slate-300 leading-tight">Gurudwara Road, Narainwala, Dhampur, Bijnor, UP - 246735</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     {/* Advantage Cards List */}
