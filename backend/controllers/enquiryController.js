@@ -5,7 +5,7 @@ const Enquiry = require("../models/Enquiry");
 // @route   POST /api/enquiries
 // @access  Public
 const createEnquiry = asyncHandler(async (req, res) => {
-  const { name, email, phone, message, source, city, resortName, villaName, budgetRange, purpose } = req.body;
+  const { name, email, phone, message, source, city, resortName, villaName, budgetRange, purpose, preferredPlot } = req.body;
 
   if (!name || (!email && !phone)) {
     res.status(400);
@@ -23,6 +23,7 @@ const createEnquiry = asyncHandler(async (req, res) => {
     villaName,
     budgetRange,
     purpose,
+    preferredPlot,
   });
 
   res.status(201).json({
@@ -66,7 +67,7 @@ const updateEnquiry = asyncHandler(async (req, res) => {
     throw new Error("Enquiry not found");
   }
 
-  const fields = ["name", "email", "phone", "city", "resortName", "villaName", "budgetRange", "purpose", "message", "status", "source"];
+  const fields = ["name", "email", "phone", "city", "resortName", "villaName", "budgetRange", "purpose", "preferredPlot", "message", "status", "source"];
   fields.forEach((field) => {
     if (req.body[field] !== undefined) {
       enquiry[field] = req.body[field];

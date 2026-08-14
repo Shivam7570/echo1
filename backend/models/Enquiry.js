@@ -52,6 +52,10 @@ const enquirySchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    preferredPlot: {
+      type: String,
+      trim: true,
+    },
     source: {
       // which part of the site the enquiry came from
       type: String,

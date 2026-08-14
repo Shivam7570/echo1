@@ -12,9 +12,6 @@ export default function MasterPlanS() {
     // Touch gesture tracking state
     const touchDistanceRef = useRef(null);
 
-
-
-
     const zones = [
         { id: 'resort', name: 'Resort Zone', color: 'bg-blue-600' },
         { id: 'villa', name: 'Villa Zone', color: 'bg-amber-600' },
@@ -23,10 +20,10 @@ export default function MasterPlanS() {
     ];
 
     const mapFeatures = [
-        { id: 1, title: 'Resort Zone', description: 'Luxury resort, clubhouse, spa, restaurant & more', top: '25%', left: '25%' },
-        { id: 2, title: 'Villa Zone', description: 'Premium villas with private gardens & luxury amenities', top: '32%', left: '42%' },
-        { id: 3, title: 'Plot Zone', description: 'Residential plots in different sizes with wide roads', top: '38%', left: '58%' },
-        { id: 4, title: 'Landscape Zone', description: 'Parks, lake, walking trails & green open spaces', top: '60%', left: '41%' },
+        { id: 1, title: 'Resort Zone', description: 'Luxury resort, clubhouse, spa, restaurant & more' },
+        { id: 2, title: 'Villa Zone', description: 'Premium villas with private gardens & luxury amenities' },
+        { id: 3, title: 'Plot Zone', description: 'Residential plots in different sizes with wide roads' },
+        { id: 4, title: 'Landscape Zone', description: 'Parks, lake, walking trails & green open spaces' },
     ];
 
     // Helper: Distance between two touch points
@@ -119,7 +116,6 @@ export default function MasterPlanS() {
                             <span className="h-[1px] w-6 bg-amber-700/40"></span>
                         </div>
                     </div>
-
                 </div>
 
                 {/* Main Content Grid */}
@@ -153,24 +149,6 @@ export default function MasterPlanS() {
                                     alt="Master Plan"
                                     className="w-full h-full object-contain pointer-events-none"
                                 />
-
-                                {/* Hotspot Markers */}
-                                {mapFeatures.map((spot) => (
-                                    <button
-                                        key={spot.id}
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            setSelectedHotspot(spot.id);
-                                        }}
-                                        style={{ top: spot.top, left: spot.left }}
-                                        className={`absolute -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-9 md:h-9 rounded-full flex items-center justify-center font-bold text-sm shadow-xl transition-all duration-300 pointer-events-auto cursor-pointer ${selectedHotspot === spot.id
-                                            ? 'bg-amber-400 text-stone-900 ring-4 ring-amber-300/50 scale-110'
-                                            : 'bg-[#1C3026] text-amber-200 border border-amber-400/60 hover:scale-110 hover:bg-amber-500 hover:text-stone-900'
-                                            }`}
-                                    >
-                                        {spot.id}
-                                    </button>
-                                ))}
                             </div>
 
                             {/* Compass Overlay */}
@@ -183,8 +161,6 @@ export default function MasterPlanS() {
                                 <ZoomIn className="w-3.5 h-3.5" />
                                 <span>Pinch with 2 fingers to Zoom ({Math.round(zoomLevel * 100)}%)</span>
                             </div>
-
-
                         </div>
 
                         {/* Legend Bar */}
@@ -209,7 +185,7 @@ export default function MasterPlanS() {
                                     MAP FEATURES
                                 </h3>
                                 <p className="text-[10px] text-stone-400 mt-0.5">
-                                    Click on hotspots to explore zones
+                                    Overview of site zones and layout
                                 </p>
                             </div>
 

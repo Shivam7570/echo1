@@ -125,67 +125,8 @@ export const GalleryAndFooter = () => {
             category: 'Garden',
             size: 'large',
         },
-        {
-            src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
-            alt: 'Sleek Architecture with Lush Manicured Garden Patio',
-            category: 'Garden',
-            size: 'small',
-        },
 
-        {
-            src: 'https://cdn.home-designing.com/wp-content/uploads/2023/04/modern-houses.jpg',
-            alt: 'Modern Japanese-inspired Zen Garden Villa',
-            category: 'Garden',
-            size: 'small',
-        },
-        {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm4Uk5YTsKaU2jaFXMOSpeQMUxWiZfsK1rMYqMK-Z4Fg&s=10',
-            alt: 'Elegantly Landscaped Terrace & Sun Deck Garden',
-            category: 'Garden',
-            size: 'large',
-        },
-        {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
-            alt: 'Architectural Lawn & Open Sky Villa Garden',
-            category: 'Garden',
-            size: 'medium',
-        },
-        {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
-            alt: 'Architectural Lawn & Open Sky Villa Garden',
-            category: 'Garden',
-            size: 'medium',
-        },
-        {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
-            alt: 'Architectural Lawn & Open Sky Villa Garden',
-            category: 'Garden',
-            size: 'medium',
-        },
-        {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
-            alt: 'Architectural Lawn & Open Sky Villa Garden',
-            category: 'Garden',
-            size: 'medium',
-        },
-        {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
-            alt: 'Architectural Lawn & Open Sky Villa Garden',
-            category: 'Garden',
-            size: 'medium',
-        },
-        {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
-            alt: 'Architectural Lawn & Open Sky Villa Garden',
-            category: 'Garden',
-            size: 'Kitchen',
-        },
-        {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
-            alt: 'Architectural Lawn & Open Sky Villa Garden',
-            category: 'Garden',
-            size: 'Kitchen',
-        },
+
     ];
 
     const filteredImages =

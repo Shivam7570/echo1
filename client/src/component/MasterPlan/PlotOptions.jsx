@@ -1,10 +1,9 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { HiArrowRight } from 'react-icons/hi';
 import { TbCompass } from 'react-icons/tb';
 
 const FILTERS = [
@@ -56,12 +55,7 @@ const STATUS_STYLES = {
 };
 
 export default function PlotOptions() {
-    const [filters, setFilters] = useState({});
-
-    const handleFilterChange = (label, value) =>
-        setFilters((f) => ({ ...f, [label]: value }));
-
-    const visiblePlots = useMemo(() => PLOTS, [filters]);
+    const visiblePlots = useMemo(() => PLOTS, []);
 
     return (
         <section className="bg-ivory py-20 md:py-24 px-6 md:px-10">
@@ -77,7 +71,6 @@ export default function PlotOptions() {
                     {FILTERS.map((f) => (
                         <select
                             key={f.label}
-                            onChange={(e) => handleFilterChange(f.label, e.target.value)}
                             className="flex-1 min-w-[160px] text-sm border border-forest/10 rounded-lg px-4 py-2.5 text-ink/80 bg-ivory focus:outline-none focus:ring-1 focus:ring-gold"
                             defaultValue=""
                         >
@@ -133,23 +126,14 @@ export default function PlotOptions() {
                                         <span className="text-sm font-semibold text-gold">{plot.price}</span>
                                     </div>
                                     <p className="text-xs text-ink/60 mb-1">{plot.area}</p>
-                                    <p className="text-xs text-ink/60 flex items-center gap-1 mb-4">
+                                    <p className="text-xs text-ink/60 flex items-center gap-1">
                                         <TbCompass className="text-forest" /> {plot.facing}
                                     </p>
-                                    <button className="mt-auto w-full border border-forest-dark/20 hover:bg-forest-dark hover:text-white text-forest-dark text-sm py-2.5 rounded-md transition-colors flex items-center justify-center gap-1.5">
-                                        View Details <HiArrowRight className="text-xs" />
-                                    </button>
                                 </div>
                             </motion.div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
-
-                <div className="text-center mt-10">
-                    <button className="inline-flex items-center gap-2 bg-forest-dark hover:bg-forest text-white px-7 py-3.5 rounded-md text-sm font-medium transition-transform hover:scale-[1.03]">
-                        View All Available Plots <HiArrowRight />
-                    </button>
-                </div>
             </div>
         </section>
     );

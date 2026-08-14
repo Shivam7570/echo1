@@ -56,14 +56,14 @@ export default function Section5() {
         {
             id: 2,
             name: 'Garjiya Devi Temple',
-            duration: '15 Minutes',
+            duration: '45 Minutes',
             icon: <FaLandmark className="w-4 h-4 text-amber-500" />,
             image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=600',
         },
         {
             id: 3,
             name: 'Kainchi Dham ',
-            duration: '20 Minutes',
+            duration: '60 Minutes',
             icon: <FaLandmark className="w-4 h-4 text-amber-500" />,
             image: 'https://static1.squarespace.com/static/5e46d3773bf1ec51a04b43f8/5e4ac92571f6217a28b98aa4/5e4ac92571f6217a28b98aa5/1607096660126/kainchi-dham-e1458255355599.jpg?format=1500w',
         },
@@ -83,8 +83,8 @@ export default function Section5() {
         },
         {
             id: 6,
-            name: 'Pili Dam',
-            duration: '2 Hours',
+            name: ' Kalagarh Dam',
+            duration: '15 minutes',
             icon: <FaWater className="w-4 h-4 text-amber-500" />,
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IMXqCNP26EoptJgP7oWSZQdRBWtz6KIjSqZb3sjDYQ&s=10',
         },

@@ -143,6 +143,7 @@ export default function App() {
         (item.phone && item.phone.includes(searchQuery)) ||
         (item.email && item.email.toLowerCase().includes(searchQuery.toLowerCase())) ||
         (item.city && item.city.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (item.preferredPlot && item.preferredPlot.toLowerCase().includes(searchQuery.toLowerCase())) ||
         (item.villaName && item.villaName.toLowerCase().includes(searchQuery.toLowerCase())) ||
         (item.resortName && item.resortName.toLowerCase().includes(searchQuery.toLowerCase())) ||
         (item.propertyType && item.propertyType.toLowerCase().includes(searchQuery.toLowerCase())) ||
@@ -162,6 +163,7 @@ export default function App() {
       email: item.email || '',
       phone: item.phone || '',
       city: item.city || '',
+      preferredPlot: item.preferredPlot || '',
       villaName: item.villaName || '',
       resortName: item.resortName || '',
       propertyType: item.propertyType || '',
@@ -206,6 +208,7 @@ export default function App() {
 
   // Get Property Label for table display
   const getPropertyText = (item) => {
+    if (item.preferredPlot) return `Plot: ${item.preferredPlot}`;
     return item.villaName || item.resortName || item.propertyType || 'General Enquiry';
   };
 
@@ -591,6 +594,17 @@ export default function App() {
                     <option value="closed">🔴 Closed</option>
                   </select>
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-stone-400 uppercase text-[10px] tracking-wider mb-1">Preferred Plot / Size (Master Plan)</label>
+                <input
+                  type="text"
+                  placeholder="e.g. 126 Sq. Yd. or Plot A-12"
+                  value={editFormData.preferredPlot || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, preferredPlot: e.target.value })}
+                  className="w-full bg-stone-950 border border-stone-800 rounded px-3 py-2 text-stone-200 focus:outline-none focus:border-[#C6A15B]"
+                />
               </div>
 
               <div>

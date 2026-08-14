@@ -64,7 +64,7 @@ const roomsData = [
     type: 'With Private Pool',
     price: '20,000',
     badge: 'MOST LOVED',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4HXDVEnr_2GT8VmG1l4h8gegOATnRUId-zwxm_K6Bxg&s=10',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpxc5ORbg5OH9jfbrUrHQomuzQ_uOe_u1TRgAZnmF1iQ&s=10',
     specs: [
       { icon: <Maximize2 className="w-3.5 h-3.5" />, text: '850 sq. ft.' },
       { icon: <Mountain className="w-3.5 h-3.5" />, text: 'Mountain/Hill View' }

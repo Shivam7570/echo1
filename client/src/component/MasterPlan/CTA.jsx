@@ -29,9 +29,7 @@ export default function CTA() {
                     Own premium land inside Echo – The Jungle Resort &amp; Villa.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
-                    <button className="bg-gold hover:bg-gold/90 text-forest-dark font-semibold px-7 py-3.5 rounded-md text-sm flex items-center gap-2 transition-transform hover:scale-[1.03]">
-                        Book a Site Visit <HiOutlineCalendar />
-                    </button>
+
                     <button className="border border-white/50 hover:border-gold hover:text-gold text-white px-7 py-3.5 rounded-md text-sm flex items-center gap-2 transition-colors">
                         Talk to Our Expert <TbHeadset />
                     </button>
