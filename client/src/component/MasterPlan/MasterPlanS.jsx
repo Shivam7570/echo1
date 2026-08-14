@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Compass, ZoomIn } from 'lucide-react';
-import imageSrc from "../../assets/Master Layout-02.png";
+import imageSrc from "../../assets/masterlayout.jpeg";
 
 export default function MasterPlanS() {
     const [selectedHotspot, setSelectedHotspot] = useState(null);

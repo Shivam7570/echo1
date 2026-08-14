@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import masterplan from "../../assets/Master Layout-02.png";
+import masterplan from "../../assets/masterlayout.jpeg";
+
 import { X } from 'lucide-react';
 
 export default function Section4() {
