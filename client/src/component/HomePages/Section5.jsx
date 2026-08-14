@@ -110,17 +110,7 @@ export default function Section5() {
                         and surrounded by renowned tourist destinations.
                     </p>
                     {/* Added Address Subtext with Clickable Link */}
-                    <div className="pt-2">
-                        <a
-                            href="https://earth.google.com/web/search/Gurudwara+Road,+Village+Narainwala,+Dhampur+District+Bijnor,+Uttar+Pradesh,+246735%2e/@29.85639196,76.32715326,991.31779548a,2567289.73631233d,35y,-0h,0t,0r/data=CsMBGpQBEo0BCiUweDM5MGEzM2NhMDZjZTVkM2I6MHg2NGYwMmI2MmNiNjkwZWViGU1dnnNcfD1AIYOBjCVRqlNAKlJHdXJ1ZHdhcmEgUm9hZCwgVmlsbGFnZSBOYXJhaW53YWxhLCBEaGFtcHVyIERpc3RyaWN0IEJpam5vciwgVXR0YXIgUHJhZGVzaCwgMjQ2NzM1GAIgASImCiQJt0WexdCZMUARtEWexdCZMcAZoRKBozQkSEAhyZJ5tsGGSMBCAggBOgMKATBCAggASg0I____________ARAA"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center space-x-1.5 text-xs text-amber-800 font-medium hover:text-amber-950 hover:underline transition-colors"
-                        >
-                            <FaMapMarkerAlt className="w-3.5 h-3.5 flex-shrink-0 text-amber-700" />
-                            <span>Gurudwara Road, Village Narainwala, Dhampur District Bijnor.</span>
-                        </a>
-                    </div>
+
                 </div>
 
                 {/* Top Split: Map + Advantage Items */}
