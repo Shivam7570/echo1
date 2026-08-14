@@ -35,7 +35,7 @@ export default function RSection() {
     };
 
     return (
-        <section className="relative w-full min-h-screen bg-[#070b07] text-white font-serif overflow-hidden flex flex-col justify-between">
+        <section className="relative w-full py-12 h-auto bg-[#070b07] text-white font-serif overflow-hidden">
 
             {/* Background Image with Dark Gradient Overlays */}
             <div
@@ -50,16 +50,15 @@ export default function RSection() {
             </div>
 
             {/* Main Content Overlay */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-12 w-full flex-1 flex flex-col justify-between">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-8 w-full">
 
                 {/* Hero Body Content */}
-                <div className="max-w-xl py-12 space-y-6">
+                <div className="max-w-xl space-y-6">
 
-                    {/* Main Title Heading */}
+                    {/* Main Title Heading (Pehle Ki Tarah) */}
                     <div className="space-y-1">
                         <h1 className="text-5xl md:text-6xl font-light tracking-wide text-white">
                             YOUR DESTINATION
-
                         </h1>
                         <h1 className="text-5xl md:text-6xl font-light tracking-wide text-[#c29b4b]">
                             YOUR RESORT
@@ -136,7 +135,6 @@ export default function RSection() {
 
                 </div>
 
-                <div />
             </div>
 
             {/* ================= BOOK A SITE VISIT POPUP MODAL ================= */}

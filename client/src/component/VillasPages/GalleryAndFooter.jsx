@@ -4,7 +4,7 @@ export const GalleryAndFooter = () => {
     const [filter, setFilter] = useState('All');
     const [selectedImage, setSelectedImage] = useState(null);
 
-    const categories = ['All', 'Exterior', 'Living Room', 'Bedroom', 'Swimming Pool', 'Kitchen', 'Garden', 'Balcony', 'Night View'];
+    const categories = ['Exterior', 'Living Room', 'Bedroom', 'Swimming Pool', 'Kitchen', 'Garden', 'Balcony', 'Night View'];
 
     const galleryImages = [
         {
@@ -20,7 +20,32 @@ export const GalleryAndFooter = () => {
             size: 'small',
         },
         {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LKFVhtycB6H05dxXyjd8pngCFhC9iIAQqbcifvtC3g&s=10',
+            alt: 'Living Room',
+            category: 'Living Room',
+            size: 'small',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7lPcynCe6eAKSwTiyMoBHM0XdnXWddknzONGvb95Q_A&s=10',
+            alt: 'Living Room',
+            category: 'Living Room',
+            size: 'small',
+        },
+
+        {
             src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop',
+            alt: 'Bedroom',
+            category: 'Bedroom',
+            size: 'small',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb4HDarpHdQAPGyuW1P3UrpeMFtSGGX6Eb5xNjHHLnACUqJE13XyHtFcrY&s=10',
+            alt: 'Bedroom',
+            category: 'Bedroom',
+            size: 'small',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPl9EY4IHXuYgFosQhYZwXmCNUHkAcII2GaBQxpcZLImfccrOr719XiBE&s=10',
             alt: 'Bedroom',
             category: 'Bedroom',
             size: 'small',
@@ -32,10 +57,134 @@ export const GalleryAndFooter = () => {
             size: 'large',
         },
         {
-            src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop',
+            src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop',
+            alt: 'Bedroom',
+            category: 'Bedroom',
+            size: 'small',
+        },
+        {
+            src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop',
+            alt: 'Bedroom',
+            category: 'Bedroom',
+            size: 'small',
+        },
+        {
+            src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop',
+            alt: 'Bedroom',
+            category: 'Bedroom',
+            size: 'small',
+        },
+        {
+            src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop',
+            alt: 'Bedroom',
+            category: 'Bedroom',
+            size: 'small',
+        },
+        {
+            src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop',
+            alt: 'Bedroom',
+            category: 'Bedroom',
+            size: 'small',
+        },
+
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROIAqrFeT8Y_Ss6gwD_8uqWs6Ysw3CemmcGQTVdqTs0w&s=10',
+            alt: 'Bedroom',
+            category: 'Bedroom',
+            size: 'small',
+        },
+        {
+            src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop',
+            alt: 'Bedroom',
+            category: 'Bedroom',
+            size: 'small',
+        },
+
+
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOcklflt2waSoiKGWwCc8-OHAzAHiJsZCzK9L_WU6DxOQoE9uGGGKEFijU&s=10',
             alt: 'Garden',
             category: 'Garden',
             size: 'large',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7SUjFIlOt9MFbBr5zVGMzsTWnSU8nrb9Q5Id9gt9yaP9HBkDZz1hnRu_z&s=10',
+            alt: 'Luxury Minimalist Modern Villa Garden with Infinity Pool',
+            category: 'Garden',
+            size: 'large',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQysA-UqCmjV_nWRRHhKTMF3iF9bR-xYQu6uIXKuoqygw&s=10',
+            alt: 'Modern Tropical Resort Garden Villa',
+            category: 'Garden',
+            size: 'medium',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbjFR1EgF98wb3l_9LG9xmO8WUOnUDoJS5CDn6XabZYHYOpb8zLp5C6T2d&s=10',
+            alt: 'Dreamy Illuminated Villa Backyard Garden at Dusk',
+            category: 'Garden',
+            size: 'large',
+        },
+        {
+            src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
+            alt: 'Sleek Architecture with Lush Manicured Garden Patio',
+            category: 'Garden',
+            size: 'small',
+        },
+
+        {
+            src: 'https://cdn.home-designing.com/wp-content/uploads/2023/04/modern-houses.jpg',
+            alt: 'Modern Japanese-inspired Zen Garden Villa',
+            category: 'Garden',
+            size: 'small',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm4Uk5YTsKaU2jaFXMOSpeQMUxWiZfsK1rMYqMK-Z4Fg&s=10',
+            alt: 'Elegantly Landscaped Terrace & Sun Deck Garden',
+            category: 'Garden',
+            size: 'large',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
+            alt: 'Architectural Lawn & Open Sky Villa Garden',
+            category: 'Garden',
+            size: 'medium',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
+            alt: 'Architectural Lawn & Open Sky Villa Garden',
+            category: 'Garden',
+            size: 'medium',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
+            alt: 'Architectural Lawn & Open Sky Villa Garden',
+            category: 'Garden',
+            size: 'medium',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
+            alt: 'Architectural Lawn & Open Sky Villa Garden',
+            category: 'Garden',
+            size: 'medium',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
+            alt: 'Architectural Lawn & Open Sky Villa Garden',
+            category: 'Garden',
+            size: 'medium',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
+            alt: 'Architectural Lawn & Open Sky Villa Garden',
+            category: 'Garden',
+            size: 'Kitchen',
+        },
+        {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsv_JNWvRbEqWdVLEd6abnt-DklMIf7eZw1hLfHugdnNNQOnYdfhHoxyR4&s=10',
+            alt: 'Architectural Lawn & Open Sky Villa Garden',
+            category: 'Garden',
+            size: 'Kitchen',
         },
     ];
 

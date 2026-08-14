@@ -69,7 +69,7 @@ export const FeaturesAndInvestment = () => {
                         </div>
                     </div>
                     <img
-                        src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop"
+                        src="https://i.ytimg.com/vi/sddTsOvIO-o/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB8wJrH9cda1VDbx6TzLO6mQQ2iZQ"
                         alt="Investment Villa"
                         className="rounded-lg shadow-xl h-64 w-full object-cover"
                     />

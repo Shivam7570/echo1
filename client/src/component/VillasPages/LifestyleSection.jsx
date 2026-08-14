@@ -20,8 +20,8 @@ export const LifestyleSection = () => {
 
     const lifestyleImages = [
         'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format&fit=crop',
-        'https://images.pexels.com/photos/38120262/pexels-photo-38120262.jpeg',
+        'https://www.bocadolobo.com/en/inspiration-and-ideas/wp-content/uploads/2022/01/bedroom-22-boca-do-lobo-1400x1050.jpg',
+        'https://i.pinimg.com/564x/e0/2b/3f/e02b3f67d12ad875f2965d4141892e24.jpg',
         'https://images.pexels.com/photos/17773876/pexels-photo-17773876.png',
     ];
 
