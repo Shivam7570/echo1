@@ -1,5 +1,30 @@
 const asyncHandler = require("express-async-handler");
 const Enquiry = require("../models/Enquiry");
+const VillaEnquiry = require("../models/VillaEnquiry");
+const ResortEnquiry = require("../models/ResortEnquiry");
+const SiteVisit = require("../models/SiteVisit");
+
+// @desc    Get counts for all database tables (Fast KPI stats)
+// @route   GET /api/enquiries/stats or /api/stats
+// @access  Public/Admin
+const getStats = asyncHandler(async (req, res) => {
+  const [allCount, villaCount, resortCount, siteVisitCount] = await Promise.all([
+    Enquiry.countDocuments(),
+    VillaEnquiry.countDocuments(),
+    ResortEnquiry.countDocuments(),
+    SiteVisit.countDocuments(),
+  ]);
+
+  res.json({
+    success: true,
+    data: {
+      all: allCount,
+      villas: villaCount,
+      resorts: resortCount,
+      siteVisits: siteVisitCount,
+    },
+  });
+});
 
 // @desc    Create a new enquiry
 // @route   POST /api/enquiries
@@ -93,9 +118,11 @@ const deleteEnquiry = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
+  getStats,
   createEnquiry,
   getEnquiries,
   getEnquiryById,
   updateEnquiry,
   deleteEnquiry,
 };
+

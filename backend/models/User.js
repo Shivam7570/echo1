@@ -27,6 +27,22 @@ const userSchema = new mongoose.Schema(
       enum: ["admin", "editor"],
       default: "admin",
     },
+    resetCode: {
+      type: String,
+      select: false,
+    },
+    resetCodeExpire: {
+      type: Date,
+      select: false,
+    },
+    resetToken: {
+      type: String,
+      select: false,
+    },
+    resetTokenExpire: {
+      type: Date,
+      select: false,
+    },
   },
   { timestamps: true }
 );

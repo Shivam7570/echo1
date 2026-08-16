@@ -73,9 +73,47 @@ const healthCheck = (req, res) => {
   });
 };
 
+const { getStats } = require("./controllers/enquiryController");
+const {
+  requestResetCode,
+  verifyResetCode,
+  requestEmailConfirmationLink,
+  verifyEmailConfirmationToken,
+  confirmNewPassword,
+} = require("./controllers/authController");
+
 app.get("/api/health", healthCheck);
 app.get("/health", healthCheck);
 app.get("/", healthCheck);
+app.get("/api/stats", getStats);
+app.get("/stats", getStats);
+
+app.post("/api/auth/request-email-confirmation", requestEmailConfirmationLink);
+app.post("/auth/request-email-confirmation", requestEmailConfirmationLink);
+app.post("/api/request-email-confirmation", requestEmailConfirmationLink);
+app.post("/request-email-confirmation", requestEmailConfirmationLink);
+
+app.post("/api/auth/verify-reset-token", verifyEmailConfirmationToken);
+app.post("/auth/verify-reset-token", verifyEmailConfirmationToken);
+app.post("/api/verify-reset-token", verifyEmailConfirmationToken);
+app.post("/verify-reset-token", verifyEmailConfirmationToken);
+
+app.post("/api/auth/confirm-new-password", confirmNewPassword);
+app.post("/auth/confirm-new-password", confirmNewPassword);
+app.post("/api/confirm-new-password", confirmNewPassword);
+app.post("/confirm-new-password", confirmNewPassword);
+
+app.post("/api/auth/request-reset-code", requestResetCode);
+app.post("/auth/request-reset-code", requestResetCode);
+app.post("/api/request-reset-code", requestResetCode);
+app.post("/request-reset-code", requestResetCode);
+
+app.post("/api/auth/verify-reset-password", verifyResetCode);
+app.post("/auth/verify-reset-password", verifyResetCode);
+app.post("/api/verify-reset-password", verifyResetCode);
+app.post("/verify-reset-password", verifyResetCode);
+
+
 
 
 // --------------------------------------------------
