@@ -133,14 +133,14 @@ export default function EchoHome() {
                     </div>
 
                     <p className="text-white text-lg mb-9 leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                        A Premium Resort, Findimming &amp; Destination Near{" "}
+                        A Premium Resort & Villa &amp; Destination Near {" "}
                         <span
                             style={{
                                 color: palette.goldSoft,
                                 textShadow: "0 2px 6px rgba(0,0,0,0.8)",
                             }}
                         >
-                            Jim Corbett
+                            By Jim Corbett
                         </span>
                     </p>
                     <div className="flex flex-wrap gap-4">

@@ -45,11 +45,18 @@ export default function EchoFooter() {
                         {/* Prominent & Larger Logo Section */}
                         <div className="pt-2">
                             <div className="inline-block p-2.5 bg-stone-900/40 rounded-xl border border-emerald-900/30 backdrop-blur-sm">
-                                <img
-                                    className="h-24 sm:h-28 w-auto object-contain max-w-full drop-shadow-md"
-                                    src={logo}
-                                    alt="Velzano Logo"
-                                />
+                                <a
+                                    href="https://velzanoinfra.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block"
+                                >
+                                    <img
+                                        className="h-24 sm:h-28 w-auto object-contain max-w-full drop-shadow-md cursor-pointer"
+                                        src={logo}
+                                        alt="Velzano Logo"
+                                    />
+                                </a>
                             </div>
                         </div>
                     </div>

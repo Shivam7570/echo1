@@ -5,6 +5,7 @@ import Section4 from "./HomePages/Section4";
 import Section5 from "./HomePages/Section5";
 import Section6 from "./HomePages/Section6";
 import SectionRoom from "./HomePages/SectionRoom";
+import Video from "./HomePages/video";
 
 
 
@@ -12,8 +13,9 @@ function Home() {
     return (
         <>
             <Section1 />
+            <Video />
             <Section3 />
-            <SectionRoom/>
+            <SectionRoom />
             <DestinationWeddings />
             <Section4 />
             <Section5 />
