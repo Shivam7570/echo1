@@ -128,7 +128,7 @@ export default function Section5() {
                         />
                         {/* Custom Property Overlay Badge (Clickable) */}
                         <a
-                            href="https://earth.google.com/web/search/Gurudwara+Road,+Village+Narainwala,+Dhampur+District+Bijnor,+Uttar+Pradesh,+246735%2e/@29.85639196,76.32715326,991.31779548a,2567289.73631233d,35y,-0h,0t,0r/data=CsMBGpQBEo0BCiUweDM5MGEzM2NhMDZjZTVkM2I6MHg2NGYwMmI2MmNiNjkwZWViGU1dnnNcfD1AIYOBjCVRqlNAKlJHdXJ1ZHdhcmEgUm9hZCwgVmlsbGFnZSBOYXJhaW53YWxhLCBEaGFtcHVyIERpc3RyaWN0IEJpam5vciwgVXR0YXIgUHJhZGVzaCwgMjQ2NzM1GAIgASImCiQJt0WexdCZMUARtEWexdCZMcAZoRKBozQkSEAhyZJ5tsGGSMBCAggBOgMKATBCAggASg0I____________ARAA"
+                            href="https://www.google.com/maps/search/?api=1&query=Narainwala,+Kalagarh+Road+nearby+Amangarh+Tiger+Reserve"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="absolute top-4 left-4 bg-[#0F261C]/90 text-white backdrop-blur-md p-3 rounded-xl border border-amber-500/30 flex items-center space-x-3 shadow-lg max-w-[280px] hover:bg-[#0F261C] transition-colors group cursor-pointer"
@@ -138,7 +138,7 @@ export default function Section5() {
                             </div>
                             <div>
                                 <h4 className="text-xs tracking-wider uppercase font-semibold text-amber-400 group-hover:underline">ECHO</h4>
-                                <p className="text-[10px] text-slate-300 leading-tight">Gurudwara Road, Narainwala, Dhampur, Bijnor, UP - 246735</p>
+                                <p className="text-[10px] text-slate-300 leading-tight">Narainwala, Kalagarh Road nearby Amangarh Tiger Reserve</p>
                             </div>
                         </a>
                     </div>

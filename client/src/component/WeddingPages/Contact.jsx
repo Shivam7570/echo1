@@ -75,7 +75,7 @@ export const ContactAndFooterSection = () => {
                     <div>
                         <span className="text-amber-700 text-xs tracking-widest uppercase">Get In Touch</span>
                         <div className="space-y-4 mt-6 text-sm text-gray-700">
-                            <p>📍 <strong>Resort Address</strong><br />Echo – The Jungle Resort &amp; Villa, Gurudwara Road, Village Narainwala, Dhampur District Bijnor.</p>
+                            <p>📍 <strong>Resort Address</strong><br />Echo – The Jungle Resort &amp; Villa, Narainwala, Kalagarh Road nearby Amangarh Tiger Reserve.</p>
                             <p>📞 <strong>Call Us</strong><br /><a href="tel:+919217579077" className="hover:text-amber-700">+91 9217579077</a></p>
                             <p>✉️ <strong>Email Us</strong><br /><a href="mailto:info@echothejungle.com" className="hover:text-amber-700">info@echothejungle.com</a></p>
                             <p>💬 <strong>Chat on WhatsApp</strong><br /><a href="https://wa.me/919217579077" target="_blank" rel="noreferrer" className="text-emerald-700 font-semibold hover:underline">+91 9217579077</a></p>
@@ -90,7 +90,7 @@ export const ContactAndFooterSection = () => {
                         <div className="mt-6 rounded-lg overflow-hidden border">
                             <iframe
                                 title="Resort Location"
-                                src="https://www.google.com/maps?q=Dhampur,Bijnor&output=embed"
+                                src="https://www.google.com/maps?q=Narainwala,Kalagarh+Road+nearby+Amangarh+Tiger+Reserve&output=embed"
                                 className="w-full h-64 border-0"
                                 loading="lazy"
                             />

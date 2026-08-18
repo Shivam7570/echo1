@@ -234,7 +234,7 @@ export default function DestinationWeddings() {
 
                             <div className="flex items-center space-x-2">
                                 <MapPin className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
-                                <span className="text-[11px]">Gurudwara Road, Village Narainwala, Dhampur District Bijnor, Uttar Pradesh, 246735.</span>
+                                <span className="text-[11px]">Narainwala, Kalagarh Road nearby Amangarh Tiger Reserve.</span>
                             </div>
                         </div>
                     </div>

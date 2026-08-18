@@ -99,7 +99,7 @@ export default function EchoFooter() {
                             <div className="flex items-start space-x-3">
                                 <MapPin className="w-4 h-4 text-[#C5A253] flex-shrink-0 mt-0.5" />
                                 <span className="leading-relaxed">
-                                    Gurudwara Road, Village Narainwala, Dhampur District Bijnor.
+                                    Narainwala, Kalagarh Road nearby Amangarh Tiger Reserve.
                                 </span>
                             </div>
                             <div className="flex items-start space-x-3">

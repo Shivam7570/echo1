@@ -2,11 +2,11 @@ import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function CorporateOfficeSection() {
-    // Google Maps embed URL for Gurudwara Road, Village Narainwala, Dhampur District Bijnor, Uttar Pradesh, 246735
+    // Google Maps embed URL for Narainwala, Kalagarh Road nearby Amangarh Tiger Reserve
     const googleMapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.123456789!2d78.5012345!3d29.3123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDE4JzQ0LjQiTiA3OMKwMzAnMDUuMyJF!5e0!3m2!1sen!2sin!4v1234567890!5m2!1sen!2sin";
 
     // Direct Google Maps link for directions/external viewing
-    const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Gurudwara+Road,+Village+Narainwala,+Dhampur,+District+Bijnor,+Uttar+Pradesh+246735";
+    const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Narainwala,+Kalagarh+Road+nearby+Amangarh+Tiger+Reserve";
 
     return (
         <div className="w-full bg-[#081B11] p-6 md:p-12 font-sans flex items-center justify-center">
@@ -66,7 +66,7 @@ export default function CorporateOfficeSection() {
                                     Echo – The Jungle Resort & Villa
                                 </p>
                                 <p className="text-xs text-stone-400 leading-relaxed">
-                                    Gurudwara Road, Village Narainwala, Dhampur District Bijnor, Uttar Pradesh, 246735.
+                                    Narainwala, Kalagarh Road nearby Amangarh Tiger Reserve.
                                 </p>
                             </div>
                         </div>
