@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import './App.css'
 import Navbar from './component/Navbar/Navbar'
 import EchoFooter from './component/EchoFooter'
+import ScrollToTop from './component/Common/ScrollToTop'
 
 // Lazy-loaded route components
 const Home = lazy(() => import('./component/Home'));
@@ -19,8 +20,13 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Navbar />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={
+        <div className="min-h-screen bg-[#05110B] flex items-center justify-center text-[#C6A15B]">
+          <div className="text-sm font-sans tracking-widest uppercase animate-pulse">Loading...</div>
+        </div>
+      }>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/resort" element={<Resort />} />
