@@ -6,6 +6,8 @@ import Navbar from './component/Navbar/Navbar'
 import EchoFooter from './component/EchoFooter'
 import ScrollToTop from './component/Common/ScrollToTop'
 
+import echoLogo from './assets/echologo2.png'
+
 // Lazy-loaded route components
 const Home = lazy(() => import('./component/Home'));
 const Resort = lazy(() => import('./component/Resort'));
@@ -23,8 +25,9 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <Suspense fallback={
-        <div className="min-h-screen bg-[#05110B] flex items-center justify-center text-[#C6A15B]">
-          <div className="text-sm font-sans tracking-widest uppercase animate-pulse">Loading...</div>
+        <div className="min-h-screen bg-[#05110B] flex flex-col items-center justify-center gap-4 text-[#C6A15B] px-4">
+          <img src={echoLogo} alt="Echo Logo" className="h-20 sm:h-28 w-auto object-contain animate-pulse" />
+          <div className="text-xs font-sans tracking-[0.3em] uppercase text-[#C6A15B]/80 animate-pulse">Loading...</div>
         </div>
       }>
         <Routes>
