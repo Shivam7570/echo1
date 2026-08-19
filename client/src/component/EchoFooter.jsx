@@ -7,7 +7,8 @@ import {
     MapPin,
     Clock,
     Download,
-    ArrowUp
+    ArrowUp,
+    ExternalLink
 } from 'lucide-react';
 import logo from "../assets/infraLogo.png";
 
@@ -42,22 +43,25 @@ export default function EchoFooter() {
                             VELZANO INFRA PRIVATE LIMITED is a forward-thinking real estate developer creating premium residential, commercial, and hospitality spaces. With a focus on quality, innovation, sustainability, and transparency, Velzano delivers future-ready environments built for lasting value and elevated living.
                         </p>
 
-                        {/* Prominent & Larger Logo Section */}
+                        {/* Interactive Hoverable Logo Card */}
                         <div className="pt-2">
-                            <div className="inline-block p-2.5 bg-stone-900/40 rounded-xl border border-emerald-900/30 backdrop-blur-sm">
-                                <a
-                                    href="https://velzanoinfra.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-block"
-                                >
-                                    <img
-                                        className="h-24 sm:h-28 w-auto object-contain max-w-full drop-shadow-md cursor-pointer"
-                                        src={logo}
-                                        alt="Velzano Logo"
-                                    />
-                                </a>
-                            </div>
+                            <a
+                                href="https://velzanoinfra.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group relative inline-block p-3 bg-stone-900/50 rounded-xl border border-emerald-900/40 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-[#C5A253]/60 hover:bg-stone-900/80 hover:shadow-lg hover:shadow-[#C5A253]/10 cursor-pointer overflow-hidden"
+                            >
+                                <img
+                                    className="h-24 sm:h-28 w-auto object-contain max-w-full drop-shadow-md group-hover:brightness-110 transition-all duration-300"
+                                    src={logo}
+                                    alt="Velzano Infra Private Limited Logo"
+                                />
+
+                                {/* External Link Hint Badge on Hover */}
+                                <div className="absolute top-2 right-2 bg-[#C5A253] text-[#051C12] p-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+                                    <ExternalLink className="w-3.5 h-3.5 stroke-[2.5]" />
+                                </div>
+                            </a>
                         </div>
                     </div>
 

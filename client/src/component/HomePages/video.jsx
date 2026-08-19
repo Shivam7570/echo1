@@ -1,15 +1,58 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
     Leaf,
     Home,
     Mountain,
-    ShieldCheck
+    ShieldCheck,
+    Play,
+    Pause
 } from 'lucide-react';
 
-// Importing the video file directly from the path provided
 import videoSrc from '/video.mp4';
 
 export default function Video() {
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    // Auto play/pause video when it scrolls in/out of view
+    useEffect(() => {
+        const videoElement = videoRef.current;
+        if (!videoElement) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    videoElement.play()
+                        .then(() => setIsPlaying(true))
+                        .catch(() => setIsPlaying(false)); // Handles browser autoplay restrictions
+                } else {
+                    videoElement.pause();
+                    setIsPlaying(false);
+                }
+            },
+            { threshold: 0.5 } // Triggers when 50% of the video is visible
+        );
+
+        observer.observe(videoElement);
+
+        return () => {
+            if (videoElement) observer.unobserve(videoElement);
+        };
+    }, []);
+
+    // Toggle play/pause state manually
+    const togglePlay = () => {
+        if (videoRef.current) {
+            if (isPlaying) {
+                videoRef.current.pause();
+                setIsPlaying(false);
+            } else {
+                videoRef.current.play();
+                setIsPlaying(true);
+            }
+        }
+    };
+
     const features = [
         {
             icon: Leaf,
@@ -55,17 +98,32 @@ export default function Video() {
                     </p>
                 </div>
 
-                {/* Clean Video Player */}
-                <div className="relative rounded-xl overflow-hidden border border-[#C5A253]/40 shadow-xl bg-stone-900">
+                {/* Interactive Video Player */}
+                <div className="relative rounded-xl overflow-hidden border border-[#C5A253]/40 shadow-xl bg-stone-900 group">
                     <div className="relative w-full h-[240px] sm:h-[320px] md:h-[380px] bg-black">
                         <video
-                            className="w-full h-full object-cover"
+                            ref={videoRef}
+                            className="w-full h-full object-cover cursor-pointer"
                             src={videoSrc}
-                            autoPlay
                             loop
-                            muted
+
                             playsInline
+                            onClick={togglePlay}
                         />
+
+                        {/* Centered Overlay Play/Pause Button */}
+                        <button
+                            onClick={togglePlay}
+                            aria-label={isPlaying ? "Pause video" : "Play video"}
+                            className={`absolute inset-0 m-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-black/50 border border-[#C5A253] text-[#C5A253] flex items-center justify-center transition-all duration-300 transform hover:scale-110 focus:outline-none ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'
+                                }`}
+                        >
+                            {isPlaying ? (
+                                <Pause className="w-8 h-8 fill-[#C5A253]" />
+                            ) : (
+                                <Play className="w-8 h-8 fill-[#C5A253] translate-x-0.5" />
+                            )}
+                        </button>
                     </div>
                 </div>
 

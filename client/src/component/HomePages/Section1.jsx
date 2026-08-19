@@ -87,10 +87,10 @@ const highlights = [
     },
     {
         icon: Milestone,
-        title: "Villa Plots",
-        desc: "Build Your Dream Villa",
+        title: "International Flavours",
+        desc: "Taste the world, beautifully curated for you.",
         image:
-            "https://www.groavy.com/static/media/Feb27.57f5d30f912f9de93e11.webp",
+            "https://st2.depositphotos.com/25797126/49426/i/1600/depositphotos_494268048-stock-photo-laid-table-food-breakfast-terrace.jpg",
     },
 ];
 
