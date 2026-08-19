@@ -84,7 +84,7 @@ export default function Video() {
                 <div className="text-center space-y-2">
                     <div className="flex items-center justify-center space-x-2 text-[#C5A253] text-[10px] sm:text-xs font-semibold tracking-[0.2em]">
                         <span className="w-6 h-[1px] bg-[#C5A253]/60"></span>
-                        <span>02</span>
+
                         <span>OUR DESTINATION</span>
                         <span className="w-6 h-[1px] bg-[#C5A253]/60"></span>
                     </div>
