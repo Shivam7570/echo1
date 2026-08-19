@@ -13,34 +13,34 @@ export default function VillaTypesSection() {
     const villaTypes = [
         {
             id: 1,
-            badge: 'Lily Haven Villas',
+            badge: 'Orchid Grand Villas',
             heroImage: 'https://images.pexels.com/photos/14658637/pexels-photo-14658637.jpeg',
             layoutImage: resort1Layout1,
-            area: '126 sq. yrd.',
+            area: '220 sq. yrd.',
             villaSizeRange: 'Customizable build options'
         },
         {
             id: 2,
-            badge: 'Azalea Retreat Villas',
+            badge: 'Lotus Signature Villas',
             heroImage: 'https://images.pexels.com/photos/24807128/pexels-photo-24807128.jpeg',
             layoutImage: resort1Layout2,
-            area: '145 sq. yrd.',
-            villaSizeRange: 'Customizable build options'
-        },
-        {
-            id: 3,
-            badge: 'Lotus Signature Villas',
-            heroImage: 'https://images.pexels.com/photos/15531226/pexels-photo-15531226.jpeg',
-            layoutImage: resort1Layout3,
             area: '188 sq. yrd.',
             villaSizeRange: 'Customizable build options'
         },
         {
+            id: 3,
+            badge: 'Azalea Retreat Villas',
+            heroImage: 'https://images.pexels.com/photos/15531226/pexels-photo-15531226.jpeg',
+            layoutImage: resort1Layout3,
+            area: '145 sq. yrd.',
+            villaSizeRange: 'Customizable build options'
+        },
+        {
             id: 4,
-            badge: 'Orchid Grand Villas',
+            badge: 'Lily Haven Villas',
             heroImage: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600',
             layoutImage: resort1Layout4,
-            area: '220 sq. yrd.',
+            area: '126 sq. yrd.',
             villaSizeRange: 'Customizable build options'
         },
     ];
