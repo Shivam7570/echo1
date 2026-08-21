@@ -167,14 +167,15 @@ export default function EchoFooter() {
                                         <Download className="w-3.5 h-3.5" />
                                     </a>
 
-                                    {/* Second PDF Download Button (Replace href with your link) */}
+                                    {/* Master Plan / Details PDF Download Button */}
                                     <a
-                                        href="YOUR_SECOND_PDF_LINK_HERE"
+                                        href="/ApplicationForm.pdf"
+                                        download="ApplicationForm.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="bg-emerald-950/80 hover:bg-emerald-900 border border-[#C5A253]/50 text-[#C5A253] font-bold text-[11px] uppercase tracking-wider py-2 px-3 rounded-lg flex items-center justify-between transition-colors w-full backdrop-blur-sm"
                                     >
-                                        <span>Master Plan / Details</span>
+                                        <span>Application Form </span>
                                         <FileText className="w-3.5 h-3.5" />
                                     </a>
                                 </div>
