@@ -8,7 +8,8 @@ import {
     Clock,
     Download,
     ArrowUp,
-    ExternalLink
+    ExternalLink,
+    FileText
 } from 'lucide-react';
 import logo from "../assets/infraLogo.png";
 
@@ -137,10 +138,10 @@ export default function EchoFooter() {
                         {/* Download Brochure Card */}
                         <div className="space-y-2">
                             <h3 className="text-[#C5A253] text-xs font-bold tracking-widest uppercase">
-                                DOWNLOAD BROCHURE
+                                DOWNLOAD BROCHURES
                             </h3>
                             <div
-                                className="relative w-full rounded-xl overflow-hidden border border-[#C5A253]/30 bg-cover bg-center p-5 min-h-[160px] flex flex-col justify-between shadow-lg"
+                                className="relative w-full rounded-xl overflow-hidden border border-[#C5A253]/30 bg-cover bg-center p-5 flex flex-col justify-between shadow-lg"
                                 style={{
                                     backgroundImage: `linear-gradient(to bottom, rgba(5, 28, 18, 0.45), rgba(5, 28, 18, 0.9)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80')`
                                 }}
@@ -148,20 +149,35 @@ export default function EchoFooter() {
                                 <div>
                                     <div className="text-white font-serif text-base font-semibold tracking-wider">ECHO</div>
                                     <p className="text-[9px] text-[#C5A253] uppercase tracking-widest font-semibold">THE JUNGLE RESORT & VILLA</p>
-                                    <p className="text-xs text-stone-200 mt-2 font-serif italic">
-                                        A Destination<br />Beyond Ordinary
+                                    <p className="text-xs text-stone-200 mt-1 font-serif italic">
+                                        A Destination Beyond Ordinary
                                     </p>
                                 </div>
 
-                                <a
-                                    href="https://drive.google.com/uc?export=download&id=1_KTN2gb4tdGVJmWOiidoQd4F01Tp5jud"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="mt-4 bg-[#C5A253] hover:bg-[#b38f42] text-[#051C12] font-bold text-xs uppercase tracking-wider py-2 px-4 rounded-lg flex items-center justify-between transition-colors w-full"
-                                >
-                                    <span>DOWNLOAD NOW</span>
-                                    <Download className="w-4 h-4" />
-                                </a>
+                                {/* Download Buttons Container */}
+                                <div className="mt-4 space-y-2">
+                                    {/* Primary Brochure Button */}
+                                    <a
+                                        href="https://drive.google.com/uc?export=download&id=1_KTN2gb4tdGVJmWOiidoQd4F01Tp5jud"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bg-[#C5A253] hover:bg-[#b38f42] text-[#051C12] font-bold text-[11px] uppercase tracking-wider py-2 px-3 rounded-lg flex items-center justify-between transition-colors w-full"
+                                    >
+                                        <span>Resort Brochure</span>
+                                        <Download className="w-3.5 h-3.5" />
+                                    </a>
+
+                                    {/* Second PDF Download Button (Replace href with your link) */}
+                                    <a
+                                        href="YOUR_SECOND_PDF_LINK_HERE"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bg-emerald-950/80 hover:bg-emerald-900 border border-[#C5A253]/50 text-[#C5A253] font-bold text-[11px] uppercase tracking-wider py-2 px-3 rounded-lg flex items-center justify-between transition-colors w-full backdrop-blur-sm"
+                                    >
+                                        <span>Master Plan / Details</span>
+                                        <FileText className="w-3.5 h-3.5" />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

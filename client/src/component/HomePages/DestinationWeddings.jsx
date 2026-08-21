@@ -229,7 +229,7 @@ export default function DestinationWeddings() {
 
                             <div className="flex items-center space-x-2">
                                 <Mail className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
-                                <span className="text-[11px]">your-email@gmail.com</span>
+                                <span className="text-[11px]">info@echothejungle.com</span>
                             </div>
 
                             <div className="flex items-center space-x-2">
