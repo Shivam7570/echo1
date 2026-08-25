@@ -21,10 +21,14 @@ async function adminFetch(path, options = {}) {
   if (isLocalhost) {
     candidateBases.push('http://localhost:5000/api', '/api', 'http://127.0.0.1:5000/api');
   } else {
-    candidateBases.push('/api', '', 'https://api.echothejungle.com/api', 'http://localhost:5000/api');
+    if (import.meta.env.VITE_API_URL) {
+      candidateBases.push(import.meta.env.VITE_API_URL);
+    }
+    // Hardcode live API endpoint for production subdomains
+    candidateBases.push('https://api.echothejungle.com/api', 'https://echothejungle.com/api');
   }
 
-  const uniqueBases = [...new Set(candidateBases)];
+  const uniqueBases = [...new Set(candidateBases)].filter(Boolean);
   let lastErr = null;
 
   for (let i = 0; i < uniqueBases.length; i++) {
@@ -33,7 +37,7 @@ async function adminFetch(path, options = {}) {
     const isLast = i === uniqueBases.length - 1;
 
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3500);
+    const timeoutId = setTimeout(() => controller.abort(), 6000);
 
     try {
       const res = await fetch(url, {
@@ -42,35 +46,64 @@ async function adminFetch(path, options = {}) {
       });
       clearTimeout(timeoutId);
 
-      const json = await res.json().catch(() => ({}));
+      const contentType = res.headers.get('content-type') || '';
+      if (contentType.includes('text/html')) {
+        const err = new Error(`Server returned HTML instead of JSON from ${url}`);
+        err.status = res.status;
+        if (cachedWorkingBaseUrl === baseUrl) cachedWorkingBaseUrl = null;
+        if (!isLast) {
+          lastErr = err;
+          continue;
+        }
+        throw err;
+      }
+
+      const json = await res.json().catch(() => null);
+      if (!json) {
+        const err = new Error(`Invalid JSON returned from ${url}`);
+        if (cachedWorkingBaseUrl === baseUrl) cachedWorkingBaseUrl = null;
+        if (!isLast) {
+          lastErr = err;
+          continue;
+        }
+        throw err;
+      }
+
       if (!res.ok) {
-        const errorMsg = json.message || `Server returned ${res.status}`;
+        const errorMsg = json.message || `Server returned status ${res.status}`;
         const err = new Error(errorMsg);
         err.status = res.status;
+        if (cachedWorkingBaseUrl === baseUrl) cachedWorkingBaseUrl = null;
         if ((res.status === 404 || res.status >= 500) && !isLast) {
           lastErr = err;
           continue;
         }
         throw err;
       }
+
       cachedWorkingBaseUrl = baseUrl;
       return json;
     } catch (err) {
       clearTimeout(timeoutId);
       lastErr = err;
+      if (cachedWorkingBaseUrl === baseUrl) cachedWorkingBaseUrl = null;
       if (
         err.name === 'AbortError' ||
         err.name === 'TypeError' ||
         err.message?.includes('Failed to fetch') ||
+        err.message?.includes('HTML instead of JSON') ||
+        err.message?.includes('Invalid JSON') ||
         ((err.status === 404 || err.status >= 500) && !isLast)
       ) {
-        continue;
+        if (!isLast) continue;
       }
       throw err;
     }
   }
+
   throw lastErr || new Error('Failed to connect to backend server');
 }
+
 
 export default function App() {
   // Authentication State
