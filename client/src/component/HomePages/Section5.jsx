@@ -48,7 +48,7 @@ export default function Section5() {
     const destinations = [
         {
             id: 1,
-            name: 'Jim Corbett National Park',
+            name: 'Jim Corbett National Park (Amangarh Tiger Reserve)',
             duration: '10 Minutes',
             icon: <GiTigerHead className="w-4 h-4 text-amber-500" />,
             image: 'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&q=80&w=600',
@@ -77,14 +77,14 @@ export default function Section5() {
         {
             id: 5,
             name: 'Nainital',
-            duration: '1.5 Hours',
+            duration: '110 minutes',
             icon: <FaCompass className="w-4 h-4 text-amber-500" />,
             image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&q=80&w=600',
         },
         {
             id: 6,
             name: ' Kalagarh Dam',
-            duration: '15 minutes',
+            duration: '5 minutes',
             icon: <FaWater className="w-4 h-4 text-amber-500" />,
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IMXqCNP26EoptJgP7oWSZQdRBWtz6KIjSqZb3sjDYQ&s=10',
         },
