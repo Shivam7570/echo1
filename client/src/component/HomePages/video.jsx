@@ -75,12 +75,11 @@ export default function Video() {
 
     return (
         <section className="bg-black text-stone-200 py-3 md:py-4 px-4 min-h-screen flex flex-col justify-center items-center overflow-hidden">
-            {/* Reduced max-width to max-w-2xl for a compact laptop layout */}
-            <div className="max-w-xl md:max-w-2xl w-full flex flex-col justify-center space-y-2.5">
+            <div className="max-w-xl md:max-w-2xl xl:max-w-3xl w-full flex flex-col justify-center space-y-2.5 md:space-y-4">
 
                 {/* Header Section */}
                 <div className="text-center space-y-0.5 flex-shrink-0">
-                    <div className="flex items-center justify-center space-x-1.5 text-[#C5A253] text-[9px] sm:text-[10px] font-semibold tracking-[0.2em]">
+                    <div className="flex items-center justify-center space-x-2 text-[#C5A253] text-[9px] sm:text-[10px] font-semibold tracking-[0.2em]">
                         <span className="w-4 h-[1px] bg-[#C5A253]/60"></span>
                         <span>OUR DESTINATION</span>
                         <span className="w-4 h-[1px] bg-[#C5A253]/60"></span>
@@ -95,12 +94,12 @@ export default function Video() {
                     </p>
                 </div>
 
-                {/* Interactive Video Player - Max height restricted */}
+                {/* Interactive Video Player */}
                 <div className="relative w-full rounded-lg overflow-hidden border border-[#C5A253]/40 shadow-lg bg-stone-900 group">
-                    <div className="relative w-full aspect-video max-h-[280px] md:max-h-[320px] flex items-center justify-center bg-black mx-auto">
+                    <div className="relative w-full aspect-video flex items-center justify-center bg-black">
                         <video
                             ref={videoRef}
-                            className="w-full h-full object-contain cursor-pointer"
+                            className="w-full h-full object-cover cursor-pointer"
                             src={videoSrc}
                             loop
                             playsInline
@@ -111,20 +110,20 @@ export default function Video() {
                         <button
                             onClick={togglePlay}
                             aria-label={isPlaying ? "Pause video" : "Play video"}
-                            className={`absolute inset-0 m-auto w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-black/50 border border-[#C5A253] text-[#C5A253] flex items-center justify-center transition-all duration-300 transform hover:scale-110 focus:outline-none ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'
+                            className={`absolute inset-0 m-auto w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/50 border border-[#C5A253] text-[#C5A253] flex items-center justify-center transition-all duration-300 transform hover:scale-110 focus:outline-none ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'
                                 }`}
                         >
                             {isPlaying ? (
-                                <Pause className="w-3.5 h-3.5 sm:w-5 sm:h-5 fill-[#C5A253]" />
+                                <Pause className="w-4 h-4 sm:w-5 sm:h-5 fill-[#C5A253]" />
                             ) : (
-                                <Play className="w-3.5 h-3.5 sm:w-5 sm:h-5 fill-[#C5A253] translate-x-0.5" />
+                                <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-[#C5A253] translate-x-0.5" />
                             )}
                         </button>
                     </div>
                 </div>
 
                 {/* Feature Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 pt-1">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 pt-0.5">
                     {features.map((feature, idx) => {
                         const IconComponent = feature.icon;
                         return (
@@ -135,7 +134,7 @@ export default function Video() {
                                 <div className="text-[#C5A253] pt-0.5 flex-shrink-0">
                                     <IconComponent className="w-3.5 h-3.5 stroke-[1.5]" />
                                 </div>
-                                <div className="space-y-0">
+                                <div className="space-y-0.5">
                                     <h4 className="text-stone-200 text-[10px] sm:text-[11px] font-serif font-medium tracking-wide">
                                         {feature.title}
                                     </h4>
