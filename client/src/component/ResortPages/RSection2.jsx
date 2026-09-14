@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Square, Leaf, X } from 'lucide-react';
-import resort1Layout1 from "../../assets/resortLayout1.png";
+import resort1Layout1 from "../../assets/resortLayout1.2.png";
 import resort1Layout2 from "../../assets/layout2.jpg";
 import resort1Layout5 from "../../assets/layout5.jpeg";
 import resort1Layout4 from "../../assets/layout4.jpg";
