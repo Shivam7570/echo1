@@ -44,7 +44,7 @@ const statBar = [
     {
         icon: Home,
         title: "Luxury Villas",
-        desc: "Premium Living Redefined",
+        desc: "Premium Living Redefine",
     },
     {
         icon: TrendingUp,
